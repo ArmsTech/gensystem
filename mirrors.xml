@@ -1,0 +1,625 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link title="new" rel="stylesheet" href="../../css/main.css" type="text/css">
+<link REL="shortcut icon" HREF="../../favicon.ico" TYPE="image/x-icon">
+<link rel="search" type="application/opensearchdescription+xml" href="//www.gentoo.org/search/www-gentoo-org.xml" title="Gentoo Website">
+<link rel="search" type="application/opensearchdescription+xml" href="//www.gentoo.org/search/forums-gentoo-org.xml" title="Gentoo Forums">
+<link rel="search" type="application/opensearchdescription+xml" href="//www.gentoo.org/search/bugs-gentoo-org.xml" title="Gentoo Bugzilla">
+<link rel="search" type="application/opensearchdescription+xml" href="//www.gentoo.org/search/packages-gentoo-org.xml" title="Gentoo Packages">
+<link rel="search" type="application/opensearchdescription+xml" href="//www.gentoo.org/search/archives-gentoo-org.xml" title="Gentoo List Archives">
+<title>
+        Gentoo Linux -- Gentoo Linux Mirrors</title>
+</head>
+<body style="margin:0px;" bgcolor="#000000"><table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top" height="125" width="1%" bgcolor="#45347b"><a href="/"><img border="0" src="../../images/gtop-www.jpg" alt="Gentoo Logo"></a></td>
+<td valign="bottom" align="left" bgcolor="#000000" colspan="2" lang="en"><p class="menu">
+<a class="menulink" href="/main/en/about.xml">About</a> | 
+<a class="menulink" href="/proj/en/">Projects</a> | 
+<a class="menulink" href="/doc/en/">Docs</a> | 
+<a class="menulink" href="https://forums.gentoo.org/">Forums</a> | 
+<a class="menulink" href="/main/en/lists.xml">Lists</a> | 
+<a class="menulink" href="http://bugs.gentoo.org/">Bugs</a> | 
+<a class="menulink" href="/main/en/where.xml">Get Gentoo!</a> | 
+<a class="menulink" href="/main/en/support.xml">Support</a> | 
+<a class="menulink" href="http://planet.gentoo.org/">Planet</a> | 
+<a class="menulink" href="https://wiki.gentoo.org/">Wiki</a>
+</p></td>
+</tr>
+<tr>
+<td valign="top" align="right" width="1%" bgcolor="#dddaec"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+<tr><td height="1%" valign="top" align="right"><img src="../../images/gridtest.gif" alt="Gentoo Spaceship"></td></tr>
+<tr><td height="99%" valign="top" align="left"><table cellspacing="0" cellpadding="5" border="0"><tr><td valign="top" class="leftmenu" lang="en">
+<p class="altmenu">Get Started<br>
+<a class="altlink" href="https://wiki.gentoo.org/wiki/Handbook:Main_Page">Gentoo Handbook</a><br>
+<a class="altlink" href="/main/en/where.xml">Downloads</a><br><br>
+News<br>
+<a class="altlink" href="/security/en/">Security Announcements</a><br>
+<a class="altlink" href="https://www.google.com/calendar/embed?src=88di0t0pl2cfau7oak48rbccfs%40group.calendar.google.com&amp;showCalendars=0&amp;color=%235229A3">Calendar</a><br>
+<a class="altlink" href="http://infra-status.gentoo.org/">Infrastructure Status</a><br><br>
+Documentation<br>
+<a class="altlink" href="https://wiki.gentoo.org/wiki/Handbook:Main_Page">Gentoo Handbook</a><br>
+<a class="altlink" href="https://wiki.gentoo.org/wiki/Project:Documentation/Overview">Featured Documentation</a><br>
+<a class="altlink" href="/doc/en/articles/">IBM dW/Intel article archive</a><br><br>
+Get Gentoo<br>
+<a class="altlink" href="/main/en/where.xml">Downloads</a><br>
+<a class="altlink" href="/main/en/mirrors2.xml">Mirrors</a><br><br>
+
+Community<br>
+<a class="altlink" href="https://forums.gentoo.org/">Discussion Forums</a><br>
+<a class="altlink" href="/main/en/irc.xml">IRC Channels</a><br>
+<a class="altlink" href="/main/en/lists.xml">Mailing Lists</a><br>
+<a class="altlink" href="http://bugs.gentoo.org">Report Issues</a><br>
+<a class="altlink" href="http://planet.gentoo.org">Planet (Blogs)</a><br>
+<a class="altlink" href="https://packages.gentoo.org/">Online Package Database</a><br>
+<a class="altlink" href="https://wiki.gentoo.org/">Wiki</a><br>
+<a class="altlink" href="/main/en/contact.xml">Contact Us</a><br>
+<a class="altlink" href="/main/en/sponsors.xml">Sponsors</a><br><br>
+Get Involved<br>
+<a class="altlink" href="http://bugs.gentoo.org">Report Issues</a><br>
+<a class="altlink" href="/proj/en/devrel/staffing-needs/">Help Wanted</a><br>
+<a class="altlink" href="/proj/en/qa/proxy-maintainers/">Help maintaining packages</a><br>
+<a class="altlink" href="https://forums.gentoo.org/">Discussion Forums</a><br>
+<a class="altlink" href="/main/en/irc.xml">IRC Channels</a><br>
+<a class="altlink" href="/main/en/lists.xml">Mailing Lists</a><br>
+<a class="altlink" href="/proj/en/devrel/handbook/handbook.xml">Become a Developer</a><br>
+<a class="altlink" href="/proj/en/userrel/adopt-a-dev/">Offer Resources</a><br>
+<a class="altlink" href="/proj/en/glep/">Enhancement Proposals (GLEPs)</a><br>
+<a class="altlink" href="http://anoncvs.gentoo.org/">Source Repositories</a><br>
+<a class="altlink" href="https://devmanual.gentoo.org">Developer's Manual</a><br><br>
+Other<br>
+<a class="altlink" href="/proj/en/devrel/roll-call/userinfo.xml">Developer List</a><br>
+<a class="altlink" href="/proj/en/devrel/roll-call/devmap.xml">Developer Map</a><br>
+<a class="altlink" href="/main/en/stores.xml">Gentoo Stores</a><br>
+<a class="altlink" href="/proj/en/">Projects</a><br><br>
+About<br>
+<a class="altlink" href="/main/en/about.xml">About Gentoo</a><br>
+<a class="altlink" href="/main/en/philosophy.xml">Philosophy</a><br>
+<a class="altlink" href="/main/en/contract.xml">Social Contract</a><br>
+<a class="altlink" href="/main/en/name-logo.xml">Name and Logo Guidelines</a><br>
+<a class="altlink" href="/main/en/graphics.xml">Logos and themes</a><br>
+<a class="altlink" href="/main/en/shots.xml">Screenshots</a><br><br>
+</p>
+<br><br>
+</td></tr></table></td></tr>
+</table></td>
+<td valign="top" bgcolor="#ffffff">
+<br><table border="0" class="content"><tr><td>
+<p class="chaphead"><a name="doc_chap1"></a><span class="chapnum">1. 
+            </span>Gentoo Download Full Mirrors</p>
+<p>
+The following organizations provide a full source mirror of all files related
+to Gentoo, including installation CDs, LiveCDs and GRP package sets.
+</p>
+<table class="ncontent" width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td bgcolor="#ffffbb"><p class="note"><b>Important: </b>
+These mirrors are download mirrors. The rsync-mirrors listed here are
+<span class="emphasis">not</span> for individual use (i.e. <span class="code" dir="ltr">emerge --sync</span>) as that would
+download the full mirror instead of just the Portage tree.
+</p></td></tr></table>
+<table class="ncontent" width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td bgcolor="#bbffbb"><p class="note"><b>Note: </b>* indicates mirrors that support IPv6</p></td></tr></table>
+<p class="chaphead"><a name="NorthAmerica"></a><a name="doc_chap2"></a><span class="chapnum">2. 
+            </span>North America</p>
+<p class="secthead"><a name="Canada"></a><a name="doc_chap2_sect1">Canada</a></p>
+<p>
+          <a href="http://gentoo.arcticnetwork.ca/">Arctic Network Mirrors (http)</a>
+          <br>
+          <a href="http://gentoo.gossamerhost.com">Gossamer Threads (http)</a>
+          <br>
+          <a href="rsync://gentoo.gossamerhost.com/gentoo-distfiles/">Gossamer Threads (rsync)</a>
+          <br>
+          <a href="ftp://mirrors.tera-byte.com/pub/gentoo">Tera-byte Dot Com Inc (ftp)</a>
+          <br>
+          <a href="http://gentoo.mirrors.tera-byte.com/">Tera-byte Dot Com Inc (http)</a>
+          <br>
+          <a href="rsync://mirrors.tera-byte.com/gentoo">Tera-byte Dot Com Inc (rsync)</a>
+          <br>
+          <a href="ftp://mirror.csclub.uwaterloo.ca/gentoo-distfiles/">University of Waterloo (ftp)</a>
+          <br>
+          <a href="http://mirror.csclub.uwaterloo.ca/gentoo-distfiles/">University of Waterloo (http)</a>
+          <br>
+        </p>
+<p class="secthead"><a name="USA"></a><a name="doc_chap2_sect2">USA</a></p>
+<p>
+          <a href="http://mirror.datapipe.net/gentoo">Datapipe Managed Hosting (http)</a>
+          <br>
+          <a href="ftp://mirror.datapipe.net/gentoo">Datapipe Managed Hosting (ftp)</a>
+          <br>
+          <a href="http://gentoo.mirrors.easynews.com/linux/gentoo/">Easynews NNTP Hosting (http)</a>
+          <br>
+          <a href="ftp://ftp.gtlib.gatech.edu/pub/gentoo">Georgia Tech (ftp)*</a>
+          <br>
+          <a href="http://www.gtlib.gatech.edu/pub/gentoo">Georgia Tech (http)*</a>
+          <br>
+          <a href="rsync://rsync.gtlib.gatech.edu/gentoo">Georgia Tech (rsync)*</a>
+          <br>
+          <a href="http://gentoo.mirrors.hoobly.com/">Hoobly Classifieds (http)</a>
+          <br>
+          <a href="ftp://ftp.ussg.iu.edu/pub/linux/gentoo">Indiana University (ftp)</a>
+          <br>
+          <a href="ftp://lug.mtu.edu/gentoo/">Michigan Tech University (ftp)*</a>
+          <br>
+          <a href="http://lug.mtu.edu/gentoo/">Michigan Tech University (http)*</a>
+          <br>
+          <a href="http://gentoo.netnitco.net">NetNITCO Internet Services (http)</a>
+          <br>
+          <a href="ftp://gentoo.netnitco.net/pub/mirrors/gentoo/source/">NetNITCO Internet Services (ftp)</a>
+          <br>
+          <a href="http://gentoo.osuosl.org/">OSU Open Source Lab (http)</a>
+          <br>
+          <a href="http://gentoo.mirrors.pair.com/">Pair Networks (http)</a>
+          <br>
+          <a href="ftp://gentoo.mirrors.pair.com/">Pair Networks (ftp)</a>
+          <br>
+          <a href="http://mirrors.rit.edu/gentoo/">Rochester Institute of Technology (http)</a>
+          <br>
+          <a href="ftp://mirrors.rit.edu/gentoo/">Rochester Institute of Technology (ftp)</a>
+          <br>
+          <a href="rsync://mirrors.rit.edu/gentoo/">Rochester Institute of Technology (rsync)</a>
+          <br>
+          <a href="http://mirror.iawnet.sandia.gov/gentoo/">Sandia National Labs (http)</a>
+          <br>
+          <a href="ftp://mirror.iawnet.sandia.gov/pub/gentoo/">Sandia National Labs (ftp)</a>
+          <br>
+          <a href="http://gentoo.llarian.net/">Semaphore Corporation (http)*</a>
+          <br>
+          <a href="ftp://gentoo.llarian.net/pub/gentoo">Semaphore Corporation (ftp)*</a>
+          <br>
+          <a href="http://gentoo.mirrors.tds.net/gentoo">TDS Internet Services (http)</a>
+          <br>
+          <a href="ftp://ftp.ucsb.edu/pub/mirrors/linux/gentoo/">University of California, Santa Barbara (ftp)</a>
+          <br>
+          <a href="http://ftp.ucsb.edu/pub/mirrors/linux/gentoo/">University of California, Santa Barbara (http)</a>
+          <br>
+          <a href="http://mirror.lug.udel.edu/pub/gentoo/">University of Delaware, Delaware Linux Users Group (http)</a>
+          <br>
+          <a href="ftp://ftp.lug.udel.edu/pub/gentoo/">University of Delaware, Delaware Linux Users Group (ftp)</a>
+          <br>
+          <a href="http://gentoo.cites.uiuc.edu/pub/gentoo/">University of Illinois-Urbana Champaign (http)</a>
+          <br>
+          <a href="ftp://gentoo.cites.uiuc.edu/pub/gentoo/">University of Illinois-Urbana Champaign (ftp)</a>
+          <br>
+          <a href="http://gentoo.cs.uni.edu/">University of Northern Iowa (http)</a>
+          <br>
+          <a href="rsync://gentoo.cs.uni.edu/gentoo-distfiles">University of Northern Iowa (rsync)</a>
+          <br>
+          <a href="http://mirror.usu.edu/mirrors/gentoo/">Utah State University (http)</a>
+          <br>
+          <a href="ftp://ftp.wallawalla.edu/pub/mirrors/ftp.gentoo.org">Walla Walla University (ftp)</a>
+          <br>
+        </p>
+<p class="chaphead"><a name="SouthAmerica"></a><a name="doc_chap3"></a><span class="chapnum">3. 
+            </span>South America</p>
+<p class="secthead"><a name="Argentina"></a><a name="doc_chap3_sect1">Argentina</a></p>
+<p>
+          <a href="http://gentoo.localhost.net.ar/">LocalHost Soluciones Innovadoras (http)</a>
+          <br>
+          <a href="ftp://mirrors.localhost.net.ar/pub/mirrors/gentoo/">LocalHost Soluciones Innovadoras (ftp)</a>
+          <br>
+        </p>
+<p class="secthead"><a name="Brazil"></a><a name="doc_chap3_sect2">Brazil</a></p>
+<p>
+          <a href="http://gentoo.c3sl.ufpr.br/">C3SL, Federal University of Paraná (http)*</a>
+          <br>
+          <a href="ftp://gentoo.c3sl.ufpr.br/gentoo/">C3SL, Federal University of Paraná (ftp)*</a>
+          <br>
+          <a href="rsync://gentoo.c3sl.ufpr.br/gentoo/">C3SL, Federal University of Paraná (rsync)*</a>
+          <br>
+          <a href="http://www.las.ic.unicamp.br/pub/gentoo/">Laboratory of System Administration (http)</a>
+          <br>
+          <a href="ftp://ftp.las.ic.unicamp.br/pub/gentoo/">Laboratory of System Administration (ftp)</a>
+          <br>
+        </p>
+<p class="chaphead"><a name="Europe"></a><a name="doc_chap4"></a><span class="chapnum">4. 
+            </span>Europe</p>
+<p class="secthead"><a name="Austria"></a><a name="doc_chap4_sect1">Austria</a></p>
+<p>
+          <a href="http://gentoo.inode.at/">Inode (http)</a>
+          <br>
+          <a href="ftp://gentoo.inode.at/source/">Inode (ftp)</a>
+          <br>
+          <a href="http://gd.tuwien.ac.at/opsys/linux/gentoo/">Vienna Univ. of Technology (http)</a>
+          <br>
+          <a href="ftp://gd.tuwien.ac.at/opsys/linux/gentoo/">Vienna Univ. of Technology (ftp)</a>
+          <br>
+        </p>
+<p class="secthead"><a name="Bulgaria"></a><a name="doc_chap4_sect2">Bulgaria</a></p>
+<p>
+          <a href="http://mirrors.telepoint.bg/gentoo/">telepoint.bg (http)</a>
+          <br>
+        </p>
+<p class="secthead"><a name="CzechRepublic"></a><a name="doc_chap4_sect3">Czech Republic</a></p>
+<p>
+          <a href="http://gentoo.supp.name/">Advokatni Kancelar Kindl &amp; Partneri (http)</a>
+          <br>
+          <a href="http://ftp.fi.muni.cz/pub/linux/gentoo/">Masaryk University Brno (http)</a>
+          <br>
+          <a href="ftp://ftp.fi.muni.cz/pub/linux/gentoo/">Masaryk University Brno (ftp)</a>
+          <br>
+          <a href="rsync://ftp.fi.muni.cz/pub/linux/gentoo/">Masaryk University Brno (rsync)</a>
+          <br>
+          <a href="rsync://ftp6.linux.cz/pub/linux/gentoo/">Masaryk University Brno (rsync/ipv6 only)</a>
+          <br>
+          <a href="http://gentoo.mirror.dkm.cz/pub/gentoo/">UPC Česká republika, a.s. (http)*</a>
+          <br>
+          <a href="ftp://gentoo.mirror.dkm.cz/pub/gentoo/">UPC Česká republika, a.s. (ftp)*</a>
+          <br>
+          <a href="rsync://gentoo.mirror.dkm.cz/gentoo/">UPC Česká republika, a.s. (rsync)*</a>
+          <br>
+          <a href="http://gentoo.mirror.web4u.cz/">Web4U Mirror (http)</a>
+          <br>
+          <a href="ftp://gentoo.mirror.web4u.cz/">Web4U Mirror (ftp)</a>
+          <br>
+        </p>
+<p class="secthead"><a name="Finland"></a><a name="doc_chap4_sect4">Finland</a></p>
+<p>
+          <a href="http://trumpetti.atm.tut.fi/gentoo/">tut.fi (http)*</a>
+          <br>
+          <a href="ftp://trumpetti.atm.tut.fi/gentoo/">tut.fi (ftp)*</a>
+          <br>
+          <a href="rsync://trumpetti.atm.tut.fi/gentoo/">tut.fi (rsync)*</a>
+          <br>
+        </p>
+<p class="secthead"><a name="France"></a><a name="doc_chap4_sect5">France</a></p>
+<p>
+          <a href="ftp://ftp.free.fr/mirrors/ftp.gentoo.org/">Free (ftp)*</a>
+          <br>
+          <a href="ftp://gentoo.imj.fr/pub/gentoo/">IMJ.fr (ftp)</a>
+          <br>
+          <a href="http://mirrors.linuxant.fr/distfiles.gentoo.org/">Linuxant.fr (http)*</a>
+          <br>
+          <a href="ftp://mirrors.linuxant.fr/distfiles.gentoo.org/">Linuxant.fr (ftp)*</a>
+          <br>
+          <a href="http://gentoo.modulix.net/gentoo/">modulix.net (http)</a>
+          <br>
+          <a href="http://gentoo.mirrors.ovh.net/gentoo-distfiles/">OVH (http)*</a>
+          <br>
+          <a href="ftp://gentoo.mirrors.ovh.net/gentoo-distfiles/">OVH (ftp)*</a>
+          <br>
+        </p>
+<p class="secthead"><a name="Germany"></a><a name="doc_chap4_sect6">Germany</a></p>
+<p>
+          <a href="ftp://de-mirror.org/gentoo/">de-mirror.org (ftp)</a>
+          <br>
+          <a href="http://de-mirror.org/gentoo/">de-mirror.org (http)</a>
+          <br>
+          <a href="rsync://de-mirror.org/gentoo/">de-mirror.org (rsync)</a>
+          <br>
+          <a href="ftp://ftp.wh2.tu-dresden.de/pub/mirrors/gentoo">Dresden University of Technology/AG DSN (ftp)</a>
+          <br>
+          <a href="ftp://mirror.netcologne.de/gentoo/">Netcologne (ftp)*</a>
+          <br>
+          <a href="http://mirror.netcologne.de/gentoo/">Netcologne (http)*</a>
+          <br>
+          <a href="rsync://mirror.netcologne.de/gentoo/">Netcologne (rsync)*</a>
+          <br>
+          <a href="http://linux.rz.ruhr-uni-bochum.de/download/gentoo-mirror/">Ruhr-Universität Bochum (http)</a>
+          <br>
+          <a href="http://ftp.halifax.rwth-aachen.de/gentoo/">RWTH Aachen University (http)</a>
+          <br>
+          <a href="ftp://ftp.halifax.rwth-aachen.de/gentoo/">RWTH Aachen University (ftp)</a>
+          <br>
+          <a href="rsync://ftp.halifax.rwth-aachen.de/gentoo/">RWTH Aachen University (rsync)</a>
+          <br>
+          <a href="ftp://sunsite.informatik.rwth-aachen.de/pub/Linux/gentoo">rwth-aachen.de (ftp)</a>
+          <br>
+          <a href="ftp://ftp.spline.inf.fu-berlin.de/mirrors/gentoo/">SPLINE, Institut für Informatik, Freie Universität Berlin (ftp)</a>
+          <br>
+          <a href="http://ftp.spline.inf.fu-berlin.de/mirrors/gentoo/">SPLINE, Institut für Informatik, Freie Universität Berlin (http)</a>
+          <br>
+          <a href="http://ftp.uni-erlangen.de/pub/mirrors/gentoo">Uni Erlangen-Nürnberg (http)*</a>
+          <br>
+          <a href="ftp://ftp.uni-erlangen.de/pub/mirrors/gentoo">Uni Erlangen-Nürnberg (ftp)*</a>
+          <br>
+          <a href="http://ftp-stud.hs-esslingen.de/pub/Mirrors/gentoo/">University of Applied Sciences, Esslingen (http)</a>
+          <br>
+          <a href="ftp://ftp-stud.hs-esslingen.de/pub/Mirrors/gentoo/">University of Applied Sciences, Esslingen (ftp)</a>
+          <br>
+          <a href="rsync://ftp-stud.hs-esslingen.de/gentoo/">University of Applied Sciences, Esslingen (rsync)</a>
+          <br>
+        </p>
+<p class="secthead"><a name="Greece"></a><a name="doc_chap4_sect7">Greece</a></p>
+<p>
+          <a href="ftp://files.gentoo.gr">files.gentoo.gr (ftp)</a>
+          <br>
+          <a href="http://files.gentoo.gr">files.gentoo.gr (http)</a>
+          <br>
+          <a href="ftp://ftp.ntua.gr/pub/linux/gentoo/">National Technical University of Athens (ftp)*</a>
+          <br>
+          <a href="http://ftp.ntua.gr/pub/linux/gentoo/">National Technical University of Athens (http)*</a>
+          <br>
+        </p>
+<p class="secthead"><a name="Ireland"></a><a name="doc_chap4_sect8">Ireland</a></p>
+<p>
+          <a href="http://ftp.heanet.ie/pub/gentoo/">HEAnet - Ireland's National Education and Research Network (http)*</a>
+          <br>
+          <a href="ftp://ftp.heanet.ie/pub/gentoo/">HEAnet - Ireland's National Education and Research Network (ftp)*</a>
+          <br>
+          <a href="rsync://ftp.heanet.ie/pub/gentoo/">HEAnet - Ireland's National Education and Research Network (rsync)*</a>
+          <br>
+        </p>
+<p class="secthead"><a name="Netherlands"></a><a name="doc_chap4_sect9">Netherlands</a></p>
+<p>
+          <a href="http://mirror.leaseweb.com/gentoo/">LeaseWeb (http)*</a>
+          <br>
+          <a href="ftp://mirror.leaseweb.com/gentoo/">LeaseWeb (ftp)*</a>
+          <br>
+          <a href="rsync://mirror.leaseweb.com/gentoo/">LeaseWeb (rsync)*</a>
+          <br>
+          <a href="http://gentoo.tiscali.nl/">Tiscali (http)</a>
+          <br>
+          <a href="ftp://gentoo.tiscali.nl/pub/mirror/gentoo/">Tiscali (ftp)</a>
+          <br>
+          <a href="http://ftp.snt.utwente.nl/pub/os/linux/gentoo">Universiteit Twente (http)*</a>
+          <br>
+          <a href="ftp://ftp.snt.utwente.nl/pub/os/linux/gentoo">Universiteit Twente (ftp)*</a>
+          <br>
+          <a href="rsync://ftp.snt.utwente.nl/gentoo">Universiteit Twente (rsync)*</a>
+          <br>
+        </p>
+<p class="secthead"><a name="Poland"></a><a name="doc_chap4_sect10">Poland</a></p>
+<p>
+          <a href="rsync://gentoo.prz.rzeszow.pl/gentoo">Rzeszow University of Technology (rsync)</a>
+          <br>
+          <a href="http://gentoo.prz.rzeszow.pl">Rzeszow University of Technology (http)</a>
+          <br>
+          <a href="http://gentoo.po.opole.pl">Technical University of Opole (http)</a>
+          <br>
+          <a href="rsync://ftp.vectranet.pl/gentoo/">Vectranet (rsync)</a>
+          <br>
+          <a href="http://ftp.vectranet.pl/gentoo/">Vectranet (http)</a>
+          <br>
+          <a href="ftp://ftp.vectranet.pl/gentoo/">Vectranet (ftp)</a>
+          <br>
+          <a href="http://gentoo.mirror.pw.edu.pl/">Warsaw University Of Technology (http)</a>
+          <br>
+        </p>
+<p class="secthead"><a name="Portugal"></a><a name="doc_chap4_sect11">Portugal</a></p>
+<p>
+          <a href="http://ftp.rnl.tecnico.ulisboa.pt/pub/gentoo/gentoo-distfiles/">RNL - Técnico Lisboa (http)*</a>
+          <br>
+          <a href="ftp://ftp.rnl.tecnico.ulisboa.pt/pub/gentoo/gentoo-distfiles/">RNL - Técnico Lisboa (ftp)*</a>
+          <br>
+          <a href="rsync://ftp.rnl.tecnico.ulisboa.pt/pub/gentoo/gentoo-distfiles/">RNL - Técnico Lisboa (rsync)*</a>
+          <br>
+          <a href="ftp://ftp.dei.uc.pt/pub/linux/gentoo/">University of Coimbra (ftp)</a>
+          <br>
+          <a href="http://ftp.dei.uc.pt/pub/linux/gentoo/">University of Coimbra (http)</a>
+          <br>
+        </p>
+<p class="secthead"><a name="Romania"></a><a name="doc_chap4_sect12">Romania</a></p>
+<p>
+          <a href="http://ftp.romnet.org/gentoo/">Romanian Organization Network (http)*</a>
+          <br>
+          <a href="http://mirrors.xservers.ro/gentoo/">xservers.ro Gazduire Web (http)</a>
+          <br>
+        </p>
+<p class="secthead"><a name="Slovakia"></a><a name="doc_chap4_sect13">Slovakia</a></p>
+<p>
+          <a href="http://tux.rainside.sk/gentoo/">Rainside.sk (http)</a>
+          <br>
+          <a href="ftp://tux.rainside.sk/gentoo/">Rainside.sk (ftp)</a>
+          <br>
+          <a href="http://gentoo.wheel.sk/">Wheel.sk (http)</a>
+          <br>
+          <a href="ftp://gentoo.wheel.sk/pub/linux/gentoo/">Wheel.sk (ftp)</a>
+          <br>
+        </p>
+<p class="secthead"><a name="Spain"></a><a name="doc_chap4_sect14">Spain</a></p>
+<p>
+          <a href="http://gentoo-euetib.upc.es/mirror/gentoo/">Politechnic University of Catalonia (http)</a>
+          <br>
+        </p>
+<p class="secthead"><a name="Sweden"></a><a name="doc_chap4_sect15">Sweden</a></p>
+<p>
+          <a href="ftp://ftp.df.lth.se/pub/gentoo/">Lund University (ftp)</a>
+          <br>
+          <a href="http://ftp.df.lth.se/pub/gentoo/">Lund University (http)</a>
+          <br>
+          <a href="rsync://ftp.df.lth.se/pub/gentoo/">Lund University (rsync)</a>
+          <br>
+          <a href="ftp://mirror.mdfnet.se/gentoo">mdfnet.se (ftp)*</a>
+          <br>
+          <a href="http://mirror.mdfnet.se/gentoo">mdfnet.se (http)*</a>
+          <br>
+        </p>
+<p class="secthead"><a name="Switzerland"></a><a name="doc_chap4_sect16">Switzerland</a></p>
+<p>
+          <a href="http://mirror.switch.ch/ftp/mirror/gentoo/">SWITCHmirror (http)*</a>
+          <br>
+          <a href="ftp://mirror.switch.ch/mirror/gentoo/">SWITCHmirror (ftp)*</a>
+          <br>
+        </p>
+<p class="secthead"><a name="Turkey"></a><a name="doc_chap4_sect17">Turkey</a></p>
+<p>
+          <a href="ftp://ftp.linux.org.tr/gentoo/">Turkish Linux Users Group - Linux Kullanicilari Dernegi(LKD) (ftp)</a>
+          <br>
+          <a href="http://ftp.linux.org.tr/gentoo/">Turkish Linux Users Group - Linux Kullanicilari Dernegi(LKD) (http)</a>
+          <br>
+          <a href="rsync://ftp.linux.org.tr/gentoo-distfiles/">Turkish Linux Users Group - Linux Kullanicilari Dernegi(LKD) (rsync)</a>
+          <br>
+        </p>
+<p class="secthead"><a name="UK"></a><a name="doc_chap4_sect18">UK</a></p>
+<p>
+          <a href="ftp://mirror.bytemark.co.uk/gentoo/">Bytemark Hosting (ftp)*</a>
+          <br>
+          <a href="http://mirror.bytemark.co.uk/gentoo/">Bytemark Hosting (http)*</a>
+          <br>
+          <a href="rsync://mirror.bytemark.co.uk/gentoo/">Bytemark Hosting (rsync)*</a>
+          <br>
+          <a href="http://mirror.qubenet.net/mirror/gentoo/">Qube Managed Services (http)*</a>
+          <br>
+          <a href="http://www.mirrorservice.org/sites/distfiles.gentoo.org/">The UK Mirror Service (http)</a>
+          <br>
+          <a href="ftp://ftp.mirrorservice.org/sites/distfiles.gentoo.org/">The UK Mirror Service (ftp)</a>
+          <br>
+          <a href="rsync://rsync.mirrorservice.org/distfiles.gentoo.org/">The UK Mirror Service (rsync)</a>
+          <br>
+        </p>
+<p class="secthead"><a name="Ukraine"></a><a name="doc_chap4_sect19">Ukraine</a></p>
+<p>
+          <a href="ftp://gentoo.kiev.ua/">gentoo.kiev.ua (ftp)</a>
+          <br>
+          <a href="http://gentoo.kiev.ua/ftp/">gentoo.kiev.ua (http)</a>
+          <br>
+          <a href="rsync://gentoo.kiev.ua/gentoo-distfiles">gentoo.kiev.ua (rsync)</a>
+          <br>
+          <a href="http://gentoo.iteam.net.ua/">ITEAM gentoo mirror (http)</a>
+          <br>
+          <a href="ftp://portage.org.ua/">portage.org.ua (ftp)*</a>
+          <br>
+          <a href="http://portage.org.ua/">portage.org.ua (http)*</a>
+          <br>
+        </p>
+<p class="chaphead"><a name="Australia"></a><a name="doc_chap5"></a><span class="chapnum">5. 
+            </span>Australia</p>
+<p>
+          <a href="ftp://ftp.swin.edu.au/gentoo">Swinburne University of Technology (ftp)*</a>
+          <br>
+          <a href="http://ftp.swin.edu.au/gentoo">Swinburne University of Technology (http)*</a>
+          <br>
+        </p>
+<p class="chaphead"><a name="Asia"></a><a name="doc_chap6"></a><span class="chapnum">6. 
+            </span>Asia</p>
+<p class="secthead"><a name="China"></a><a name="doc_chap6_sect1">China</a></p>
+<p>
+          <a href="http://mirrors.163.com/gentoo/">Netease.com, Inc. (http)</a>
+          <br>
+          <a href="http://mirrors.sohu.com/gentoo/">Sohu.inc (http)</a>
+          <br>
+          <a href="http://mirrors.stuhome.net/gentoo/">Star Studio of UESTC (http)</a>
+          <br>
+          <a href="ftp://mirrors.stuhome.net/gentoo/">Star Studio of UESTC (ftp)</a>
+          <br>
+          <a href="ftp://mirrors.xmu.edu.cn/gentoo">Xiamen University (ftp)*</a>
+          <br>
+          <a href="http://mirrors.xmu.edu.cn/gentoo">Xiamen University (http)*</a>
+          <br>
+          <a href="rsync://mirrors.xmu.edu.cn/gentoo/">Xiamen University (rsync)*</a>
+          <br>
+        </p>
+<p class="secthead"><a name="HongKong"></a><a name="doc_chap6_sect2">Hong Kong</a></p>
+<p>
+          <a href="http://gentoo.aditsu.net:8000/">aditsu.net (http)</a>
+          <br>
+        </p>
+<p class="secthead"><a name="Japan"></a><a name="doc_chap6_sect3">Japan</a></p>
+<p>
+          <a href="http://gentoo.gg3.net/">gg3.net (http)</a>
+          <br>
+          <a href="ftp://gg3.net/pub/linux/gentoo/">gg3.net (ftp)</a>
+          <br>
+          <a href="rsync://ftp.iij.ad.jp/pub/linux/gentoo/">Internet Initiative Japan (rsync)*</a>
+          <br>
+          <a href="http://ftp.iij.ad.jp/pub/linux/gentoo/">Internet Initiative Japan (http)*</a>
+          <br>
+          <a href="ftp://ftp.iij.ad.jp/pub/linux/gentoo/">Internet Initiative Japan (ftp)*</a>
+          <br>
+          <a href="http://ftp.jaist.ac.jp/pub/Linux/Gentoo/">Japan Advanced Institute of Science and Technology (http)*</a>
+          <br>
+          <a href="rsync://ftp.jaist.ac.jp/pub/Linux/Gentoo/">Japan Advanced Institute of Science and Technology (rsync)*</a>
+          <br>
+          <a href="ftp://ftp.jaist.ac.jp/pub/Linux/Gentoo/">Japan Advanced Institute of Science and Technology (ftp)*</a>
+          <br>
+        </p>
+<p class="secthead"><a name="Russia"></a><a name="doc_chap6_sect4">Russia</a></p>
+<p>
+          <a href="http://gentoo.bloodhost.ru/">Bloodhost.ru (http)</a>
+          <br>
+          <a href="ftp://gentoo.bloodhost.ru/">Bloodhost.ru (ftp)</a>
+          <br>
+          <a href="rsync://gentoo.bloodhost.ru/gentoo-distfiles">Bloodhost.ru (rsync)</a>
+          <br>
+          <a href="ftp://xeon.gentoo.ru/mirrors/gentoo/distfiles/">xeon.gentoo.ru (ftp)</a>
+          <br>
+          <a href="http://mirror.yandex.ru/gentoo-distfiles/">Yandex.ru (http)*</a>
+          <br>
+          <a href="ftp://mirror.yandex.ru/gentoo-distfiles/">Yandex.ru (ftp)*</a>
+          <br>
+        </p>
+<p class="secthead"><a name="SouthKorea"></a><a name="doc_chap6_sect5">South Korea</a></p>
+<p>
+          <a href="http://ftp.daum.net/gentoo/">Daum Communications Corp (http)</a>
+          <br>
+          <a href="http://ftp.kaist.ac.kr/pub/gentoo/">KAIST (http)</a>
+          <br>
+          <a href="ftp://ftp.kaist.ac.kr/gentoo/">KAIST (ftp)</a>
+          <br>
+          <a href="http://ftp.lecl.net/pub/gentoo/">lecl.net (http)</a>
+          <br>
+          <a href="ftp://ftp.lecl.net/pub/gentoo/">lecl.net (ftp)</a>
+          <br>
+        </p>
+<p class="chaphead"><a name="MiddleEast"></a><a name="doc_chap7"></a><span class="chapnum">7. 
+            </span>Middle East</p>
+<p class="secthead"><a name="Israel"></a><a name="doc_chap7_sect1">Israel</a></p>
+<p>
+          <a href="http://mirror.isoc.org.il/pub/gentoo/">Hamakor FOSS Society (http)</a>
+          <br>
+          <a href="ftp://mirror.isoc.org.il/gentoo/">Hamakor FOSS Society (ftp)</a>
+          <br>
+        </p>
+<p class="secthead"><a name="Kazakhstan"></a><a name="doc_chap7_sect2">Kazakhstan</a></p>
+<p>
+          <a href="http://mirror.neolabs.kz/gentoo/pub">Neo Lab's (http)</a>
+          <br>
+          <a href="ftp://mirror.neolabs.kz/gentoo/pub">Neo Lab's (ftp)</a>
+          <br>
+          <a href="rsync://mirror.neolabs.kz/gentoo">Neo Lab's (rsync)</a>
+          <br>
+        </p>
+<p class="chaphead"><a name="partial"></a><a name="doc_chap8"></a><span class="chapnum">8. 
+            </span>Partial Mirrors</p>
+<p>
+These mirrors are not complete mirrors. Some provide only distfiles, while
+others provide only installation media. Please use one of the full mirrors if
+you cannot find what you're looking for.
+</p>
+<a href="http://ftp.twaren.net/Linux/Gentoo/">National Center for High-Performance Computing (Taiwan/http)</a><br><a href="ftp://ftp.twaren.net/Linux/Gentoo/">National Center for High-Performance Computing (Taiwan/ftp)</a><br><p class="chaphead"><a name="resources"></a><a name="doc_chap9"></a><span class="chapnum">9. 
+            </span>Mirroring Resources</p>
+<p>
+          <a href="/doc/en/rsync.xml">How to set up a Gentoo rsync mirror</a>
+          <br>
+          <a href="/doc/en/source_mirrors.xml">How to set up a Gentoo source mirror</a>
+        </p>
+</td></tr></table>
+<br><p class="copyright">
+	The contents of this document, unless otherwise expressly stated, are licensed under the <a href="http://creativecommons.org/licenses/by-sa/2.5">CC-BY-SA-2.5</a> license. The <a href="/main/en/name-logo.xml"> Gentoo Name and Logo Usage Guidelines </a> apply.
+  </p>
+<!--
+  <rdf:RDF xmlns="http://web.resource.org/cc/"
+      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  
+  <license rdf:about="http://creativecommons.org/licenses/by-sa/2.5/">
+    
+     <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+     <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+     <requires rdf:resource="http://web.resource.org/cc/Notice" />
+     <requires rdf:resource="http://web.resource.org/cc/Attribution" />
+     <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+     <requires rdf:resource="http://web.resource.org/cc/ShareAlike" />
+  </License>
+  </rdf:RDF>
+--><br>
+</td>
+<td width="1%" bgcolor="#dddaec" valign="top"><table border="0" cellspacing="4px" cellpadding="4px">
+<tr><td class="topsep" align="center"><p class="alttext">Page updated December 3, 2009</p></td></tr>
+<tr><td class="topsep" align="left"><p class="alttext"><b>Summary: </b>
+List of Gentoo Mirrors
+</p></td></tr>
+<tr lang="en"><td align="center" class="topsep">
+<p class="alttext"><b>Donate</b> to support our development efforts.
+        </p>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_xclick"><input type="hidden" name="business" value="paypal@gentoo.org"><input type="hidden" name="item_name" value="Gentoo Linux Support"><input type="hidden" name="item_number" value="1000"><input type="hidden" name="image_url" value="/images/paypal.png"><input type="hidden" name="no_shipping" value="1"><input type="hidden" name="return" value="https://www.gentoo.org"><input type="hidden" name="cancel_return" value="https://www.gentoo.org"><input type="image" src="https://www.paypal.com/en_US/i/btn/x-click-but21.gif" name="submit" alt="Donate to Gentoo">
+</form>
+</td></tr>
+<tr lang="en"><td align="center"><iframe src="https://sidebar.gentoo.org" scrolling="no" width="125" height="850" frameborder="0" style="border:0px padding:0x" marginwidth="0" marginheight="0"><p>Your browser does not support iframes.</p></iframe></td></tr>
+</table></td>
+</tr>
+<tr lang="en"><td align="right" class="infohead" colspan="3">
+Copyright 2001-2015 Gentoo Foundation, Inc. Questions, Comments? <a class="highlight" href="/main/en/contact.xml">Contact us</a>.
+</td></tr>
+</table></body>
+</html>
