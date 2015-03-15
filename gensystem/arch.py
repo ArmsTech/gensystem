@@ -1,4 +1,4 @@
-"""Map architecture to relevant files using namedtuples."""
+"""Map architectures to relevant files using namedtuples."""
 
 from collections import namedtuple
 
@@ -10,3 +10,5 @@ AMD64 = Arch(
     'current-stage3-amd64::stage3-amd64-\d{8}.tar.bz2$',
     'current-stage3-amd64-hardened::stage3-amd64-hardened-\d{8}.tar.bz2$',
     'current-stage3-amd64-nomultilib::stage3-amd64-nomultilib-\d{8}.tar.bz2$')
+
+SUPPORTED_ARCH = {'amd64': AMD64}
