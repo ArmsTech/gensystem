@@ -108,6 +108,5 @@ with open('gensystem/mirrors.xml') as response:
 #try:
 #    #GENTOO_MIRRORS = get_gentoo_mirrors_by_country(
 #    #    soupify(GENTOO_MIRRORS_URL))
-#    GENTOO_MIRRORS = get_gentoo_mirrors_by_country(mirrors_soup)
 #except Exception:
 #    raise ("Could NOT parse %s." % GENTOO_MIRRORS_URL)
