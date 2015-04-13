@@ -5,7 +5,7 @@ from urlparse import urlparse
 from bs4 import BeautifulSoup
 
 GENTOO_MIRRORS = {}
-GENTOO_MIRRORS_URL = 'http://www.gentoo.org/main/en/mirrors.xml'
+GENTOO_MIRRORS_URL = 'https://www.gentoo.org/downloads/mirrors/'
 GENTOO_RELEASES_TEMPLATE = 'releases/%s/autobuilds/%s/'
 
 SUPPORTED_COUNTRIES = [
