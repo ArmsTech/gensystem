@@ -1,10 +1,17 @@
-"""Manage Gentoo Linux mirrors."""
+"""Collect Gentoo mirrors from gentoo.org."""
+
+from urlparse import urlparse
 
 from bs4 import BeautifulSoup
 
 GENTOO_MIRRORS = {}
 GENTOO_MIRRORS_URL = 'http://www.gentoo.org/main/en/mirrors.xml'
 GENTOO_RELEASES_TEMPLATE = 'releases/%s/autobuilds/%s/'
+
+SUPPORTED_COUNTRIES = [
+    'CA', 'US', 'AR', 'BR', 'AT', 'BG', 'CZ', 'FI', 'FR', 'DE', 'GR', 'IE',
+    'NL', 'PL', 'PT', 'RO', 'SE', 'SK', 'ES', 'CH', 'TR', 'UA', 'UK', 'AU',
+    'CN', 'HK', 'JP', 'KR', 'RU', 'TW', 'IL', 'KZ']
 
 
 def get_gentoo_mirrors_by_country(mirrors_soup, country=None):
@@ -25,33 +32,38 @@ def get_gentoo_mirrors_by_country(mirrors_soup, country=None):
 
     Expected HTML format of GENTOO_MIRRORS_URL:
 
-        <p class="secthead">
-            <a name="Canada"></a>
-            <a name="doc_chap2_sect1">Canada</a>
-        </p>
-        <p>
-            <a href="http://gentoo.arcticnetwork.ca/">
-                Arctic Network Mirrors (http)
-            </a>
-            <br>
-            <a href="http://gentoo.gossamerhost.com">
-                Gossamer Threads (http)
-            </a>
-            ...
-        </p>
-        <p class="secthead">
-            <a name="USA"></a>
-            <a name="doc_chap2_sect1">Canada</a>
-        </p>
+        <h3 id="CA">CA &ndash; Canada</h3>
+        <table class="table table-condensed">
+        <tr>
+            <th style="width: 30%;">Name</th>
+            <th style="width: 10%;">Protocol</th>
+            <th style="width: 10%;">IPv4/v6</th>
+            <th style="width: 50%;">URL</th>
+        </tr>
+        <tr>
+            <td rowspan="1">Arctic Network Mirrors</td>
+            <td>
+                <span class="label label-primary">http</span>
+            </td>
+            <td>
+                <span class="label label-info">IPv4 only</span>
+            </td>
+            <td>
+                <a href="http://gentoo..."><code>http://gentoo...</code></a>
+            </td>
+        </tr>
+        ...
+        <h3 id="US">US &ndash; USA</h3>
+        ...
 
     Return format:
 
-        {'Netherlands': [
-            Mirror(
-                name=u'Universiteit Twente (rsync)*',
-                link='rsync://ftp.snt.utwente.nl/gentoo'),
+        {'Netherlands':
+            {u'LeaseWeb (ftp)': u'ftp://mirror.leaseweb.com/gentoo/',
+             u'LeaseWeb (http)': u'http://mirror.leaseweb.com/gentoo/',
             ...
-            ]
+            }
+         ...
         }
 
     """
@@ -60,27 +72,26 @@ def get_gentoo_mirrors_by_country(mirrors_soup, country=None):
     country_name = None
     for tag in mirrors_soup.find_all(True):
 
-        try:
-            tag_class = tag['class'][0]
-        except (KeyError, IndexError):
-            tag_class = None
-
-        # Hit country section heading
-        if tag_class == 'secthead':
-            country_name = list(tag.children)[0]['name']
+        if tag.name == 'h3' and tag.get('id') in SUPPORTED_COUNTRIES:
+            # Assumes format "ID SEPARATOR COUNTRY" e.g. (CA - Canada)
+            country_name = tag.string.split()[2]
             mirrors_by_country[country_name] = {}
             continue
 
-        # Hit <p> tag after our country section heading
-        if country_name is not None and tag.name == 'p':
+        # Hit <table> tag after our country section heading
+        if country_name is not None and tag.name == 'table':
 
-            # Get all the mirror names and links
-            for child in tag.children:
-                if child.name == 'a':
-                    mirror_name = child.string
-                    mirror_link = child['href']
+            # Get all the mirror names and links in table
+            for descendant in tag.descendants:
+                # Assumes the name column spans rows
+                if descendant.name == 'td' and descendant.get('rowspan'):
+                    mirror_name = descendant.string
+                if descendant.name == 'a':
+                    mirror_link = descendant['href']
+                    name_with_protocol = '%s (%s)' % (
+                        mirror_name, urlparse(mirror_link).scheme)
                     mirrors_by_country[
-                        country_name][mirror_name] = mirror_link
+                        country_name][name_with_protocol] = mirror_link
 
             if country_name == country:
                 return mirrors_by_country
