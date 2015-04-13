@@ -1,625 +1,3631 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="en">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link title="new" rel="stylesheet" href="../../css/main.css" type="text/css">
-<link REL="shortcut icon" HREF="../../favicon.ico" TYPE="image/x-icon">
-<link rel="search" type="application/opensearchdescription+xml" href="//www.gentoo.org/search/www-gentoo-org.xml" title="Gentoo Website">
-<link rel="search" type="application/opensearchdescription+xml" href="//www.gentoo.org/search/forums-gentoo-org.xml" title="Gentoo Forums">
-<link rel="search" type="application/opensearchdescription+xml" href="//www.gentoo.org/search/bugs-gentoo-org.xml" title="Gentoo Bugzilla">
-<link rel="search" type="application/opensearchdescription+xml" href="//www.gentoo.org/search/packages-gentoo-org.xml" title="Gentoo Packages">
-<link rel="search" type="application/opensearchdescription+xml" href="//www.gentoo.org/search/archives-gentoo-org.xml" title="Gentoo List Archives">
-<title>
-        Gentoo Linux -- Gentoo Linux Mirrors</title>
-</head>
-<body style="margin:0px;" bgcolor="#000000"><table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tr>
-<td valign="top" height="125" width="1%" bgcolor="#45347b"><a href="/"><img border="0" src="../../images/gtop-www.jpg" alt="Gentoo Logo"></a></td>
-<td valign="bottom" align="left" bgcolor="#000000" colspan="2" lang="en"><p class="menu">
-<a class="menulink" href="/main/en/about.xml">About</a> | 
-<a class="menulink" href="/proj/en/">Projects</a> | 
-<a class="menulink" href="/doc/en/">Docs</a> | 
-<a class="menulink" href="https://forums.gentoo.org/">Forums</a> | 
-<a class="menulink" href="/main/en/lists.xml">Lists</a> | 
-<a class="menulink" href="http://bugs.gentoo.org/">Bugs</a> | 
-<a class="menulink" href="/main/en/where.xml">Get Gentoo!</a> | 
-<a class="menulink" href="/main/en/support.xml">Support</a> | 
-<a class="menulink" href="http://planet.gentoo.org/">Planet</a> | 
-<a class="menulink" href="https://wiki.gentoo.org/">Wiki</a>
-</p></td>
-</tr>
-<tr>
-<td valign="top" align="right" width="1%" bgcolor="#dddaec"><table width="100%" cellspacing="0" cellpadding="0" border="0">
-<tr><td height="1%" valign="top" align="right"><img src="../../images/gridtest.gif" alt="Gentoo Spaceship"></td></tr>
-<tr><td height="99%" valign="top" align="left"><table cellspacing="0" cellpadding="5" border="0"><tr><td valign="top" class="leftmenu" lang="en">
-<p class="altmenu">Get Started<br>
-<a class="altlink" href="https://wiki.gentoo.org/wiki/Handbook:Main_Page">Gentoo Handbook</a><br>
-<a class="altlink" href="/main/en/where.xml">Downloads</a><br><br>
-News<br>
-<a class="altlink" href="/security/en/">Security Announcements</a><br>
-<a class="altlink" href="https://www.google.com/calendar/embed?src=88di0t0pl2cfau7oak48rbccfs%40group.calendar.google.com&amp;showCalendars=0&amp;color=%235229A3">Calendar</a><br>
-<a class="altlink" href="http://infra-status.gentoo.org/">Infrastructure Status</a><br><br>
-Documentation<br>
-<a class="altlink" href="https://wiki.gentoo.org/wiki/Handbook:Main_Page">Gentoo Handbook</a><br>
-<a class="altlink" href="https://wiki.gentoo.org/wiki/Project:Documentation/Overview">Featured Documentation</a><br>
-<a class="altlink" href="/doc/en/articles/">IBM dW/Intel article archive</a><br><br>
-Get Gentoo<br>
-<a class="altlink" href="/main/en/where.xml">Downloads</a><br>
-<a class="altlink" href="/main/en/mirrors2.xml">Mirrors</a><br><br>
-
-Community<br>
-<a class="altlink" href="https://forums.gentoo.org/">Discussion Forums</a><br>
-<a class="altlink" href="/main/en/irc.xml">IRC Channels</a><br>
-<a class="altlink" href="/main/en/lists.xml">Mailing Lists</a><br>
-<a class="altlink" href="http://bugs.gentoo.org">Report Issues</a><br>
-<a class="altlink" href="http://planet.gentoo.org">Planet (Blogs)</a><br>
-<a class="altlink" href="https://packages.gentoo.org/">Online Package Database</a><br>
-<a class="altlink" href="https://wiki.gentoo.org/">Wiki</a><br>
-<a class="altlink" href="/main/en/contact.xml">Contact Us</a><br>
-<a class="altlink" href="/main/en/sponsors.xml">Sponsors</a><br><br>
-Get Involved<br>
-<a class="altlink" href="http://bugs.gentoo.org">Report Issues</a><br>
-<a class="altlink" href="/proj/en/devrel/staffing-needs/">Help Wanted</a><br>
-<a class="altlink" href="/proj/en/qa/proxy-maintainers/">Help maintaining packages</a><br>
-<a class="altlink" href="https://forums.gentoo.org/">Discussion Forums</a><br>
-<a class="altlink" href="/main/en/irc.xml">IRC Channels</a><br>
-<a class="altlink" href="/main/en/lists.xml">Mailing Lists</a><br>
-<a class="altlink" href="/proj/en/devrel/handbook/handbook.xml">Become a Developer</a><br>
-<a class="altlink" href="/proj/en/userrel/adopt-a-dev/">Offer Resources</a><br>
-<a class="altlink" href="/proj/en/glep/">Enhancement Proposals (GLEPs)</a><br>
-<a class="altlink" href="http://anoncvs.gentoo.org/">Source Repositories</a><br>
-<a class="altlink" href="https://devmanual.gentoo.org">Developer's Manual</a><br><br>
-Other<br>
-<a class="altlink" href="/proj/en/devrel/roll-call/userinfo.xml">Developer List</a><br>
-<a class="altlink" href="/proj/en/devrel/roll-call/devmap.xml">Developer Map</a><br>
-<a class="altlink" href="/main/en/stores.xml">Gentoo Stores</a><br>
-<a class="altlink" href="/proj/en/">Projects</a><br><br>
-About<br>
-<a class="altlink" href="/main/en/about.xml">About Gentoo</a><br>
-<a class="altlink" href="/main/en/philosophy.xml">Philosophy</a><br>
-<a class="altlink" href="/main/en/contract.xml">Social Contract</a><br>
-<a class="altlink" href="/main/en/name-logo.xml">Name and Logo Guidelines</a><br>
-<a class="altlink" href="/main/en/graphics.xml">Logos and themes</a><br>
-<a class="altlink" href="/main/en/shots.xml">Screenshots</a><br><br>
-</p>
-<br><br>
-</td></tr></table></td></tr>
-</table></td>
-<td valign="top" bgcolor="#ffffff">
-<br><table border="0" class="content"><tr><td>
-<p class="chaphead"><a name="doc_chap1"></a><span class="chapnum">1. 
-            </span>Gentoo Download Full Mirrors</p>
-<p>
-The following organizations provide a full source mirror of all files related
-to Gentoo, including installation CDs, LiveCDs and GRP package sets.
-</p>
-<table class="ncontent" width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td bgcolor="#ffffbb"><p class="note"><b>Important: </b>
-These mirrors are download mirrors. The rsync-mirrors listed here are
-<span class="emphasis">not</span> for individual use (i.e. <span class="code" dir="ltr">emerge --sync</span>) as that would
-download the full mirror instead of just the Portage tree.
-</p></td></tr></table>
-<table class="ncontent" width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td bgcolor="#bbffbb"><p class="note"><b>Note: </b>* indicates mirrors that support IPv6</p></td></tr></table>
-<p class="chaphead"><a name="NorthAmerica"></a><a name="doc_chap2"></a><span class="chapnum">2. 
-            </span>North America</p>
-<p class="secthead"><a name="Canada"></a><a name="doc_chap2_sect1">Canada</a></p>
-<p>
-          <a href="http://gentoo.arcticnetwork.ca/">Arctic Network Mirrors (http)</a>
-          <br>
-          <a href="http://gentoo.gossamerhost.com">Gossamer Threads (http)</a>
-          <br>
-          <a href="rsync://gentoo.gossamerhost.com/gentoo-distfiles/">Gossamer Threads (rsync)</a>
-          <br>
-          <a href="ftp://mirrors.tera-byte.com/pub/gentoo">Tera-byte Dot Com Inc (ftp)</a>
-          <br>
-          <a href="http://gentoo.mirrors.tera-byte.com/">Tera-byte Dot Com Inc (http)</a>
-          <br>
-          <a href="rsync://mirrors.tera-byte.com/gentoo">Tera-byte Dot Com Inc (rsync)</a>
-          <br>
-          <a href="ftp://mirror.csclub.uwaterloo.ca/gentoo-distfiles/">University of Waterloo (ftp)</a>
-          <br>
-          <a href="http://mirror.csclub.uwaterloo.ca/gentoo-distfiles/">University of Waterloo (http)</a>
-          <br>
-        </p>
-<p class="secthead"><a name="USA"></a><a name="doc_chap2_sect2">USA</a></p>
-<p>
-          <a href="http://mirror.datapipe.net/gentoo">Datapipe Managed Hosting (http)</a>
-          <br>
-          <a href="ftp://mirror.datapipe.net/gentoo">Datapipe Managed Hosting (ftp)</a>
-          <br>
-          <a href="http://gentoo.mirrors.easynews.com/linux/gentoo/">Easynews NNTP Hosting (http)</a>
-          <br>
-          <a href="ftp://ftp.gtlib.gatech.edu/pub/gentoo">Georgia Tech (ftp)*</a>
-          <br>
-          <a href="http://www.gtlib.gatech.edu/pub/gentoo">Georgia Tech (http)*</a>
-          <br>
-          <a href="rsync://rsync.gtlib.gatech.edu/gentoo">Georgia Tech (rsync)*</a>
-          <br>
-          <a href="http://gentoo.mirrors.hoobly.com/">Hoobly Classifieds (http)</a>
-          <br>
-          <a href="ftp://ftp.ussg.iu.edu/pub/linux/gentoo">Indiana University (ftp)</a>
-          <br>
-          <a href="ftp://lug.mtu.edu/gentoo/">Michigan Tech University (ftp)*</a>
-          <br>
-          <a href="http://lug.mtu.edu/gentoo/">Michigan Tech University (http)*</a>
-          <br>
-          <a href="http://gentoo.netnitco.net">NetNITCO Internet Services (http)</a>
-          <br>
-          <a href="ftp://gentoo.netnitco.net/pub/mirrors/gentoo/source/">NetNITCO Internet Services (ftp)</a>
-          <br>
-          <a href="http://gentoo.osuosl.org/">OSU Open Source Lab (http)</a>
-          <br>
-          <a href="http://gentoo.mirrors.pair.com/">Pair Networks (http)</a>
-          <br>
-          <a href="ftp://gentoo.mirrors.pair.com/">Pair Networks (ftp)</a>
-          <br>
-          <a href="http://mirrors.rit.edu/gentoo/">Rochester Institute of Technology (http)</a>
-          <br>
-          <a href="ftp://mirrors.rit.edu/gentoo/">Rochester Institute of Technology (ftp)</a>
-          <br>
-          <a href="rsync://mirrors.rit.edu/gentoo/">Rochester Institute of Technology (rsync)</a>
-          <br>
-          <a href="http://mirror.iawnet.sandia.gov/gentoo/">Sandia National Labs (http)</a>
-          <br>
-          <a href="ftp://mirror.iawnet.sandia.gov/pub/gentoo/">Sandia National Labs (ftp)</a>
-          <br>
-          <a href="http://gentoo.llarian.net/">Semaphore Corporation (http)*</a>
-          <br>
-          <a href="ftp://gentoo.llarian.net/pub/gentoo">Semaphore Corporation (ftp)*</a>
-          <br>
-          <a href="http://gentoo.mirrors.tds.net/gentoo">TDS Internet Services (http)</a>
-          <br>
-          <a href="ftp://ftp.ucsb.edu/pub/mirrors/linux/gentoo/">University of California, Santa Barbara (ftp)</a>
-          <br>
-          <a href="http://ftp.ucsb.edu/pub/mirrors/linux/gentoo/">University of California, Santa Barbara (http)</a>
-          <br>
-          <a href="http://mirror.lug.udel.edu/pub/gentoo/">University of Delaware, Delaware Linux Users Group (http)</a>
-          <br>
-          <a href="ftp://ftp.lug.udel.edu/pub/gentoo/">University of Delaware, Delaware Linux Users Group (ftp)</a>
-          <br>
-          <a href="http://gentoo.cites.uiuc.edu/pub/gentoo/">University of Illinois-Urbana Champaign (http)</a>
-          <br>
-          <a href="ftp://gentoo.cites.uiuc.edu/pub/gentoo/">University of Illinois-Urbana Champaign (ftp)</a>
-          <br>
-          <a href="http://gentoo.cs.uni.edu/">University of Northern Iowa (http)</a>
-          <br>
-          <a href="rsync://gentoo.cs.uni.edu/gentoo-distfiles">University of Northern Iowa (rsync)</a>
-          <br>
-          <a href="http://mirror.usu.edu/mirrors/gentoo/">Utah State University (http)</a>
-          <br>
-          <a href="ftp://ftp.wallawalla.edu/pub/mirrors/ftp.gentoo.org">Walla Walla University (ftp)</a>
-          <br>
-        </p>
-<p class="chaphead"><a name="SouthAmerica"></a><a name="doc_chap3"></a><span class="chapnum">3. 
-            </span>South America</p>
-<p class="secthead"><a name="Argentina"></a><a name="doc_chap3_sect1">Argentina</a></p>
-<p>
-          <a href="http://gentoo.localhost.net.ar/">LocalHost Soluciones Innovadoras (http)</a>
-          <br>
-          <a href="ftp://mirrors.localhost.net.ar/pub/mirrors/gentoo/">LocalHost Soluciones Innovadoras (ftp)</a>
-          <br>
-        </p>
-<p class="secthead"><a name="Brazil"></a><a name="doc_chap3_sect2">Brazil</a></p>
-<p>
-          <a href="http://gentoo.c3sl.ufpr.br/">C3SL, Federal University of Paraná (http)*</a>
-          <br>
-          <a href="ftp://gentoo.c3sl.ufpr.br/gentoo/">C3SL, Federal University of Paraná (ftp)*</a>
-          <br>
-          <a href="rsync://gentoo.c3sl.ufpr.br/gentoo/">C3SL, Federal University of Paraná (rsync)*</a>
-          <br>
-          <a href="http://www.las.ic.unicamp.br/pub/gentoo/">Laboratory of System Administration (http)</a>
-          <br>
-          <a href="ftp://ftp.las.ic.unicamp.br/pub/gentoo/">Laboratory of System Administration (ftp)</a>
-          <br>
-        </p>
-<p class="chaphead"><a name="Europe"></a><a name="doc_chap4"></a><span class="chapnum">4. 
-            </span>Europe</p>
-<p class="secthead"><a name="Austria"></a><a name="doc_chap4_sect1">Austria</a></p>
-<p>
-          <a href="http://gentoo.inode.at/">Inode (http)</a>
-          <br>
-          <a href="ftp://gentoo.inode.at/source/">Inode (ftp)</a>
-          <br>
-          <a href="http://gd.tuwien.ac.at/opsys/linux/gentoo/">Vienna Univ. of Technology (http)</a>
-          <br>
-          <a href="ftp://gd.tuwien.ac.at/opsys/linux/gentoo/">Vienna Univ. of Technology (ftp)</a>
-          <br>
-        </p>
-<p class="secthead"><a name="Bulgaria"></a><a name="doc_chap4_sect2">Bulgaria</a></p>
-<p>
-          <a href="http://mirrors.telepoint.bg/gentoo/">telepoint.bg (http)</a>
-          <br>
-        </p>
-<p class="secthead"><a name="CzechRepublic"></a><a name="doc_chap4_sect3">Czech Republic</a></p>
-<p>
-          <a href="http://gentoo.supp.name/">Advokatni Kancelar Kindl &amp; Partneri (http)</a>
-          <br>
-          <a href="http://ftp.fi.muni.cz/pub/linux/gentoo/">Masaryk University Brno (http)</a>
-          <br>
-          <a href="ftp://ftp.fi.muni.cz/pub/linux/gentoo/">Masaryk University Brno (ftp)</a>
-          <br>
-          <a href="rsync://ftp.fi.muni.cz/pub/linux/gentoo/">Masaryk University Brno (rsync)</a>
-          <br>
-          <a href="rsync://ftp6.linux.cz/pub/linux/gentoo/">Masaryk University Brno (rsync/ipv6 only)</a>
-          <br>
-          <a href="http://gentoo.mirror.dkm.cz/pub/gentoo/">UPC Česká republika, a.s. (http)*</a>
-          <br>
-          <a href="ftp://gentoo.mirror.dkm.cz/pub/gentoo/">UPC Česká republika, a.s. (ftp)*</a>
-          <br>
-          <a href="rsync://gentoo.mirror.dkm.cz/gentoo/">UPC Česká republika, a.s. (rsync)*</a>
-          <br>
-          <a href="http://gentoo.mirror.web4u.cz/">Web4U Mirror (http)</a>
-          <br>
-          <a href="ftp://gentoo.mirror.web4u.cz/">Web4U Mirror (ftp)</a>
-          <br>
-        </p>
-<p class="secthead"><a name="Finland"></a><a name="doc_chap4_sect4">Finland</a></p>
-<p>
-          <a href="http://trumpetti.atm.tut.fi/gentoo/">tut.fi (http)*</a>
-          <br>
-          <a href="ftp://trumpetti.atm.tut.fi/gentoo/">tut.fi (ftp)*</a>
-          <br>
-          <a href="rsync://trumpetti.atm.tut.fi/gentoo/">tut.fi (rsync)*</a>
-          <br>
-        </p>
-<p class="secthead"><a name="France"></a><a name="doc_chap4_sect5">France</a></p>
-<p>
-          <a href="ftp://ftp.free.fr/mirrors/ftp.gentoo.org/">Free (ftp)*</a>
-          <br>
-          <a href="ftp://gentoo.imj.fr/pub/gentoo/">IMJ.fr (ftp)</a>
-          <br>
-          <a href="http://mirrors.linuxant.fr/distfiles.gentoo.org/">Linuxant.fr (http)*</a>
-          <br>
-          <a href="ftp://mirrors.linuxant.fr/distfiles.gentoo.org/">Linuxant.fr (ftp)*</a>
-          <br>
-          <a href="http://gentoo.modulix.net/gentoo/">modulix.net (http)</a>
-          <br>
-          <a href="http://gentoo.mirrors.ovh.net/gentoo-distfiles/">OVH (http)*</a>
-          <br>
-          <a href="ftp://gentoo.mirrors.ovh.net/gentoo-distfiles/">OVH (ftp)*</a>
-          <br>
-        </p>
-<p class="secthead"><a name="Germany"></a><a name="doc_chap4_sect6">Germany</a></p>
-<p>
-          <a href="ftp://de-mirror.org/gentoo/">de-mirror.org (ftp)</a>
-          <br>
-          <a href="http://de-mirror.org/gentoo/">de-mirror.org (http)</a>
-          <br>
-          <a href="rsync://de-mirror.org/gentoo/">de-mirror.org (rsync)</a>
-          <br>
-          <a href="ftp://ftp.wh2.tu-dresden.de/pub/mirrors/gentoo">Dresden University of Technology/AG DSN (ftp)</a>
-          <br>
-          <a href="ftp://mirror.netcologne.de/gentoo/">Netcologne (ftp)*</a>
-          <br>
-          <a href="http://mirror.netcologne.de/gentoo/">Netcologne (http)*</a>
-          <br>
-          <a href="rsync://mirror.netcologne.de/gentoo/">Netcologne (rsync)*</a>
-          <br>
-          <a href="http://linux.rz.ruhr-uni-bochum.de/download/gentoo-mirror/">Ruhr-Universität Bochum (http)</a>
-          <br>
-          <a href="http://ftp.halifax.rwth-aachen.de/gentoo/">RWTH Aachen University (http)</a>
-          <br>
-          <a href="ftp://ftp.halifax.rwth-aachen.de/gentoo/">RWTH Aachen University (ftp)</a>
-          <br>
-          <a href="rsync://ftp.halifax.rwth-aachen.de/gentoo/">RWTH Aachen University (rsync)</a>
-          <br>
-          <a href="ftp://sunsite.informatik.rwth-aachen.de/pub/Linux/gentoo">rwth-aachen.de (ftp)</a>
-          <br>
-          <a href="ftp://ftp.spline.inf.fu-berlin.de/mirrors/gentoo/">SPLINE, Institut für Informatik, Freie Universität Berlin (ftp)</a>
-          <br>
-          <a href="http://ftp.spline.inf.fu-berlin.de/mirrors/gentoo/">SPLINE, Institut für Informatik, Freie Universität Berlin (http)</a>
-          <br>
-          <a href="http://ftp.uni-erlangen.de/pub/mirrors/gentoo">Uni Erlangen-Nürnberg (http)*</a>
-          <br>
-          <a href="ftp://ftp.uni-erlangen.de/pub/mirrors/gentoo">Uni Erlangen-Nürnberg (ftp)*</a>
-          <br>
-          <a href="http://ftp-stud.hs-esslingen.de/pub/Mirrors/gentoo/">University of Applied Sciences, Esslingen (http)</a>
-          <br>
-          <a href="ftp://ftp-stud.hs-esslingen.de/pub/Mirrors/gentoo/">University of Applied Sciences, Esslingen (ftp)</a>
-          <br>
-          <a href="rsync://ftp-stud.hs-esslingen.de/gentoo/">University of Applied Sciences, Esslingen (rsync)</a>
-          <br>
-        </p>
-<p class="secthead"><a name="Greece"></a><a name="doc_chap4_sect7">Greece</a></p>
-<p>
-          <a href="ftp://files.gentoo.gr">files.gentoo.gr (ftp)</a>
-          <br>
-          <a href="http://files.gentoo.gr">files.gentoo.gr (http)</a>
-          <br>
-          <a href="ftp://ftp.ntua.gr/pub/linux/gentoo/">National Technical University of Athens (ftp)*</a>
-          <br>
-          <a href="http://ftp.ntua.gr/pub/linux/gentoo/">National Technical University of Athens (http)*</a>
-          <br>
-        </p>
-<p class="secthead"><a name="Ireland"></a><a name="doc_chap4_sect8">Ireland</a></p>
-<p>
-          <a href="http://ftp.heanet.ie/pub/gentoo/">HEAnet - Ireland's National Education and Research Network (http)*</a>
-          <br>
-          <a href="ftp://ftp.heanet.ie/pub/gentoo/">HEAnet - Ireland's National Education and Research Network (ftp)*</a>
-          <br>
-          <a href="rsync://ftp.heanet.ie/pub/gentoo/">HEAnet - Ireland's National Education and Research Network (rsync)*</a>
-          <br>
-        </p>
-<p class="secthead"><a name="Netherlands"></a><a name="doc_chap4_sect9">Netherlands</a></p>
-<p>
-          <a href="http://mirror.leaseweb.com/gentoo/">LeaseWeb (http)*</a>
-          <br>
-          <a href="ftp://mirror.leaseweb.com/gentoo/">LeaseWeb (ftp)*</a>
-          <br>
-          <a href="rsync://mirror.leaseweb.com/gentoo/">LeaseWeb (rsync)*</a>
-          <br>
-          <a href="http://gentoo.tiscali.nl/">Tiscali (http)</a>
-          <br>
-          <a href="ftp://gentoo.tiscali.nl/pub/mirror/gentoo/">Tiscali (ftp)</a>
-          <br>
-          <a href="http://ftp.snt.utwente.nl/pub/os/linux/gentoo">Universiteit Twente (http)*</a>
-          <br>
-          <a href="ftp://ftp.snt.utwente.nl/pub/os/linux/gentoo">Universiteit Twente (ftp)*</a>
-          <br>
-          <a href="rsync://ftp.snt.utwente.nl/gentoo">Universiteit Twente (rsync)*</a>
-          <br>
-        </p>
-<p class="secthead"><a name="Poland"></a><a name="doc_chap4_sect10">Poland</a></p>
-<p>
-          <a href="rsync://gentoo.prz.rzeszow.pl/gentoo">Rzeszow University of Technology (rsync)</a>
-          <br>
-          <a href="http://gentoo.prz.rzeszow.pl">Rzeszow University of Technology (http)</a>
-          <br>
-          <a href="http://gentoo.po.opole.pl">Technical University of Opole (http)</a>
-          <br>
-          <a href="rsync://ftp.vectranet.pl/gentoo/">Vectranet (rsync)</a>
-          <br>
-          <a href="http://ftp.vectranet.pl/gentoo/">Vectranet (http)</a>
-          <br>
-          <a href="ftp://ftp.vectranet.pl/gentoo/">Vectranet (ftp)</a>
-          <br>
-          <a href="http://gentoo.mirror.pw.edu.pl/">Warsaw University Of Technology (http)</a>
-          <br>
-        </p>
-<p class="secthead"><a name="Portugal"></a><a name="doc_chap4_sect11">Portugal</a></p>
-<p>
-          <a href="http://ftp.rnl.tecnico.ulisboa.pt/pub/gentoo/gentoo-distfiles/">RNL - Técnico Lisboa (http)*</a>
-          <br>
-          <a href="ftp://ftp.rnl.tecnico.ulisboa.pt/pub/gentoo/gentoo-distfiles/">RNL - Técnico Lisboa (ftp)*</a>
-          <br>
-          <a href="rsync://ftp.rnl.tecnico.ulisboa.pt/pub/gentoo/gentoo-distfiles/">RNL - Técnico Lisboa (rsync)*</a>
-          <br>
-          <a href="ftp://ftp.dei.uc.pt/pub/linux/gentoo/">University of Coimbra (ftp)</a>
-          <br>
-          <a href="http://ftp.dei.uc.pt/pub/linux/gentoo/">University of Coimbra (http)</a>
-          <br>
-        </p>
-<p class="secthead"><a name="Romania"></a><a name="doc_chap4_sect12">Romania</a></p>
-<p>
-          <a href="http://ftp.romnet.org/gentoo/">Romanian Organization Network (http)*</a>
-          <br>
-          <a href="http://mirrors.xservers.ro/gentoo/">xservers.ro Gazduire Web (http)</a>
-          <br>
-        </p>
-<p class="secthead"><a name="Slovakia"></a><a name="doc_chap4_sect13">Slovakia</a></p>
-<p>
-          <a href="http://tux.rainside.sk/gentoo/">Rainside.sk (http)</a>
-          <br>
-          <a href="ftp://tux.rainside.sk/gentoo/">Rainside.sk (ftp)</a>
-          <br>
-          <a href="http://gentoo.wheel.sk/">Wheel.sk (http)</a>
-          <br>
-          <a href="ftp://gentoo.wheel.sk/pub/linux/gentoo/">Wheel.sk (ftp)</a>
-          <br>
-        </p>
-<p class="secthead"><a name="Spain"></a><a name="doc_chap4_sect14">Spain</a></p>
-<p>
-          <a href="http://gentoo-euetib.upc.es/mirror/gentoo/">Politechnic University of Catalonia (http)</a>
-          <br>
-        </p>
-<p class="secthead"><a name="Sweden"></a><a name="doc_chap4_sect15">Sweden</a></p>
-<p>
-          <a href="ftp://ftp.df.lth.se/pub/gentoo/">Lund University (ftp)</a>
-          <br>
-          <a href="http://ftp.df.lth.se/pub/gentoo/">Lund University (http)</a>
-          <br>
-          <a href="rsync://ftp.df.lth.se/pub/gentoo/">Lund University (rsync)</a>
-          <br>
-          <a href="ftp://mirror.mdfnet.se/gentoo">mdfnet.se (ftp)*</a>
-          <br>
-          <a href="http://mirror.mdfnet.se/gentoo">mdfnet.se (http)*</a>
-          <br>
-        </p>
-<p class="secthead"><a name="Switzerland"></a><a name="doc_chap4_sect16">Switzerland</a></p>
-<p>
-          <a href="http://mirror.switch.ch/ftp/mirror/gentoo/">SWITCHmirror (http)*</a>
-          <br>
-          <a href="ftp://mirror.switch.ch/mirror/gentoo/">SWITCHmirror (ftp)*</a>
-          <br>
-        </p>
-<p class="secthead"><a name="Turkey"></a><a name="doc_chap4_sect17">Turkey</a></p>
-<p>
-          <a href="ftp://ftp.linux.org.tr/gentoo/">Turkish Linux Users Group - Linux Kullanicilari Dernegi(LKD) (ftp)</a>
-          <br>
-          <a href="http://ftp.linux.org.tr/gentoo/">Turkish Linux Users Group - Linux Kullanicilari Dernegi(LKD) (http)</a>
-          <br>
-          <a href="rsync://ftp.linux.org.tr/gentoo-distfiles/">Turkish Linux Users Group - Linux Kullanicilari Dernegi(LKD) (rsync)</a>
-          <br>
-        </p>
-<p class="secthead"><a name="UK"></a><a name="doc_chap4_sect18">UK</a></p>
-<p>
-          <a href="ftp://mirror.bytemark.co.uk/gentoo/">Bytemark Hosting (ftp)*</a>
-          <br>
-          <a href="http://mirror.bytemark.co.uk/gentoo/">Bytemark Hosting (http)*</a>
-          <br>
-          <a href="rsync://mirror.bytemark.co.uk/gentoo/">Bytemark Hosting (rsync)*</a>
-          <br>
-          <a href="http://mirror.qubenet.net/mirror/gentoo/">Qube Managed Services (http)*</a>
-          <br>
-          <a href="http://www.mirrorservice.org/sites/distfiles.gentoo.org/">The UK Mirror Service (http)</a>
-          <br>
-          <a href="ftp://ftp.mirrorservice.org/sites/distfiles.gentoo.org/">The UK Mirror Service (ftp)</a>
-          <br>
-          <a href="rsync://rsync.mirrorservice.org/distfiles.gentoo.org/">The UK Mirror Service (rsync)</a>
-          <br>
-        </p>
-<p class="secthead"><a name="Ukraine"></a><a name="doc_chap4_sect19">Ukraine</a></p>
-<p>
-          <a href="ftp://gentoo.kiev.ua/">gentoo.kiev.ua (ftp)</a>
-          <br>
-          <a href="http://gentoo.kiev.ua/ftp/">gentoo.kiev.ua (http)</a>
-          <br>
-          <a href="rsync://gentoo.kiev.ua/gentoo-distfiles">gentoo.kiev.ua (rsync)</a>
-          <br>
-          <a href="http://gentoo.iteam.net.ua/">ITEAM gentoo mirror (http)</a>
-          <br>
-          <a href="ftp://portage.org.ua/">portage.org.ua (ftp)*</a>
-          <br>
-          <a href="http://portage.org.ua/">portage.org.ua (http)*</a>
-          <br>
-        </p>
-<p class="chaphead"><a name="Australia"></a><a name="doc_chap5"></a><span class="chapnum">5. 
-            </span>Australia</p>
-<p>
-          <a href="ftp://ftp.swin.edu.au/gentoo">Swinburne University of Technology (ftp)*</a>
-          <br>
-          <a href="http://ftp.swin.edu.au/gentoo">Swinburne University of Technology (http)*</a>
-          <br>
-        </p>
-<p class="chaphead"><a name="Asia"></a><a name="doc_chap6"></a><span class="chapnum">6. 
-            </span>Asia</p>
-<p class="secthead"><a name="China"></a><a name="doc_chap6_sect1">China</a></p>
-<p>
-          <a href="http://mirrors.163.com/gentoo/">Netease.com, Inc. (http)</a>
-          <br>
-          <a href="http://mirrors.sohu.com/gentoo/">Sohu.inc (http)</a>
-          <br>
-          <a href="http://mirrors.stuhome.net/gentoo/">Star Studio of UESTC (http)</a>
-          <br>
-          <a href="ftp://mirrors.stuhome.net/gentoo/">Star Studio of UESTC (ftp)</a>
-          <br>
-          <a href="ftp://mirrors.xmu.edu.cn/gentoo">Xiamen University (ftp)*</a>
-          <br>
-          <a href="http://mirrors.xmu.edu.cn/gentoo">Xiamen University (http)*</a>
-          <br>
-          <a href="rsync://mirrors.xmu.edu.cn/gentoo/">Xiamen University (rsync)*</a>
-          <br>
-        </p>
-<p class="secthead"><a name="HongKong"></a><a name="doc_chap6_sect2">Hong Kong</a></p>
-<p>
-          <a href="http://gentoo.aditsu.net:8000/">aditsu.net (http)</a>
-          <br>
-        </p>
-<p class="secthead"><a name="Japan"></a><a name="doc_chap6_sect3">Japan</a></p>
-<p>
-          <a href="http://gentoo.gg3.net/">gg3.net (http)</a>
-          <br>
-          <a href="ftp://gg3.net/pub/linux/gentoo/">gg3.net (ftp)</a>
-          <br>
-          <a href="rsync://ftp.iij.ad.jp/pub/linux/gentoo/">Internet Initiative Japan (rsync)*</a>
-          <br>
-          <a href="http://ftp.iij.ad.jp/pub/linux/gentoo/">Internet Initiative Japan (http)*</a>
-          <br>
-          <a href="ftp://ftp.iij.ad.jp/pub/linux/gentoo/">Internet Initiative Japan (ftp)*</a>
-          <br>
-          <a href="http://ftp.jaist.ac.jp/pub/Linux/Gentoo/">Japan Advanced Institute of Science and Technology (http)*</a>
-          <br>
-          <a href="rsync://ftp.jaist.ac.jp/pub/Linux/Gentoo/">Japan Advanced Institute of Science and Technology (rsync)*</a>
-          <br>
-          <a href="ftp://ftp.jaist.ac.jp/pub/Linux/Gentoo/">Japan Advanced Institute of Science and Technology (ftp)*</a>
-          <br>
-        </p>
-<p class="secthead"><a name="Russia"></a><a name="doc_chap6_sect4">Russia</a></p>
-<p>
-          <a href="http://gentoo.bloodhost.ru/">Bloodhost.ru (http)</a>
-          <br>
-          <a href="ftp://gentoo.bloodhost.ru/">Bloodhost.ru (ftp)</a>
-          <br>
-          <a href="rsync://gentoo.bloodhost.ru/gentoo-distfiles">Bloodhost.ru (rsync)</a>
-          <br>
-          <a href="ftp://xeon.gentoo.ru/mirrors/gentoo/distfiles/">xeon.gentoo.ru (ftp)</a>
-          <br>
-          <a href="http://mirror.yandex.ru/gentoo-distfiles/">Yandex.ru (http)*</a>
-          <br>
-          <a href="ftp://mirror.yandex.ru/gentoo-distfiles/">Yandex.ru (ftp)*</a>
-          <br>
-        </p>
-<p class="secthead"><a name="SouthKorea"></a><a name="doc_chap6_sect5">South Korea</a></p>
-<p>
-          <a href="http://ftp.daum.net/gentoo/">Daum Communications Corp (http)</a>
-          <br>
-          <a href="http://ftp.kaist.ac.kr/pub/gentoo/">KAIST (http)</a>
-          <br>
-          <a href="ftp://ftp.kaist.ac.kr/gentoo/">KAIST (ftp)</a>
-          <br>
-          <a href="http://ftp.lecl.net/pub/gentoo/">lecl.net (http)</a>
-          <br>
-          <a href="ftp://ftp.lecl.net/pub/gentoo/">lecl.net (ftp)</a>
-          <br>
-        </p>
-<p class="chaphead"><a name="MiddleEast"></a><a name="doc_chap7"></a><span class="chapnum">7. 
-            </span>Middle East</p>
-<p class="secthead"><a name="Israel"></a><a name="doc_chap7_sect1">Israel</a></p>
-<p>
-          <a href="http://mirror.isoc.org.il/pub/gentoo/">Hamakor FOSS Society (http)</a>
-          <br>
-          <a href="ftp://mirror.isoc.org.il/gentoo/">Hamakor FOSS Society (ftp)</a>
-          <br>
-        </p>
-<p class="secthead"><a name="Kazakhstan"></a><a name="doc_chap7_sect2">Kazakhstan</a></p>
-<p>
-          <a href="http://mirror.neolabs.kz/gentoo/pub">Neo Lab's (http)</a>
-          <br>
-          <a href="ftp://mirror.neolabs.kz/gentoo/pub">Neo Lab's (ftp)</a>
-          <br>
-          <a href="rsync://mirror.neolabs.kz/gentoo">Neo Lab's (rsync)</a>
-          <br>
-        </p>
-<p class="chaphead"><a name="partial"></a><a name="doc_chap8"></a><span class="chapnum">8. 
-            </span>Partial Mirrors</p>
-<p>
-These mirrors are not complete mirrors. Some provide only distfiles, while
-others provide only installation media. Please use one of the full mirrors if
-you cannot find what you're looking for.
-</p>
-<a href="http://ftp.twaren.net/Linux/Gentoo/">National Center for High-Performance Computing (Taiwan/http)</a><br><a href="ftp://ftp.twaren.net/Linux/Gentoo/">National Center for High-Performance Computing (Taiwan/ftp)</a><br><p class="chaphead"><a name="resources"></a><a name="doc_chap9"></a><span class="chapnum">9. 
-            </span>Mirroring Resources</p>
-<p>
-          <a href="/doc/en/rsync.xml">How to set up a Gentoo rsync mirror</a>
-          <br>
-          <a href="/doc/en/source_mirrors.xml">How to set up a Gentoo source mirror</a>
-        </p>
-</td></tr></table>
-<br><p class="copyright">
-	The contents of this document, unless otherwise expressly stated, are licensed under the <a href="http://creativecommons.org/licenses/by-sa/2.5">CC-BY-SA-2.5</a> license. The <a href="/main/en/name-logo.xml"> Gentoo Name and Logo Usage Guidelines </a> apply.
-  </p>
-<!--
-  <rdf:RDF xmlns="http://web.resource.org/cc/"
-      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Gentoo Distfile Mirrors – Gentoo Linux</title>
   
-  <license rdf:about="http://creativecommons.org/licenses/by-sa/2.5/">
+  <meta charset="utf-8">
+  <meta name="theme-color" content="#54487a">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="Gentoo Distfile Mirrors – Gentoo Linux">
+  <meta property="og:image" content="https://www.gentoo.org/assets/img/logo/gentoo-g.png">
+  <meta property="og:description" content="News and information from Gentoo Linux">
+  <meta name="twitter:image" content="https://www.gentoo.org/assets/img/logo/gentoo-g.png">
+  <link rel="apple-touch-icon" href="https://www.gentoo.org/assets/img/logo/icon-192.png">
+  <link rel="icon" sizes="192x192" href="https://www.gentoo.org/assets/img/logo/icon-192.png">
+  <link href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/tyrian.min.css" rel="stylesheet" media="screen">
+  <link href="/assets/css/screen.css" rel="stylesheet" media="screen">
+  
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="search" type="application/opensearchdescription+xml" href="https://www.gentoo.org/search/www-gentoo-org.xml" title="Gentoo Website">
+  <link rel="search" type="application/opensearchdescription+xml" href="https://www.gentoo.org/search/forums-gentoo-org.xml" title="Gentoo Forums">
+  <link rel="search" type="application/opensearchdescription+xml" href="https://www.gentoo.org/search/bugs-gentoo-org.xml" title="Gentoo Bugzilla">
+  <link rel="search" type="application/opensearchdescription+xml" href="https://www.gentoo.org/search/packages-gentoo-org.xml" title="Gentoo Packages">
+  <link rel="search" type="application/opensearchdescription+xml" href="https://www.gentoo.org/search/archives-gentoo-org.xml" title="Gentoo List Archives">
+  
+</head>
+  <body class="">
+    <header>
+  <div class="site-title">
+    <div class="container">
+      <div class="row">
+        <div class="site-title-buttons">
+          <div class="btn-group btn-group-sm">
+            <a href="http://get.gentoo.org/" role="button" class="btn get-gentoo"><span class="fa fa-download"></span> <strong>Get Gentoo!</strong></a>
+            <div class="btn-group btn-group-sm">
+              <button type="button" class="btn gentoo-org-sites dropdown-toggle" data-toggle="dropdown">
+                <span class="glyphicon glyphicon-globe"></span> gentoo.org sites <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="http://www.gentoo.org/" title="Main Gentoo website"><span class="fa fa-home fa-fw"></span> gentoo.org</a></li>
+                <li><a href="http://wiki.gentoo.org/" title="Find and contribute documentation"><span class="fa fa-file-text fa-fw"></span> Wiki</a></li>
+                <li><a href="https://bugs.gentoo.org/" title="Report issues and find common issues"><span class="fa fa-bug fa-fw"></span> Bugs</a></li>
+                <li><a href="http://forums.gentoo.org/" title="Discuss with the community"><span class="fa fa-comments-o fa-fw"></span> Forums</a></li>
+                <li><a href="http://packages.gentoo.org/" title="Find software for your Gentoo"><span class="fa fa-hdd-o fa-fw"></span> Packages</a></li>
+                <li class="divider"></li>
+                <li><a href="http://overlays.gentoo.org/" title="Collaborate on maintaining packages"><span class="fa fa-code-fork fa-fw"></span> Overlays</a></li>
+                <li><a href="http://planet.gentoo.org/" title="Find out what's going on in the developer community"><span class="fa fa-rss fa-fw"></span> Planet</a></li>
+                <li><a href="http://archives.gentoo.org/" title="Read up on past discussions"><span class="fa fa-archive fa-fw"></span> Archives</a></li>
+                <li><a href="http://sources.gentoo.org/" title="Browse our source code"><span class="fa fa-code fa-fw"></span> Sources</a></li>
+                <li class="divider"></li>
+                <li><a href="http://infra-status.gentoo.org/" title="Get updates on the services provided by Gentoo"><span class="fa fa-tasks fa-fw"></span> Infra Status</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="logo">
+          <a href="/" title="Back to the homepage" class="site-logo">
+            <object data="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.svg" type="image/svg+xml">
+            <img src="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.png" alt="Gentoo Linux Logo">
+            </object>
+          </a>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav class="tyrian-navbar" role="navigation">
+    <div class="container">
+      <div class="row">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse navbar-main-collapse">
+          <ul class="nav navbar-nav">
+            <li class=""><a href="/">Home</a></li>
+<li class=""><a href="/get-started/">Get Started</a></li>
+<li class="active"><a href="/downloads/">Downloads</a></li>
+<li class=""><a href="/inside-gentoo/">Inside Gentoo</a></li>
+<li class=""><a href="/support/">Support</a></li>
+<li class=""><a href="/get-involved/">Get Involved</a></li>
+
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class=""><a href="/donate/"><span class="fa fa-heart"></span> Donate</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+  <nav class="navbar navbar-grey navbar-stick" role="navigation">
+    <div class="container">
+      <div class="row">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-secondary-collapse">
+              <span class="sr-only">Toggle secondary navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse navbar-secondary-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/downloads/mirrors/">Mirrors</a></li>
+<li class=""><a href="/downloads/signatures/">Signatures</a></li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+</header>
+
+    <div class="container">
+      <div class="row">
+        <div id="content" class="col-md-12">
+          <h1 class="first-header">Gentoo Distfile Mirrors</h1>
+
+<p>
+  Gentoo downloads can be retrieved from many mirrors around the globe.
+  Selecting a mirror that is geographically near you may help speed up downloads.
+</p>
+
+<div class="alert alert-info">
+  <strong>Note</strong><br>
+  The mirrors listed on this page contain installation files such as LiveCDs, Portage snapshots as well as <em>distfiles</em> (the actual program code for most packages we offer).<br>
+  That means you can use them in your <code>GENTOO_MIRRORS</code> variable in <tt>make.conf</tt>, but they are <strong>not</strong> <em>rsync</em> mirrors (which go into <tt>repos.conf</tt>, formerly <code>SYNC</code> in <tt>make.conf</tt>).
+</div>
+
+<p>
+  We would like to thank the many organizations and individuals that are providing mirroring services to the Gentoo project. If you would like to contribute a mirror, please consult the <a href="https://wiki.gentoo.org/wiki/Project:Infrastructure/Source_mirrors">relevant documentation</a>.
+</p>
+
+<hr>
+
+<h2>Countries covered by Gentoo mirrors</h2>
+
+<table class="table table-condensed table-striped">
+  <tr>
+    <th>Region</th>
+    <th>Countries</th>
+  </tr>
+
+  <tr>
+    <th>North America</th>
+    <td>
+      
+      <a href="#CA">CA</a>
+      
+      <a href="#US">US</a>
+      
+    </td>
+  </tr>
+
+  <tr>
+    <th>South America</th>
+    <td>
+      
+      <a href="#AR">AR</a>
+      
+      <a href="#BR">BR</a>
+      
+    </td>
+  </tr>
+
+  <tr>
+    <th>Europe</th>
+    <td>
+      
+      <a href="#AT">AT</a>
+      
+      <a href="#BG">BG</a>
+      
+      <a href="#CZ">CZ</a>
+      
+      <a href="#FI">FI</a>
+      
+      <a href="#FR">FR</a>
+      
+      <a href="#DE">DE</a>
+      
+      <a href="#GR">GR</a>
+      
+      <a href="#IE">IE</a>
+      
+      <a href="#NL">NL</a>
+      
+      <a href="#PL">PL</a>
+      
+      <a href="#PT">PT</a>
+      
+      <a href="#RO">RO</a>
+      
+      <a href="#SE">SE</a>
+      
+      <a href="#SK">SK</a>
+      
+      <a href="#ES">ES</a>
+      
+      <a href="#CH">CH</a>
+      
+      <a href="#TR">TR</a>
+      
+      <a href="#UA">UA</a>
+      
+      <a href="#UK">UK</a>
+      
+    </td>
+  </tr>
+
+  <tr>
+    <th>Australia</th>
+    <td>
+      
+      <a href="#AU">AU</a>
+      
+    </td>
+  </tr>
+
+  <tr>
+    <th>Asia</th>
+    <td>
+      
+      <a href="#CN">CN</a>
+      
+      <a href="#HK">HK</a>
+      
+      <a href="#JP">JP</a>
+      
+      <a href="#KR">KR</a>
+      
+      <a href="#RU">RU</a>
+      
+      <a href="#TW">TW</a>
+      
+    </td>
+  </tr>
+
+  <tr>
+    <th>Middle East</th>
+    <td>
+      
+      <a href="#IL">IL</a>
+      
+      <a href="#KZ">KZ</a>
+      
+    </td>
+  </tr>
+
+</table>
+
+<hr>
+
+
+  <h2>North America</h2>
+
+  
+    <h3 id="CA">CA &ndash; Canada</h3>
+
+    <table class="table table-condensed">
+      <tr>
+        <th style="width: 30%;">Name</th>
+        <th style="width: 10%;">Protocol</th>
+        <th style="width: 10%;">IPv4/v6</th>
+        <th style="width: 50%;">URL</th>
+      </tr>
+      
+        <tr>
+          <td rowspan="1">Arctic Network Mirrors</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://gentoo.arcticnetwork.ca/"><code>http://gentoo.arcticnetwork.ca/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="3">Tera-byte Dot Com Inc</td>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="ftp://mirrors.tera-byte.com/pub/gentoo"><code>ftp://mirrors.tera-byte.com/pub/gentoo</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://gentoo.mirrors.tera-byte.com/"><code>http://gentoo.mirrors.tera-byte.com/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">rsync</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="rsync://mirrors.tera-byte.com/gentoo"><code>rsync://mirrors.tera-byte.com/gentoo</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="2">University of Waterloo</td>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="ftp://mirror.csclub.uwaterloo.ca/gentoo-distfiles/"><code>ftp://mirror.csclub.uwaterloo.ca/gentoo-distfiles/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://mirror.csclub.uwaterloo.ca/gentoo-distfiles/"><code>http://mirror.csclub.uwaterloo.ca/gentoo-distfiles/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="2">Gossamer Threads</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://gentoo.gossamerhost.com"><code>http://gentoo.gossamerhost.com</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">rsync</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="rsync://gentoo.gossamerhost.com/gentoo-distfiles/"><code>rsync://gentoo.gossamerhost.com/gentoo-distfiles/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+    </table>
+  
+    <h3 id="US">US &ndash; USA</h3>
+
+    <table class="table table-condensed">
+      <tr>
+        <th style="width: 30%;">Name</th>
+        <th style="width: 10%;">Protocol</th>
+        <th style="width: 10%;">IPv4/v6</th>
+        <th style="width: 50%;">URL</th>
+      </tr>
+      
+        <tr>
+          <td rowspan="1">OSU Open Source Lab</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://gentoo.osuosl.org/"><code>http://gentoo.osuosl.org/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="3">Georgia Tech</td>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="ftp://ftp.gtlib.gatech.edu/pub/gentoo"><code>ftp://ftp.gtlib.gatech.edu/pub/gentoo</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="http://www.gtlib.gatech.edu/pub/gentoo"><code>http://www.gtlib.gatech.edu/pub/gentoo</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">rsync</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="rsync://rsync.gtlib.gatech.edu/gentoo"><code>rsync://rsync.gtlib.gatech.edu/gentoo</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="2">Sandia National Labs</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://mirror.iawnet.sandia.gov/gentoo/"><code>http://mirror.iawnet.sandia.gov/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="ftp://mirror.iawnet.sandia.gov/pub/gentoo/"><code>ftp://mirror.iawnet.sandia.gov/pub/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="1">Indiana University</td>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="ftp://ftp.ussg.iu.edu/pub/linux/gentoo"><code>ftp://ftp.ussg.iu.edu/pub/linux/gentoo</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="2">University of California, Santa Barbara</td>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="ftp://ftp.ucsb.edu/pub/mirrors/linux/gentoo/"><code>ftp://ftp.ucsb.edu/pub/mirrors/linux/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://ftp.ucsb.edu/pub/mirrors/linux/gentoo/"><code>http://ftp.ucsb.edu/pub/mirrors/linux/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="1">TDS Internet Services</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://gentoo.mirrors.tds.net/gentoo"><code>http://gentoo.mirrors.tds.net/gentoo</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="2">NetNITCO Internet Services</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://gentoo.netnitco.net"><code>http://gentoo.netnitco.net</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="ftp://gentoo.netnitco.net/pub/mirrors/gentoo/source/"><code>ftp://gentoo.netnitco.net/pub/mirrors/gentoo/source/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="2">Semaphore Corporation</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="http://gentoo.llarian.net/"><code>http://gentoo.llarian.net/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="ftp://gentoo.llarian.net/pub/gentoo"><code>ftp://gentoo.llarian.net/pub/gentoo</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="1">Utah State University</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://mirror.usu.edu/mirrors/gentoo/"><code>http://mirror.usu.edu/mirrors/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="1">Easynews NNTP Hosting</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://gentoo.mirrors.easynews.com/linux/gentoo/"><code>http://gentoo.mirrors.easynews.com/linux/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="2">University of Illinois-Urbana Champaign</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://gentoo.cites.uiuc.edu/pub/gentoo/"><code>http://gentoo.cites.uiuc.edu/pub/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="ftp://gentoo.cites.uiuc.edu/pub/gentoo/"><code>ftp://gentoo.cites.uiuc.edu/pub/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="1">Walla Walla University</td>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="ftp://ftp.wallawalla.edu/pub/mirrors/ftp.gentoo.org"><code>ftp://ftp.wallawalla.edu/pub/mirrors/ftp.gentoo.org</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="2">Michigan Tech University</td>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="ftp://lug.mtu.edu/gentoo/"><code>ftp://lug.mtu.edu/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="http://lug.mtu.edu/gentoo/"><code>http://lug.mtu.edu/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="1">Hoobly Classifieds</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://gentoo.mirrors.hoobly.com/"><code>http://gentoo.mirrors.hoobly.com/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="2">University of Delaware, Delaware Linux Users Group</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://mirror.lug.udel.edu/pub/gentoo/"><code>http://mirror.lug.udel.edu/pub/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="ftp://ftp.lug.udel.edu/pub/gentoo/"><code>ftp://ftp.lug.udel.edu/pub/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="3">Rochester Institute of Technology</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://mirrors.rit.edu/gentoo/"><code>http://mirrors.rit.edu/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="ftp://mirrors.rit.edu/gentoo/"><code>ftp://mirrors.rit.edu/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">rsync</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="rsync://mirrors.rit.edu/gentoo/"><code>rsync://mirrors.rit.edu/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="2">University of Northern Iowa</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://gentoo.cs.uni.edu/"><code>http://gentoo.cs.uni.edu/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">rsync</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="rsync://gentoo.cs.uni.edu/gentoo-distfiles"><code>rsync://gentoo.cs.uni.edu/gentoo-distfiles</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="2">Pair Networks</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://gentoo.mirrors.pair.com/"><code>http://gentoo.mirrors.pair.com/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="ftp://gentoo.mirrors.pair.com/"><code>ftp://gentoo.mirrors.pair.com/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+    </table>
+  
+
+  <h2>South America</h2>
+
+  
+    <h3 id="AR">AR &ndash; Argentina</h3>
+
+    <table class="table table-condensed">
+      <tr>
+        <th style="width: 30%;">Name</th>
+        <th style="width: 10%;">Protocol</th>
+        <th style="width: 10%;">IPv4/v6</th>
+        <th style="width: 50%;">URL</th>
+      </tr>
+      
+        <tr>
+          <td rowspan="2">LocalHost Soluciones Innovadoras</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://gentoo.localhost.net.ar/"><code>http://gentoo.localhost.net.ar/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="ftp://mirrors.localhost.net.ar/pub/mirrors/gentoo/"><code>ftp://mirrors.localhost.net.ar/pub/mirrors/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+    </table>
+  
+    <h3 id="BR">BR &ndash; Brazil</h3>
+
+    <table class="table table-condensed">
+      <tr>
+        <th style="width: 30%;">Name</th>
+        <th style="width: 10%;">Protocol</th>
+        <th style="width: 10%;">IPv4/v6</th>
+        <th style="width: 50%;">URL</th>
+      </tr>
+      
+        <tr>
+          <td rowspan="2">Laboratory of System Administration</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://www.las.ic.unicamp.br/pub/gentoo/"><code>http://www.las.ic.unicamp.br/pub/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="ftp://ftp.las.ic.unicamp.br/pub/gentoo/"><code>ftp://ftp.las.ic.unicamp.br/pub/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="3">C3SL, Federal University of Paraná</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="http://gentoo.c3sl.ufpr.br/"><code>http://gentoo.c3sl.ufpr.br/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="ftp://gentoo.c3sl.ufpr.br/gentoo/"><code>ftp://gentoo.c3sl.ufpr.br/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">rsync</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="rsync://gentoo.c3sl.ufpr.br/gentoo/"><code>rsync://gentoo.c3sl.ufpr.br/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+    </table>
+  
+
+  <h2>Europe</h2>
+
+  
+    <h3 id="AT">AT &ndash; Austria</h3>
+
+    <table class="table table-condensed">
+      <tr>
+        <th style="width: 30%;">Name</th>
+        <th style="width: 10%;">Protocol</th>
+        <th style="width: 10%;">IPv4/v6</th>
+        <th style="width: 50%;">URL</th>
+      </tr>
+      
+        <tr>
+          <td rowspan="2">Inode</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://gentoo.inode.at/"><code>http://gentoo.inode.at/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="ftp://gentoo.inode.at/source/"><code>ftp://gentoo.inode.at/source/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="2">Vienna Univ. of Technology</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://gd.tuwien.ac.at/opsys/linux/gentoo/"><code>http://gd.tuwien.ac.at/opsys/linux/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="ftp://gd.tuwien.ac.at/opsys/linux/gentoo/"><code>ftp://gd.tuwien.ac.at/opsys/linux/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+    </table>
+  
+    <h3 id="BG">BG &ndash; Bulgaria</h3>
+
+    <table class="table table-condensed">
+      <tr>
+        <th style="width: 30%;">Name</th>
+        <th style="width: 10%;">Protocol</th>
+        <th style="width: 10%;">IPv4/v6</th>
+        <th style="width: 50%;">URL</th>
+      </tr>
+      
+        <tr>
+          <td rowspan="1">telepoint.bg</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://mirrors.telepoint.bg/gentoo/"><code>http://mirrors.telepoint.bg/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+    </table>
+  
+    <h3 id="CZ">CZ &ndash; Czech Republic</h3>
+
+    <table class="table table-condensed">
+      <tr>
+        <th style="width: 30%;">Name</th>
+        <th style="width: 10%;">Protocol</th>
+        <th style="width: 10%;">IPv4/v6</th>
+        <th style="width: 50%;">URL</th>
+      </tr>
+      
+        <tr>
+          <td rowspan="4">Masaryk University Brno</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://ftp.fi.muni.cz/pub/linux/gentoo/"><code>http://ftp.fi.muni.cz/pub/linux/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="ftp://ftp.fi.muni.cz/pub/linux/gentoo/"><code>ftp://ftp.fi.muni.cz/pub/linux/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">rsync</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="rsync://ftp.fi.muni.cz/pub/linux/gentoo/"><code>rsync://ftp.fi.muni.cz/pub/linux/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">rsync</span>
+            </td>
+            <td>
+              
+                <span class="label label-danger">IPv6 only</span>
+              
+            </td>
+            <td>
+              <a href="rsync://ftp6.linux.cz/pub/linux/gentoo/"><code>rsync://ftp6.linux.cz/pub/linux/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="1">Advokatni Kancelar Kindl & Partneri</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://gentoo.supp.name/"><code>http://gentoo.supp.name/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="2">Web4U Mirror</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://gentoo.mirror.web4u.cz/"><code>http://gentoo.mirror.web4u.cz/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="ftp://gentoo.mirror.web4u.cz/"><code>ftp://gentoo.mirror.web4u.cz/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="3">UPC Česká republika, a.s.</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="http://gentoo.mirror.dkm.cz/pub/gentoo/"><code>http://gentoo.mirror.dkm.cz/pub/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="ftp://gentoo.mirror.dkm.cz/pub/gentoo/"><code>ftp://gentoo.mirror.dkm.cz/pub/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">rsync</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="rsync://gentoo.mirror.dkm.cz/gentoo/"><code>rsync://gentoo.mirror.dkm.cz/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+    </table>
+  
+    <h3 id="FI">FI &ndash; Finland</h3>
+
+    <table class="table table-condensed">
+      <tr>
+        <th style="width: 30%;">Name</th>
+        <th style="width: 10%;">Protocol</th>
+        <th style="width: 10%;">IPv4/v6</th>
+        <th style="width: 50%;">URL</th>
+      </tr>
+      
+        <tr>
+          <td rowspan="3">tut.fi</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="http://trumpetti.atm.tut.fi/gentoo/"><code>http://trumpetti.atm.tut.fi/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="ftp://trumpetti.atm.tut.fi/gentoo/"><code>ftp://trumpetti.atm.tut.fi/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">rsync</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="rsync://trumpetti.atm.tut.fi/gentoo/"><code>rsync://trumpetti.atm.tut.fi/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+    </table>
+  
+    <h3 id="FR">FR &ndash; France</h3>
+
+    <table class="table table-condensed">
+      <tr>
+        <th style="width: 30%;">Name</th>
+        <th style="width: 10%;">Protocol</th>
+        <th style="width: 10%;">IPv4/v6</th>
+        <th style="width: 50%;">URL</th>
+      </tr>
+      
+        <tr>
+          <td rowspan="2">OVH</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="http://gentoo.mirrors.ovh.net/gentoo-distfiles/"><code>http://gentoo.mirrors.ovh.net/gentoo-distfiles/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="ftp://gentoo.mirrors.ovh.net/gentoo-distfiles/"><code>ftp://gentoo.mirrors.ovh.net/gentoo-distfiles/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="1">IMJ.fr</td>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="ftp://gentoo.imj.fr/pub/gentoo/"><code>ftp://gentoo.imj.fr/pub/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="1">Free</td>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="ftp://ftp.free.fr/mirrors/ftp.gentoo.org/"><code>ftp://ftp.free.fr/mirrors/ftp.gentoo.org/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="2">Linuxant.fr</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="http://mirrors.linuxant.fr/distfiles.gentoo.org/"><code>http://mirrors.linuxant.fr/distfiles.gentoo.org/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="ftp://mirrors.linuxant.fr/distfiles.gentoo.org/"><code>ftp://mirrors.linuxant.fr/distfiles.gentoo.org/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="1">modulix.net</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://gentoo.modulix.net/gentoo/"><code>http://gentoo.modulix.net/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+    </table>
+  
+    <h3 id="DE">DE &ndash; Germany</h3>
+
+    <table class="table table-condensed">
+      <tr>
+        <th style="width: 30%;">Name</th>
+        <th style="width: 10%;">Protocol</th>
+        <th style="width: 10%;">IPv4/v6</th>
+        <th style="width: 50%;">URL</th>
+      </tr>
+      
+        <tr>
+          <td rowspan="1">rwth-aachen.de</td>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="ftp://sunsite.informatik.rwth-aachen.de/pub/Linux/gentoo"><code>ftp://sunsite.informatik.rwth-aachen.de/pub/Linux/gentoo</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="1">Ruhr-Universität Bochum</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://linux.rz.ruhr-uni-bochum.de/download/gentoo-mirror/"><code>http://linux.rz.ruhr-uni-bochum.de/download/gentoo-mirror/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="2">Uni Erlangen-Nürnberg</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="http://ftp.uni-erlangen.de/pub/mirrors/gentoo"><code>http://ftp.uni-erlangen.de/pub/mirrors/gentoo</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="ftp://ftp.uni-erlangen.de/pub/mirrors/gentoo"><code>ftp://ftp.uni-erlangen.de/pub/mirrors/gentoo</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="1">Dresden University of Technology/AG DSN</td>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="ftp://ftp.wh2.tu-dresden.de/pub/mirrors/gentoo"><code>ftp://ftp.wh2.tu-dresden.de/pub/mirrors/gentoo</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="3">University of Applied Sciences, Esslingen</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://ftp-stud.hs-esslingen.de/pub/Mirrors/gentoo/"><code>http://ftp-stud.hs-esslingen.de/pub/Mirrors/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="ftp://ftp-stud.hs-esslingen.de/pub/Mirrors/gentoo/"><code>ftp://ftp-stud.hs-esslingen.de/pub/Mirrors/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">rsync</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="rsync://ftp-stud.hs-esslingen.de/gentoo/"><code>rsync://ftp-stud.hs-esslingen.de/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="3">de-mirror.org</td>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="ftp://de-mirror.org/gentoo/"><code>ftp://de-mirror.org/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://de-mirror.org/gentoo/"><code>http://de-mirror.org/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">rsync</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="rsync://de-mirror.org/gentoo/"><code>rsync://de-mirror.org/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="2">SPLINE, Institut für Informatik, Freie Universität Berlin</td>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="ftp://ftp.spline.inf.fu-berlin.de/mirrors/gentoo/"><code>ftp://ftp.spline.inf.fu-berlin.de/mirrors/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://ftp.spline.inf.fu-berlin.de/mirrors/gentoo/"><code>http://ftp.spline.inf.fu-berlin.de/mirrors/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="3">Netcologne</td>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="ftp://mirror.netcologne.de/gentoo/"><code>ftp://mirror.netcologne.de/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="http://mirror.netcologne.de/gentoo/"><code>http://mirror.netcologne.de/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">rsync</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="rsync://mirror.netcologne.de/gentoo/"><code>rsync://mirror.netcologne.de/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="3">RWTH Aachen University</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://ftp.halifax.rwth-aachen.de/gentoo/"><code>http://ftp.halifax.rwth-aachen.de/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="ftp://ftp.halifax.rwth-aachen.de/gentoo/"><code>ftp://ftp.halifax.rwth-aachen.de/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">rsync</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="rsync://ftp.halifax.rwth-aachen.de/gentoo/"><code>rsync://ftp.halifax.rwth-aachen.de/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+    </table>
+  
+    <h3 id="GR">GR &ndash; Greece</h3>
+
+    <table class="table table-condensed">
+      <tr>
+        <th style="width: 30%;">Name</th>
+        <th style="width: 10%;">Protocol</th>
+        <th style="width: 10%;">IPv4/v6</th>
+        <th style="width: 50%;">URL</th>
+      </tr>
+      
+        <tr>
+          <td rowspan="2">files.gentoo.gr</td>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="ftp://files.gentoo.gr"><code>ftp://files.gentoo.gr</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://files.gentoo.gr"><code>http://files.gentoo.gr</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="2">National Technical University of Athens</td>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="ftp://ftp.ntua.gr/pub/linux/gentoo/"><code>ftp://ftp.ntua.gr/pub/linux/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="http://ftp.ntua.gr/pub/linux/gentoo/"><code>http://ftp.ntua.gr/pub/linux/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+    </table>
+  
+    <h3 id="IE">IE &ndash; Ireland</h3>
+
+    <table class="table table-condensed">
+      <tr>
+        <th style="width: 30%;">Name</th>
+        <th style="width: 10%;">Protocol</th>
+        <th style="width: 10%;">IPv4/v6</th>
+        <th style="width: 50%;">URL</th>
+      </tr>
+      
+        <tr>
+          <td rowspan="3">HEAnet - Ireland's National Education and Research Network</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="http://ftp.heanet.ie/pub/gentoo/"><code>http://ftp.heanet.ie/pub/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="ftp://ftp.heanet.ie/pub/gentoo/"><code>ftp://ftp.heanet.ie/pub/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">rsync</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="rsync://ftp.heanet.ie/pub/gentoo/"><code>rsync://ftp.heanet.ie/pub/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+    </table>
+  
+    <h3 id="NL">NL &ndash; Netherlands</h3>
+
+    <table class="table table-condensed">
+      <tr>
+        <th style="width: 30%;">Name</th>
+        <th style="width: 10%;">Protocol</th>
+        <th style="width: 10%;">IPv4/v6</th>
+        <th style="width: 50%;">URL</th>
+      </tr>
+      
+        <tr>
+          <td rowspan="3">Universiteit Twente</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="http://ftp.snt.utwente.nl/pub/os/linux/gentoo"><code>http://ftp.snt.utwente.nl/pub/os/linux/gentoo</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="ftp://ftp.snt.utwente.nl/pub/os/linux/gentoo"><code>ftp://ftp.snt.utwente.nl/pub/os/linux/gentoo</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">rsync</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="rsync://ftp.snt.utwente.nl/gentoo"><code>rsync://ftp.snt.utwente.nl/gentoo</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="2">Tiscali</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://gentoo.tiscali.nl/"><code>http://gentoo.tiscali.nl/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="ftp://gentoo.tiscali.nl/pub/mirror/gentoo/"><code>ftp://gentoo.tiscali.nl/pub/mirror/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="3">LeaseWeb</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="http://mirror.leaseweb.com/gentoo/"><code>http://mirror.leaseweb.com/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="ftp://mirror.leaseweb.com/gentoo/"><code>ftp://mirror.leaseweb.com/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">rsync</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="rsync://mirror.leaseweb.com/gentoo/"><code>rsync://mirror.leaseweb.com/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+    </table>
+  
+    <h3 id="PL">PL &ndash; Poland</h3>
+
+    <table class="table table-condensed">
+      <tr>
+        <th style="width: 30%;">Name</th>
+        <th style="width: 10%;">Protocol</th>
+        <th style="width: 10%;">IPv4/v6</th>
+        <th style="width: 50%;">URL</th>
+      </tr>
+      
+        <tr>
+          <td rowspan="3">Vectranet</td>
+          
+            <td>
+              <span class="label label-primary">rsync</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="rsync://ftp.vectranet.pl/gentoo/"><code>rsync://ftp.vectranet.pl/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://ftp.vectranet.pl/gentoo/"><code>http://ftp.vectranet.pl/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="ftp://ftp.vectranet.pl/gentoo/"><code>ftp://ftp.vectranet.pl/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="2">Rzeszow University of Technology</td>
+          
+            <td>
+              <span class="label label-primary">rsync</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="rsync://gentoo.prz.rzeszow.pl/gentoo"><code>rsync://gentoo.prz.rzeszow.pl/gentoo</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://gentoo.prz.rzeszow.pl"><code>http://gentoo.prz.rzeszow.pl</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="1">Technical University of Opole</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://gentoo.po.opole.pl"><code>http://gentoo.po.opole.pl</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="1">Warsaw University Of Technology</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://gentoo.mirror.pw.edu.pl/"><code>http://gentoo.mirror.pw.edu.pl/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+    </table>
+  
+    <h3 id="PT">PT &ndash; Portugal</h3>
+
+    <table class="table table-condensed">
+      <tr>
+        <th style="width: 30%;">Name</th>
+        <th style="width: 10%;">Protocol</th>
+        <th style="width: 10%;">IPv4/v6</th>
+        <th style="width: 50%;">URL</th>
+      </tr>
+      
+        <tr>
+          <td rowspan="3">RNL - Técnico Lisboa</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="http://ftp.rnl.tecnico.ulisboa.pt/pub/gentoo/gentoo-distfiles/"><code>http://ftp.rnl.tecnico.ulisboa.pt/pub/gentoo/gentoo-distfiles/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="ftp://ftp.rnl.tecnico.ulisboa.pt/pub/gentoo/gentoo-distfiles/"><code>ftp://ftp.rnl.tecnico.ulisboa.pt/pub/gentoo/gentoo-distfiles/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">rsync</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="rsync://ftp.rnl.tecnico.ulisboa.pt/pub/gentoo/gentoo-distfiles/"><code>rsync://ftp.rnl.tecnico.ulisboa.pt/pub/gentoo/gentoo-distfiles/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="2">University of Coimbra</td>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="ftp://ftp.dei.uc.pt/pub/linux/gentoo/"><code>ftp://ftp.dei.uc.pt/pub/linux/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://ftp.dei.uc.pt/pub/linux/gentoo/"><code>http://ftp.dei.uc.pt/pub/linux/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+    </table>
+  
+    <h3 id="RO">RO &ndash; Romania</h3>
+
+    <table class="table table-condensed">
+      <tr>
+        <th style="width: 30%;">Name</th>
+        <th style="width: 10%;">Protocol</th>
+        <th style="width: 10%;">IPv4/v6</th>
+        <th style="width: 50%;">URL</th>
+      </tr>
+      
+        <tr>
+          <td rowspan="1">xservers.ro Gazduire Web</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://mirrors.xservers.ro/gentoo/"><code>http://mirrors.xservers.ro/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="1">Romanian Organization Network</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="http://ftp.romnet.org/gentoo/"><code>http://ftp.romnet.org/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+    </table>
+  
+    <h3 id="SE">SE &ndash; Sweden</h3>
+
+    <table class="table table-condensed">
+      <tr>
+        <th style="width: 30%;">Name</th>
+        <th style="width: 10%;">Protocol</th>
+        <th style="width: 10%;">IPv4/v6</th>
+        <th style="width: 50%;">URL</th>
+      </tr>
+      
+        <tr>
+          <td rowspan="2">mdfnet.se</td>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="ftp://mirror.mdfnet.se/gentoo"><code>ftp://mirror.mdfnet.se/gentoo</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="http://mirror.mdfnet.se/gentoo"><code>http://mirror.mdfnet.se/gentoo</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="3">Lund University</td>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="ftp://ftp.df.lth.se/pub/gentoo/"><code>ftp://ftp.df.lth.se/pub/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://ftp.df.lth.se/pub/gentoo/"><code>http://ftp.df.lth.se/pub/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">rsync</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="rsync://ftp.df.lth.se/pub/gentoo/"><code>rsync://ftp.df.lth.se/pub/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+    </table>
+  
+    <h3 id="SK">SK &ndash; Slovakia</h3>
+
+    <table class="table table-condensed">
+      <tr>
+        <th style="width: 30%;">Name</th>
+        <th style="width: 10%;">Protocol</th>
+        <th style="width: 10%;">IPv4/v6</th>
+        <th style="width: 50%;">URL</th>
+      </tr>
+      
+        <tr>
+          <td rowspan="2">Wheel.sk</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://gentoo.wheel.sk/"><code>http://gentoo.wheel.sk/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="ftp://gentoo.wheel.sk/pub/linux/gentoo/"><code>ftp://gentoo.wheel.sk/pub/linux/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="2">Rainside.sk</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://tux.rainside.sk/gentoo/"><code>http://tux.rainside.sk/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="ftp://tux.rainside.sk/gentoo/"><code>ftp://tux.rainside.sk/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+    </table>
+  
+    <h3 id="ES">ES &ndash; Spain</h3>
+
+    <table class="table table-condensed">
+      <tr>
+        <th style="width: 30%;">Name</th>
+        <th style="width: 10%;">Protocol</th>
+        <th style="width: 10%;">IPv4/v6</th>
+        <th style="width: 50%;">URL</th>
+      </tr>
+      
+        <tr>
+          <td rowspan="1">Politechnic University of Catalonia</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://gentoo-euetib.upc.es/mirror/gentoo/"><code>http://gentoo-euetib.upc.es/mirror/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+    </table>
+  
+    <h3 id="CH">CH &ndash; Switzerland</h3>
+
+    <table class="table table-condensed">
+      <tr>
+        <th style="width: 30%;">Name</th>
+        <th style="width: 10%;">Protocol</th>
+        <th style="width: 10%;">IPv4/v6</th>
+        <th style="width: 50%;">URL</th>
+      </tr>
+      
+        <tr>
+          <td rowspan="2">SWITCHmirror</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="http://mirror.switch.ch/ftp/mirror/gentoo/"><code>http://mirror.switch.ch/ftp/mirror/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="ftp://mirror.switch.ch/mirror/gentoo/"><code>ftp://mirror.switch.ch/mirror/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+    </table>
+  
+    <h3 id="TR">TR &ndash; Turkey</h3>
+
+    <table class="table table-condensed">
+      <tr>
+        <th style="width: 30%;">Name</th>
+        <th style="width: 10%;">Protocol</th>
+        <th style="width: 10%;">IPv4/v6</th>
+        <th style="width: 50%;">URL</th>
+      </tr>
+      
+        <tr>
+          <td rowspan="3">Turkish Linux Users Group - Linux Kullanicilari Dernegi(LKD)</td>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="ftp://ftp.linux.org.tr/gentoo/"><code>ftp://ftp.linux.org.tr/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://ftp.linux.org.tr/gentoo/"><code>http://ftp.linux.org.tr/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">rsync</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="rsync://ftp.linux.org.tr/gentoo-distfiles/"><code>rsync://ftp.linux.org.tr/gentoo-distfiles/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+    </table>
+  
+    <h3 id="UA">UA &ndash; Ukraine</h3>
+
+    <table class="table table-condensed">
+      <tr>
+        <th style="width: 30%;">Name</th>
+        <th style="width: 10%;">Protocol</th>
+        <th style="width: 10%;">IPv4/v6</th>
+        <th style="width: 50%;">URL</th>
+      </tr>
+      
+        <tr>
+          <td rowspan="3">gentoo.kiev.ua</td>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="ftp://gentoo.kiev.ua/"><code>ftp://gentoo.kiev.ua/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://gentoo.kiev.ua/ftp/"><code>http://gentoo.kiev.ua/ftp/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">rsync</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="rsync://gentoo.kiev.ua/gentoo-distfiles"><code>rsync://gentoo.kiev.ua/gentoo-distfiles</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="1">ITEAM gentoo mirror</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://gentoo.iteam.net.ua/"><code>http://gentoo.iteam.net.ua/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="2">portage.org.ua</td>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="ftp://portage.org.ua/"><code>ftp://portage.org.ua/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="http://portage.org.ua/"><code>http://portage.org.ua/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+    </table>
+  
+    <h3 id="UK">UK &ndash; UK</h3>
+
+    <table class="table table-condensed">
+      <tr>
+        <th style="width: 30%;">Name</th>
+        <th style="width: 10%;">Protocol</th>
+        <th style="width: 10%;">IPv4/v6</th>
+        <th style="width: 50%;">URL</th>
+      </tr>
+      
+        <tr>
+          <td rowspan="3">Bytemark Hosting</td>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="ftp://mirror.bytemark.co.uk/gentoo/"><code>ftp://mirror.bytemark.co.uk/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="http://mirror.bytemark.co.uk/gentoo/"><code>http://mirror.bytemark.co.uk/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">rsync</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="rsync://mirror.bytemark.co.uk/gentoo/"><code>rsync://mirror.bytemark.co.uk/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="3">The UK Mirror Service</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://www.mirrorservice.org/sites/distfiles.gentoo.org/"><code>http://www.mirrorservice.org/sites/distfiles.gentoo.org/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="ftp://ftp.mirrorservice.org/sites/distfiles.gentoo.org/"><code>ftp://ftp.mirrorservice.org/sites/distfiles.gentoo.org/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">rsync</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="rsync://rsync.mirrorservice.org/distfiles.gentoo.org/"><code>rsync://rsync.mirrorservice.org/distfiles.gentoo.org/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="1">Qube Managed Services</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="http://mirror.qubenet.net/mirror/gentoo/"><code>http://mirror.qubenet.net/mirror/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+    </table>
+  
+
+  <h2>Australia</h2>
+
+  
+    <h3 id="AU">AU &ndash; Australia</h3>
+
+    <table class="table table-condensed">
+      <tr>
+        <th style="width: 30%;">Name</th>
+        <th style="width: 10%;">Protocol</th>
+        <th style="width: 10%;">IPv4/v6</th>
+        <th style="width: 50%;">URL</th>
+      </tr>
+      
+        <tr>
+          <td rowspan="2">Swinburne University of Technology</td>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="ftp://ftp.swin.edu.au/gentoo"><code>ftp://ftp.swin.edu.au/gentoo</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="http://ftp.swin.edu.au/gentoo"><code>http://ftp.swin.edu.au/gentoo</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+    </table>
+  
+
+  <h2>Asia</h2>
+
+  
+    <h3 id="CN">CN &ndash; China</h3>
+
+    <table class="table table-condensed">
+      <tr>
+        <th style="width: 30%;">Name</th>
+        <th style="width: 10%;">Protocol</th>
+        <th style="width: 10%;">IPv4/v6</th>
+        <th style="width: 50%;">URL</th>
+      </tr>
+      
+        <tr>
+          <td rowspan="3">Xiamen University</td>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="ftp://mirrors.xmu.edu.cn/gentoo"><code>ftp://mirrors.xmu.edu.cn/gentoo</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="http://mirrors.xmu.edu.cn/gentoo"><code>http://mirrors.xmu.edu.cn/gentoo</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">rsync</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="rsync://mirrors.xmu.edu.cn/gentoo/"><code>rsync://mirrors.xmu.edu.cn/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="1">Sohu.inc</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://mirrors.sohu.com/gentoo/"><code>http://mirrors.sohu.com/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="1">Netease.com, Inc.</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://mirrors.163.com/gentoo/"><code>http://mirrors.163.com/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="2">Star Studio of UESTC</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://mirrors.stuhome.net/gentoo/"><code>http://mirrors.stuhome.net/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="ftp://mirrors.stuhome.net/gentoo/"><code>ftp://mirrors.stuhome.net/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+    </table>
+  
+    <h3 id="HK">HK &ndash; Hong Kong</h3>
+
+    <table class="table table-condensed">
+      <tr>
+        <th style="width: 30%;">Name</th>
+        <th style="width: 10%;">Protocol</th>
+        <th style="width: 10%;">IPv4/v6</th>
+        <th style="width: 50%;">URL</th>
+      </tr>
+      
+        <tr>
+          <td rowspan="1">aditsu.net</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://gentoo.aditsu.net:8000/"><code>http://gentoo.aditsu.net:8000/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+    </table>
+  
+    <h3 id="JP">JP &ndash; Japan</h3>
+
+    <table class="table table-condensed">
+      <tr>
+        <th style="width: 30%;">Name</th>
+        <th style="width: 10%;">Protocol</th>
+        <th style="width: 10%;">IPv4/v6</th>
+        <th style="width: 50%;">URL</th>
+      </tr>
+      
+        <tr>
+          <td rowspan="2">gg3.net</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://gentoo.gg3.net/"><code>http://gentoo.gg3.net/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="ftp://gg3.net/pub/linux/gentoo/"><code>ftp://gg3.net/pub/linux/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="3">Japan Advanced Institute of Science and Technology</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="http://ftp.jaist.ac.jp/pub/Linux/Gentoo/"><code>http://ftp.jaist.ac.jp/pub/Linux/Gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">rsync</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="rsync://ftp.jaist.ac.jp/pub/Linux/Gentoo/"><code>rsync://ftp.jaist.ac.jp/pub/Linux/Gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="ftp://ftp.jaist.ac.jp/pub/Linux/Gentoo/"><code>ftp://ftp.jaist.ac.jp/pub/Linux/Gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="3">Internet Initiative Japan</td>
+          
+            <td>
+              <span class="label label-primary">rsync</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="rsync://ftp.iij.ad.jp/pub/linux/gentoo/"><code>rsync://ftp.iij.ad.jp/pub/linux/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="http://ftp.iij.ad.jp/pub/linux/gentoo/"><code>http://ftp.iij.ad.jp/pub/linux/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="ftp://ftp.iij.ad.jp/pub/linux/gentoo/"><code>ftp://ftp.iij.ad.jp/pub/linux/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+    </table>
+  
+    <h3 id="KR">KR &ndash; South Korea</h3>
+
+    <table class="table table-condensed">
+      <tr>
+        <th style="width: 30%;">Name</th>
+        <th style="width: 10%;">Protocol</th>
+        <th style="width: 10%;">IPv4/v6</th>
+        <th style="width: 50%;">URL</th>
+      </tr>
+      
+        <tr>
+          <td rowspan="2">KAIST</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://ftp.kaist.ac.kr/pub/gentoo/"><code>http://ftp.kaist.ac.kr/pub/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="ftp://ftp.kaist.ac.kr/gentoo/"><code>ftp://ftp.kaist.ac.kr/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="2">lecl.net</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://ftp.lecl.net/pub/gentoo/"><code>http://ftp.lecl.net/pub/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="ftp://ftp.lecl.net/pub/gentoo/"><code>ftp://ftp.lecl.net/pub/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="1">Daum Communications Corp</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://ftp.daum.net/gentoo/"><code>http://ftp.daum.net/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+    </table>
+  
+    <h3 id="RU">RU &ndash; Russia</h3>
+
+    <table class="table table-condensed">
+      <tr>
+        <th style="width: 30%;">Name</th>
+        <th style="width: 10%;">Protocol</th>
+        <th style="width: 10%;">IPv4/v6</th>
+        <th style="width: 50%;">URL</th>
+      </tr>
+      
+        <tr>
+          <td rowspan="2">Yandex.ru</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="http://mirror.yandex.ru/gentoo-distfiles/"><code>http://mirror.yandex.ru/gentoo-distfiles/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-success">IPv4 + IPv6</span>
+              
+            </td>
+            <td>
+              <a href="ftp://mirror.yandex.ru/gentoo-distfiles/"><code>ftp://mirror.yandex.ru/gentoo-distfiles/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="3">Bloodhost.ru</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://gentoo.bloodhost.ru/"><code>http://gentoo.bloodhost.ru/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="ftp://gentoo.bloodhost.ru/"><code>ftp://gentoo.bloodhost.ru/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">rsync</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="rsync://gentoo.bloodhost.ru/gentoo-distfiles"><code>rsync://gentoo.bloodhost.ru/gentoo-distfiles</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+        <tr>
+          <td rowspan="1">xeon.gentoo.ru</td>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="ftp://xeon.gentoo.ru/mirrors/gentoo/distfiles/"><code>ftp://xeon.gentoo.ru/mirrors/gentoo/distfiles/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+    </table>
+  
+    <h3 id="TW">TW &ndash; Taiwan</h3>
+
+    <table class="table table-condensed">
+      <tr>
+        <th style="width: 30%;">Name</th>
+        <th style="width: 10%;">Protocol</th>
+        <th style="width: 10%;">IPv4/v6</th>
+        <th style="width: 50%;">URL</th>
+      </tr>
+      
+        <tr>
+          <td rowspan="2">National Center for High-Performance Computing</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://ftp.twaren.net/Linux/Gentoo/"><code>http://ftp.twaren.net/Linux/Gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="ftp://ftp.twaren.net/Linux/Gentoo/"><code>ftp://ftp.twaren.net/Linux/Gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+    </table>
+  
+
+  <h2>Middle East</h2>
+
+  
+    <h3 id="IL">IL &ndash; Israel</h3>
+
+    <table class="table table-condensed">
+      <tr>
+        <th style="width: 30%;">Name</th>
+        <th style="width: 10%;">Protocol</th>
+        <th style="width: 10%;">IPv4/v6</th>
+        <th style="width: 50%;">URL</th>
+      </tr>
+      
+        <tr>
+          <td rowspan="2">Hamakor FOSS Society</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://mirror.isoc.org.il/pub/gentoo/"><code>http://mirror.isoc.org.il/pub/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="ftp://mirror.isoc.org.il/gentoo/"><code>ftp://mirror.isoc.org.il/gentoo/</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+    </table>
+  
+    <h3 id="KZ">KZ &ndash; Kazakhstan</h3>
+
+    <table class="table table-condensed">
+      <tr>
+        <th style="width: 30%;">Name</th>
+        <th style="width: 10%;">Protocol</th>
+        <th style="width: 10%;">IPv4/v6</th>
+        <th style="width: 50%;">URL</th>
+      </tr>
+      
+        <tr>
+          <td rowspan="3">Neo Lab's</td>
+          
+            <td>
+              <span class="label label-primary">http</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="http://mirror.neolabs.kz/gentoo/pub"><code>http://mirror.neolabs.kz/gentoo/pub</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">ftp</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="ftp://mirror.neolabs.kz/gentoo/pub"><code>ftp://mirror.neolabs.kz/gentoo/pub</code></a>
+            </tr>
+            <tr>
+          
+            <td>
+              <span class="label label-primary">rsync</span>
+            </td>
+            <td>
+              
+                <span class="label label-info">IPv4 only</span>
+              
+            </td>
+            <td>
+              <a href="rsync://mirror.neolabs.kz/gentoo"><code>rsync://mirror.neolabs.kz/gentoo</code></a>
+            </tr>
+            <tr>
+          
+        </tr>
+      
+    </table>
+  
+
+
+        </div>
+      </div>
+    </div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-offset-2 col-md-7">
+        
+      </div>
+      <div class="col-xs-12 col-md-3">
+        <h3 class="footerhead">Questions or comments?</h3>
+        Please feel free to <a href="/inside-gentoo/contact/">contact us</a>.
+      </div>
+    </div>
+  </div>
+  <div class="container-sitemap">
+    <div class="container">
+      <div class="row row-sitemap hidden-xs">
+  <div class="col-xs-12 col-sm-4 col-md-2">
+    <h3 class="footerhead"><a href="/">Home</a></h3>
+    <ul class="sitemap">
+    <li class=""><a href="/news/">News</a></li>
+
+    </ul>
+  </div>
+  <div class="col-xs-12 col-sm-4 col-md-2">
+    <h3 class="footerhead"><a href="/get-started/">Get Started</a></h3>
+    <ul class="sitemap">
+    <li class=""><a href="/get-started/about/">About Gentoo</a></li>
+<li class=""><a href="/get-started/philosophy/">Philosophy</a></li>
+<li class=""><a href="/get-started/screenshots/">Screenshots</a></li>
+<li class=""><a href="https://wiki.gentoo.org/wiki/FAQ">FAQ</a></li>
+
+    </ul>
+  </div>
+  <div class="col-xs-12 col-sm-4 col-md-2">
+    <h3 class="footerhead"><a href="/downloads/">Downloads</a></h3>
+    <ul class="sitemap">
+    <li class=""><a href="/downloads/mirrors/">Mirrors</a></li>
+<li class=""><a href="/downloads/signatures/">Signatures</a></li>
+
+    </ul>
+  </div>
+  <div class="col-xs-12 col-sm-4 col-md-2">
+    <h3 class="footerhead"><a href="/inside-gentoo/">Inside Gentoo</a></h3>
+    <ul class="sitemap">
+    <li class=""><a href="/inside-gentoo/developers/">Developers</a></li>
+<li class=""><a href="https://wiki.gentoo.org/wiki/Project:Gentoo">Projects</a></li>
+<li class=""><a href="/inside-gentoo/artwork/">Artwork</a></li>
+<li class=""><a href="/inside-gentoo/foundation/">Gentoo Foundation</a></li>
+<li class=""><a href="/inside-gentoo/sponsors/">Sponsors</a></li>
+<li class=""><a href="/inside-gentoo/stores/">Stores</a></li>
+<li class=""><a href="/inside-gentoo/contact/">Contact</a></li>
+
+    </ul>
+  </div>
+  <div class="col-xs-12 col-sm-4 col-md-2">
+    <h3 class="footerhead"><a href="/support/">Support</a></h3>
+    <ul class="sitemap">
+    <li class=""><a href="/support/documentation/">Documentation</a></li>
+<li class=""><a href="/support/news-items/">News Items</a></li>
+<li class=""><a href="http://packages.gentoo.org/">Package Database</a></li>
+<li class=""><a href="/support/security/">Security</a></li>
+
+    </ul>
+  </div>
+  <div class="col-xs-12 col-sm-4 col-md-2">
+    <h3 class="footerhead"><a href="/get-involved/">Get Involved</a></h3>
+    <ul class="sitemap">
+    <li class=""><a href="/get-involved/irc-channels/">IRC Channels</a></li>
+<li class=""><a href="https://forums.gentoo.org/">Forums</a></li>
+<li class=""><a href="/get-involved/mailing-lists/">Mailing Lists</a></li>
+<li class=""><a href="/get-involved/contribute/">Contribute</a></li>
+<li class=""><a href="/get-involved/become-developer/">Become a Developer</a></li>
+<li class=""><a href="/get-involved/get-code/">Get the Code</a></li>
+
+    </ul>
+  </div>
+</div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-3 col-md-2">
+        <ul class="footerlinks three-icons">
+          <li><a href="http://twitter.com/gentoo" title="@Gentoo on Twitter"><span class="fa fa-twitter fa-fw"></span></a></li>
+          <li><a href="https://plus.google.com/+Gentoo" title="+Gentoo on Google+"><span class="fa fa-google-plus fa-fw"></span></a></li>
+          <li><a href="https://www.facebook.com/gentoo.org" title="Gentoo on Facebook"><span class="fa fa-facebook fa-fw"></span></a></li>
+        </ul>
+      </div>
+      <div class="col-xs-9 col-md-9">
+        <strong>&copy; 2001&ndash;2015 Gentoo Foundation, Inc.</strong><br>
+        <small>
+          Gentoo is a trademark of the Gentoo Foundation, Inc.
+          The contents of this document, unless otherwise expressly stated, are licensed under the
+          <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">CC-BY-SA-3.0</a> license.
+          The <a href="/inside-gentoo/foundation/name-logo-guidelines.html">Gentoo Name and Logo Usage Guidelines</a> apply.
+        </small>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script src="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/jquery.min.js"></script>
+    <script src="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.js"></script>
     
-     <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
-     <permits rdf:resource="http://web.resource.org/cc/Distribution" />
-     <requires rdf:resource="http://web.resource.org/cc/Notice" />
-     <requires rdf:resource="http://web.resource.org/cc/Attribution" />
-     <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
-     <requires rdf:resource="http://web.resource.org/cc/ShareAlike" />
-  </License>
-  </rdf:RDF>
---><br>
-</td>
-<td width="1%" bgcolor="#dddaec" valign="top"><table border="0" cellspacing="4px" cellpadding="4px">
-<tr><td class="topsep" align="center"><p class="alttext">Page updated December 3, 2009</p></td></tr>
-<tr><td class="topsep" align="left"><p class="alttext"><b>Summary: </b>
-List of Gentoo Mirrors
-</p></td></tr>
-<tr lang="en"><td align="center" class="topsep">
-<p class="alttext"><b>Donate</b> to support our development efforts.
-        </p>
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-<input type="hidden" name="cmd" value="_xclick"><input type="hidden" name="business" value="paypal@gentoo.org"><input type="hidden" name="item_name" value="Gentoo Linux Support"><input type="hidden" name="item_number" value="1000"><input type="hidden" name="image_url" value="/images/paypal.png"><input type="hidden" name="no_shipping" value="1"><input type="hidden" name="return" value="https://www.gentoo.org"><input type="hidden" name="cancel_return" value="https://www.gentoo.org"><input type="image" src="https://www.paypal.com/en_US/i/btn/x-click-but21.gif" name="submit" alt="Donate to Gentoo">
-</form>
-</td></tr>
-<tr lang="en"><td align="center"><iframe src="https://sidebar.gentoo.org" scrolling="no" width="125" height="850" frameborder="0" style="border:0px padding:0x" marginwidth="0" marginheight="0"><p>Your browser does not support iframes.</p></iframe></td></tr>
-</table></td>
-</tr>
-<tr lang="en"><td align="right" class="infohead" colspan="3">
-Copyright 2001-2015 Gentoo Foundation, Inc. Questions, Comments? <a class="highlight" href="/main/en/contact.xml">Contact us</a>.
-</td></tr>
-</table></body>
+    
+    <script type="text/javascript">
+      var _paq = _paq || [];
+      _paq.push(["disableCookies"]);
+      _paq.push(['trackPageView']);
+      (function() {
+        var u="//piwik.gentoo.org/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', 7]);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <noscript><p><img src="//piwik.gentoo.org/piwik.php?idsite=7" style="border:0;" alt="" /></p></noscript>
+  </body>
 </html>
