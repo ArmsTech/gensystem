@@ -156,11 +156,11 @@ def get_choice_value(user_choice, choices):
     return choice_value
 
 
-def main():
-    """Control the download of a gentoo installation media.
+def download_interactively():
+    """Download Gentoo installation media by prompting user for choices.
 
-    :return: exit code 0 (success) | >0 (failure)
-    :rtype: int
+    :returns: None
+    :rtype: None
 
     """
     print "\nGENTOO DOWNLOAD\n"
@@ -203,6 +203,15 @@ def main():
 
     # DOWNLOAD THE MEDIA FILE
 
+
+def main():
+    """Control the download of a gentoo installation media.
+
+    :return: exit code 0 (success) | >0 (failure)
+    :rtype: int
+
+    """
+    download_interactively()
     return 0
 
 
