@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
-"""Control download and/or install of Gentoo Linux."""
+"""Control Gentoo Linux download and install."""
 
+import argparse
 import os
 import sys
 
@@ -159,7 +160,7 @@ def get_choice_value(user_choice, choices):
 def download_interactively():
     """Download Gentoo installation media by prompting user for choices.
 
-    :returns: None
+    :return: None
     :rtype: None
 
     """
@@ -205,13 +206,39 @@ def download_interactively():
 
 
 def main():
-    """Control the download of a gentoo installation media.
+    """Control gensystem.
 
-    :return: exit code 0 (success) | >0 (failure)
+    :return: exit code; 0 (success) | >0 (failure)
     :rtype: int
 
     """
-    download_interactively()
+    parser = argparse.ArgumentParser(
+        description='Tool for downloading and installing Gentoo Linux',
+        usage='gensystem [-h] <command> [options]')
+    subparsers = parser.add_subparsers(dest='subparser')
+    parser_do = subparsers.add_parser(
+        'download', help='show download help',
+        usage='gensystem download [options]')
+    parser_in = subparsers.add_parser(
+        'install', help='show install help',
+        usage='gensystem install [options]')
+
+    # Add 'download' arguments
+    parser_do.add_argument(
+        "-i", "--interactive", help="perform download interactively",
+        action="store_true")
+
+    args = parser.parse_args()
+
+    if args.subparser == 'download':
+        if args.interactive:
+            download_interactively()
+        else:
+            # 'download' with no options shows help
+            parser_do.print_help()
+    elif args.subparser == 'install':
+        raise NotImplementedError("Install has not been implemented.")
+
     return 0
 
 
