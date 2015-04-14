@@ -101,7 +101,7 @@ def get_gentoo_mirrors_by_country(mirrors_soup, country=None):
 
     return mirrors_by_country
 
-with open('gensystem/mirrors.xml') as response:
+with open('gensystem/functional_test/files/mirrors.html') as response:
     mirrors_soup = BeautifulSoup(response.read())
     GENTOO_MIRRORS = get_gentoo_mirrors_by_country(mirrors_soup)
 
