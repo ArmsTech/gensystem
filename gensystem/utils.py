@@ -22,16 +22,20 @@ def soupify(url_path):
     return BeautifulSoup(response.read())
 
 
-def get_choices(items):
+def get_choices(items, sort=True):
     """Get choices for a given list of items.
 
     Args:
         items (list): items to get choices for.
+        sort (bool, optional): whether to sort items.
 
     Returns:
         dict: choices for the specified items.
         format: {item1: 1, item2: 2, item3: 3, ...}
     """
+    if sort:
+        items.sort()
+
     return {item: choice for choice, item in enumerate(items, 1)}
 
 

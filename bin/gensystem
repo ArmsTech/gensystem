@@ -27,7 +27,7 @@ def print_columnized_choices(choices):
         [2] B   [5] E   [8] H
         [3] C   [6] F   [9] I
     """
-    items = sorted(choices.keys())
+    items = sorted(choices.keys(), key=choices.get)
 
     # Add placeholders for pretty formatting
     column_length, placeholders_needed = divmod(len(items), 3)
@@ -52,7 +52,7 @@ def print_columnized_choices(choices):
             for item in row if item])
 
 
-def print_choices(items):
+def print_choices(choices):
     """Print choices in a one-column format.
 
     :param items: items to print in a single column
@@ -77,16 +77,11 @@ def print_choices(items):
         [9] I
 
     """
-    items.sort()
-    choices = {item: choice for choice, item in enumerate(items, 1)}
     column_length = len(choices)
-
-    for item in items:
+    for item in sorted(choices.keys(), key=choices.get):
         print "".join(['%s %s' % (
             gensystem_utils.format_choice(
                 choices[item], column_length), item)])
-
-    return choices
 
 
 def download_interactively():
@@ -99,14 +94,16 @@ def download_interactively():
     print "\nGENTOO DOWNLOAD\n"
 
     # SELECT AN ARCHITECTURE
-    arch_choices = print_choices(gensystem_media.SUPPORTED_ARCH.keys())
+    arch_choices = gensystem_utils.get_choices(
+        gensystem_media.SUPPORTED_ARCH.keys())
+    print_choices(arch_choices)
     arch_chosen = gensystem_utils.get_user_choice(
         "\nSELECT ARCHITECTURE (e.g. 1 for amd64/x86_64): ", arch_choices)
     arch_chosen = gensystem_media.SUPPORTED_ARCH[arch_chosen]
 
     # SELECT A COUNTRY
     country_choices = gensystem_utils.get_choices(
-        sorted(gensystem_mirror.GENTOO_MIRRORS.keys()))
+        gensystem_mirror.GENTOO_MIRRORS.keys())
     print_columnized_choices(country_choices)
     country = gensystem_utils.get_user_choice(
         "\nSELECT COUNTRY (e.g. 29 for USA): ", country_choices)
@@ -115,7 +112,8 @@ def download_interactively():
 
     # SELECT A MIRROR
     mirrors = gensystem_mirror.GENTOO_MIRRORS[country]
-    mirror_choices = print_choices(mirrors.keys())
+    mirror_choices = gensystem_utils.get_choices(mirrors.keys())
+    print_choices(mirror_choices)
     mirror_chosen = gensystem_utils.get_user_choice(
         "\nSELECT MIRROR (Note: * indicates mirrors that support IPv6): ",
         mirror_choices)
@@ -123,7 +121,9 @@ def download_interactively():
     print
 
     # SELECT AN INSTALLATION MEDIA
-    media_choices = print_choices(gensystem_media.GENTOO_MEDIA.keys())
+    media_choices = gensystem_utils.get_choices(
+        gensystem_media.GENTOO_MEDIA.keys())
+    print_choices(media_choices)
     media_chosen = gensystem_utils.get_user_choice(
         "\nSELECT INSTALLATION MEDIA: ",
         media_choices)
