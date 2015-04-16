@@ -7,7 +7,6 @@ import argparse
 import os
 import sys
 
-import gensystem.arch as arch
 import gensystem.media as media
 import gensystem.mirror as mirror
 
@@ -176,10 +175,10 @@ def download_interactively():
     print "\nGENTOO DOWNLOAD\n"
 
     # SELECT AN ARCHITECTURE
-    arch_choices = print_choices(arch.SUPPORTED_ARCH.keys())
+    arch_choices = print_choices(media.SUPPORTED_ARCH.keys())
     arch_chosen = get_user_choice(
         "\nSELECT ARCHITECTURE (e.g. 1 for amd64/x86_64): ", arch_choices)
-    arch_chosen = arch.SUPPORTED_ARCH[arch_chosen]
+    arch_chosen = media.SUPPORTED_ARCH[arch_chosen]
 
     # SELECT A COUNTRY
     country_choices = get_choices(sorted(mirror.GENTOO_MIRRORS.keys()))
