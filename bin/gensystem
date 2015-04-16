@@ -18,7 +18,7 @@ def print_columnized_choices(choices):
     """Print choices in a three-column (sorted) format.
 
     Args:
-        choices (dict): choices to print in a three-column format.
+        choices (dict): Choices to print in a three-column format.
 
     Example:
         >>> choices = {B:2, A:1, C:3, D:4, E:5, F:6, G:7, H:8, I:9}
@@ -53,19 +53,14 @@ def print_columnized_choices(choices):
 
 
 def print_choices(choices):
-    """Print choices in a one-column format.
+    """Print choices in a (sorted) one-column format.
 
-    :param items: items to print in a single column
-    :type items: list
-    :return: None
-    :rtype: None
+    Args:
+        choices (dict): Choices to print in a three-column format.
 
-    :Example:
-
-    Input:
-        [A, B, C, D, E, F, G, H, I]
-
-    Output:
+    Example:
+        >>> choices = {B:2, A:1, C:3, D:4, E:5, F:6, G:7, H:8, I:9}
+        >>> print_choices(choices)
         [1] A
         [2] B
         [3] C
@@ -75,7 +70,6 @@ def print_choices(choices):
         [7] G
         [8] H
         [9] I
-
     """
     column_length = len(choices)
     for item in sorted(choices.keys(), key=choices.get):
@@ -85,12 +79,8 @@ def print_choices(choices):
 
 
 def download_interactively():
-    """Download Gentoo installation media by prompting user for choices.
+    """Download Gentoo installation media by prompting user for choices."""
 
-    :return: None
-    :rtype: None
-
-    """
     print "\nGENTOO DOWNLOAD\n"
 
     # SELECT AN ARCHITECTURE
@@ -144,9 +134,8 @@ def download_interactively():
 def main():
     """Control gensystem.
 
-    :return: exit code; 0 (success) | >0 (failure)
-    :rtype: int
-
+    Returns:
+        int: An exit code; 0 (success) | >0 (failure).
     """
     parser = argparse.ArgumentParser(
         description='Tool for downloading and installing Gentoo Linux',
