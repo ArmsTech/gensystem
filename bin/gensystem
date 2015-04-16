@@ -14,46 +14,55 @@ import gensystem.mirror as mirror
 COLUMN_PADDING = 3
 
 
-def print_columnized_choices(items):
-    """Print choices in a three-column format.
+def get_choices(items):
+    """Get choices for a given list of items.
 
-    :param items: items to print in columns of three
-    :type items: list
-    :return: None
-    :rtype: None
+    Args:
+        items (list): items to get choices for.
 
-    :Example:
+    Returns:
+        dict: choices for the specified items.
+        format: {item1: 1, item2: 2, item3: 3, ...}
+    """
+    return {item: choice for choice, item in enumerate(items, 1)}
 
-    Input:
-        [A, B, C, D, E, F, G, H, I]
 
-    Output:
+def print_columnized_choices(choices):
+    """Print choices in a three-column (sorted) format.
+
+    Args:
+        choices (dict): choices to print in a three-column format.
+
+    Example:
+        >>> choices = {B:2, A:1, C:3, D:4, E:5, F:6, G:7, H:8, I:9}
+        >>> print_columnized_choices(choices)
         [1] A   [4] D   [7] G
         [2] B   [5] E   [8] H
         [3] C   [6] F   [9] I
-
     """
+    items = sorted(choices.keys())
+
+    # Add placeholders for pretty formatting
     column_length, placeholders_needed = divmod(len(items), 3)
+    # Correct if not even
+    if placeholders_needed != 0:
+        column_length += 1
+        items.extend(['' for placeholder in range(3 - placeholders_needed)])
+
     middle_index = 2 * column_length
-
-    items.sort()
-    choices = {item: choice for choice, item in enumerate(items, 1)}
-    items.extend(['' for placeholder in range(placeholders_needed)])
-
     columnized_rows = zip(
         items[0:column_length],
         items[column_length:middle_index],
         items[middle_index:])
 
+    # Print choices in three columns
     column_width = max(len(item) for item in items) + COLUMN_PADDING
     for row in columnized_rows:
         print "".join([
             '%s %s' % (
                 _format_choice(choices[item], column_length),
                 item.ljust(column_width))
-            for item in row])
-
-    return choices
+            for item in row if item])
 
 
 def print_choices(items):
@@ -173,7 +182,8 @@ def download_interactively():
     arch_chosen = arch.SUPPORTED_ARCH[arch_chosen]
 
     # SELECT A COUNTRY
-    country_choices = print_columnized_choices(mirror.GENTOO_MIRRORS.keys())
+    country_choices = get_choices(sorted(mirror.GENTOO_MIRRORS.keys()))
+    print_columnized_choices(country_choices)
     country = get_user_choice(
         "\nSELECT COUNTRY (e.g. 29 for USA): ", country_choices)
 
