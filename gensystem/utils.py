@@ -34,7 +34,7 @@ def get_choices(items, sort=True):
         format: {item1: 1, item2: 2, item3: 3, ...}
     """
     if sort:
-        items.sort()
+        items = sorted(items)
 
     return {item: choice for choice, item in enumerate(items, 1)}
 
