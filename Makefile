@@ -44,7 +44,7 @@ lint:
 	flake8 gensystem
 
 test:
-	python setup.py test
+	py.test gensystem/test
 
 test-all:
 	tox
