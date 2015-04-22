@@ -34,8 +34,8 @@ def get_media_file_url(folder_url, file_regex):
     :rtype: str
 
     """
-    links = gensystem_utils.soupify(folder_url).find_all(
-        href=re.compile(file_regex))
+    soupified_folder = gensystem_utils.soupify(folder_url)
+    links = soupified_folder.find_all(href=re.compile(file_regex))
     try:
         # Use -1 index to avoid image links
         return os.path.join(folder_url, links[-1]['href'])
