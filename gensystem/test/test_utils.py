@@ -76,4 +76,25 @@ def test_get_choice_value_choice_found():
 def test_get_choice_value_choice_not_found():
     """Test get_choice_value when the choice is not found."""
     value = gensystem_utils.get_choice_value(3, {'A': 1, 'B': 2})
-    assert value == None
+    assert value is None
+
+
+def test_format_choice_10_choices_or_less():
+    """Test format_choice when there are <= 10 choices."""
+    # ten_or_more_choices default is False
+    formatted_choice = gensystem_utils.format_choice(3)
+    assert formatted_choice == '[3]'
+
+    formatted_choice = gensystem_utils.format_choice(10)
+    assert formatted_choice == '[10]'
+
+
+def test_format_choice_more_than_10_choices():
+    """Test format_choice when there are > 10 choices."""
+    formatted_choice = gensystem_utils.format_choice(
+        3, ten_or_more_choices=True)
+    assert formatted_choice == '[ 3]'
+
+    formatted_choice = gensystem_utils.format_choice(
+        11, ten_or_more_choices=True)
+    assert formatted_choice == '[11]'

@@ -42,12 +42,14 @@ def print_columnized_choices(choices):
         items[column_length:middle_index],
         items[middle_index:])
 
-    # Print choices in three columns
+    # 10 or more choices
+    has_ten_or_more = column_length >= 10
     column_width = max(len(item) for item in items) + COLUMN_PADDING
+    # Print choices in three columns
     for row in columnized_rows:
         print "".join([
             '%s %s' % (
-                gensystem_utils.format_choice(choices[item], column_length),
+                gensystem_utils.format_choice(choices[item], has_ten_or_more),
                 item.ljust(column_width))
             for item in row if item])
 
@@ -71,11 +73,11 @@ def print_choices(choices):
         [8] H
         [9] I
     """
-    column_length = len(choices)
+    has_ten_or_more = len(choices) >= 10
     for item in sorted(choices.keys(), key=choices.get):
         print "".join(['%s %s' % (
             gensystem_utils.format_choice(
-                choices[item], column_length), item)])
+                choices[item], has_ten_or_more), item)])
 
 
 def download_interactively():

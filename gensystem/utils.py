@@ -100,18 +100,18 @@ def get_choice_value(user_choice, choices):
     return choice_value
 
 
-def format_choice(choice, choices_per_column=None):
+def format_choice(choice, ten_or_more_choices=False):
     """Format a choice so that columns always line up.
 
     :param choice: a choice (e.g. 1, 2, 3)
     :type choice: int
-    :param choices_per_column: number of choices in each column
-    :type choices_per_column: int
+    :param ten_or_more_choices: whether there are 10 or more choices
+    :type choices_per_column: bool
     :return: formatted str [ %s] | [%s]
     :rtype: str
 
     """
-    if choice < 10 and choices_per_column >= 10:
+    if choice < 10 and ten_or_more_choices:
         choice_format = "[ %s]"
     else:
         choice_format = "[%s]"
