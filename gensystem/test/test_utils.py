@@ -58,3 +58,9 @@ def test_get_user_choice_invalid_choice(m_get_raw_input):
     choice = gensystem_utils.get_user_choice("Test prompt:", {'A': 1, 'B': 2})
     # 2 calls + the 2 from above should = 4
     assert len(m_get_raw_input.mock_calls) == 4 and choice == 'B'
+
+
+def test_get_raw_input():
+    """Test get_raw_input."""
+    # get_raw_input is just a wrapper for raw_input
+    pytest.skip("Built-in raw_input cannot be mocked and tested effectively.")
