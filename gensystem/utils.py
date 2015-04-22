@@ -57,7 +57,7 @@ def get_user_choice(prompt, choices):
 
     while True:
         try:
-            choice = int(raw_input(prompt))
+            choice = int(get_raw_input(prompt))
             assert choice in valid_choices
         except (ValueError, AssertionError):
             continue
@@ -65,6 +65,21 @@ def get_user_choice(prompt, choices):
             break
 
     return get_choice_value(choice, choices)
+
+
+def get_raw_input(prompt):
+    """Get raw input from user using raw_input.
+
+    This function exists to wrap raw_input so that it can be mocked for
+    unit testing.
+
+    Arguments:
+        prompt (str): message to prompt user with.
+
+    Returns:
+        str: raw input from user.
+    """
+    return raw_input(prompt)
 
 
 def get_choice_value(user_choice, choices):

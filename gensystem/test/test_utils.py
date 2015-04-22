@@ -36,3 +36,25 @@ def test_get_choices_not_sorted():
     unsorted_choices = gensystem_utils.get_choices(
         ['B', 'A', 'D', 'C'], sort=False)
     assert unsorted_choices == {'A': 2, 'B': 1, 'C': 4, 'D': 3}
+
+
+@mock.patch.object(gensystem_utils, 'get_raw_input', lambda prompt: 1)
+def test_get_user_choice_valid_choice():
+    """Test get_user_choice using a valid choice."""
+    choice = gensystem_utils.get_user_choice("Test prompt:", {'A': 1, 'B': 2})
+    assert choice == 'A'
+
+
+@mock.patch.object(gensystem_utils, 'get_raw_input')
+def test_get_user_choice_invalid_choice(m_get_raw_input):
+    """Test get_user_choice using invalid choices."""
+    # Test user choice valid type but not in valid choices
+    m_get_raw_input.side_effect = [3, 1]
+    choice = gensystem_utils.get_user_choice("Test prompt:", {'A': 1, 'B': 2})
+    assert len(m_get_raw_input.mock_calls) == 2 and choice == 'A'
+
+    # Test user choice is not a valid type (int)
+    m_get_raw_input.side_effect = ['This should be an integer.', 2]
+    choice = gensystem_utils.get_user_choice("Test prompt:", {'A': 1, 'B': 2})
+    # 2 calls + the 2 from above should = 4
+    assert len(m_get_raw_input.mock_calls) == 4 and choice == 'B'
