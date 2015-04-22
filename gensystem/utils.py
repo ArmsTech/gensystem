@@ -79,7 +79,7 @@ def get_raw_input(prompt):
     Returns:
         str: raw input from user.
     """
-    return raw_input(prompt)
+    return raw_input(prompt)  # pragma: no cover
 
 
 def get_choice_value(user_choice, choices):
