@@ -64,3 +64,16 @@ def test_get_raw_input():
     """Test get_raw_input."""
     # get_raw_input is just a wrapper for raw_input
     pytest.skip("Built-in raw_input cannot be mocked and tested effectively.")
+
+
+def test_get_choice_value_choice_found():
+    """Test get_choice_value when the choice is found."""
+    value_A = gensystem_utils.get_choice_value(1, {'A': 1, 'B': 2})
+    value_B = gensystem_utils.get_choice_value(2, {'A': 1, 'B': 2})
+    assert value_A == 'A' and value_B == 'B'
+
+
+def test_get_choice_value_choice_not_found():
+    """Test get_choice_value when the choice is not found."""
+    value = gensystem_utils.get_choice_value(3, {'A': 1, 'B': 2})
+    assert value == None
