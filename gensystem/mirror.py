@@ -14,8 +14,8 @@ SUPPORTED_COUNTRIES = [
     'CN', 'HK', 'JP', 'KR', 'RU', 'TW', 'IL', 'KZ']
 
 
-def get_gentoo_mirrors_by_country(mirrors_soup, country=None):
-    """Get gentoo.org mirrors from GENTOO_MIRRORS_URL by country.
+def get_gentoo_mirrors(mirrors_soup, country=None):
+    """Get gentoo.org mirrors from GENTOO_MIRRORS_URL.
 
     Given a BeautifulSoup representation of GENTOO_MIRRORS_URL, get all
     gentoo mirrors by country, or just for a specified country. We assume
@@ -67,7 +67,7 @@ def get_gentoo_mirrors_by_country(mirrors_soup, country=None):
         }
 
     """
-    mirrors_by_country = {}
+    mirrors = {}
 
     country_name = None
     for tag in mirrors_soup.find_all(True):
@@ -75,7 +75,7 @@ def get_gentoo_mirrors_by_country(mirrors_soup, country=None):
         if tag.name == 'h3' and tag.get('id') in SUPPORTED_COUNTRIES:
             # Assumes format "ID SEPARATOR COUNTRY" e.g. (CA - Canada)
             country_name = tag.string.split()[2]
-            mirrors_by_country[country_name] = {}
+            mirrors[country_name] = {}
             continue
 
         # Hit <table> tag after our country section heading
@@ -90,23 +90,18 @@ def get_gentoo_mirrors_by_country(mirrors_soup, country=None):
                     mirror_link = descendant['href']
                     name_with_protocol = '%s (%s)' % (
                         mirror_name, urlparse(mirror_link).scheme)
-                    mirrors_by_country[
-                        country_name][name_with_protocol] = mirror_link
+                    mirrors[country_name][name_with_protocol] = mirror_link
 
-            if country_name == country:
-                return mirrors_by_country
-            else:
-                # Reset country_name
-                country_name = None
+            # Reset country_name
+            country_name = None
 
-    return mirrors_by_country
+    return {country: mirrors[country]} if country else mirrors
 
 with open('gensystem/functional_test/files/mirrors.html') as response:
     mirrors_soup = BeautifulSoup(response.read())
-    GENTOO_MIRRORS = get_gentoo_mirrors_by_country(mirrors_soup)
+    GENTOO_MIRRORS = get_gentoo_mirrors(mirrors_soup)
 
 #try:
-#    #GENTOO_MIRRORS = get_gentoo_mirrors_by_country(
-#    #    soupify(GENTOO_MIRRORS_URL))
+#    #GENTOO_MIRRORS = get_gentoo_mirrors(soupify(GENTOO_MIRRORS_URL))
 #except Exception:
 #    raise ("Could NOT parse %s." % GENTOO_MIRRORS_URL)
