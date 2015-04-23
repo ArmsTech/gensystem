@@ -1,4 +1,4 @@
-"""Utilities for dealing with Gentoo Linux and gensystem."""
+"""Utilities for working with gensystem."""
 
 import urllib2
 
@@ -6,12 +6,16 @@ from bs4 import BeautifulSoup
 
 
 def soupify(url_path):
-    """Get BeautifulSoup representation of a web page.
+    """Get a BeautifulSoup representation of a web page.
 
-    :param url_path: full path to url to soupify
-    :type url_path: str
-    :return: soup representation of url_path
-    :rtype: bs4.BeautifulSoup
+    Args:
+        url_path (str): Full path to a URL to soupify.
+
+    Returns:
+        bs4.BeautifulSoup: Soup representation of `url_path`.
+
+    Raises:
+        RuntimeError: When urllib2 cannot communicate with `url_path`.
 
     """
     try:
@@ -26,12 +30,13 @@ def get_choices(items, sort=True):
     """Get choices for a given list of items.
 
     Args:
-        items (list): items to get choices for.
-        sort (bool, optional): whether to sort items.
+        items (list): Items to get choices for.
+        sort (bool, optional): Whether to sort items.
 
     Returns:
-        dict: choices for the specified items.
-        format: {item1: 1, item2: 2, item3: 3, ...}
+        dict: Choices for the specified items.
+        The return format is: {item1: 1, item2: 2, item3: 3, ...}
+
     """
     if sort:
         items = sorted(items)
@@ -43,14 +48,14 @@ def get_user_choice(prompt, choices):
     """Prompt user for a choice and ensure user input is valid.
 
     Input for a choice will always be presented as an integer. Prompt the
-    user until valid input is received.
+    user until valid input is received (an integer).
 
-    :param prompt: message to prompt the user with
-    :type prompt: str
-    :param valid_choices: valid choices a user can make
-    :type valid_choices: dict
-    :return: valid user choice
-    :rtype: int
+    Args:
+        prompt (str): Message to prompt the user with.
+        valid_choices (dict): Valid choices a user can make.
+
+    Returns:
+        int: A valid user choice.
 
     """
     valid_choices = choices.values()
@@ -70,27 +75,28 @@ def get_user_choice(prompt, choices):
 def get_raw_input(prompt):
     """Get raw input from user using raw_input.
 
-    This function exists to wrap raw_input so that it can be mocked for
-    unit testing.
+    This function exists only to wrap raw_input so that it can be mocked
+    for unit testing.
 
-    Arguments:
-        prompt (str): message to prompt user with.
+    Args:
+        prompt (str): Message to prompt user with.
 
     Returns:
-        str: raw input from user.
+        str: Raw input from user.
+
     """
     return raw_input(prompt)  # pragma: no cover
 
 
 def get_choice_value(user_choice, choices):
-    """Get value associated with user choice.
+    """Get the value associated with a user choice.
 
-    :param user_choice: valid user choice
-    :type user_choice: int
-    :param choices: valid choices a user can make
-    :type choices: dict
-    :return: choice
-    :rtype: int
+    Args:
+        user_choice (int): A valid user choice.
+        choices (dict): Valid choices a user can make.
+
+    Returns:
+        int: The choice value for a `user_choice`.
 
     """
     choice_value = None
@@ -101,14 +107,14 @@ def get_choice_value(user_choice, choices):
 
 
 def format_choice(choice, ten_or_more_choices=False):
-    """Format a choice so that columns always line up.
+    """Format a choice so that columns always line up in stdout.
 
-    :param choice: a choice (e.g. 1, 2, 3)
-    :type choice: int
-    :param ten_or_more_choices: whether there are 10 or more choices
-    :type choices_per_column: bool
-    :return: formatted str [ %s] | [%s]
-    :rtype: str
+    Args:
+        choice (int): A choice (e.g. 1, 2, 3).
+        ten_or_more_choices (bool): Whether there are 10 or more choices.
+
+    Returns:
+        str: A formatted choice in format [ %s] or [%s].
 
     """
     if choice < 10 and ten_or_more_choices:
