@@ -139,8 +139,10 @@ def main():
     """
     parser = argparse.ArgumentParser(
         description='Tool for downloading and installing Gentoo Linux',
-        usage='gensystem [-h] <command> [options]')
-    subparsers = parser.add_subparsers(dest='subparser')
+        usage='gensystem [-h] <command> [options]',
+        epilog="Use 'gensystem <command>' for specific subcommand help.")
+    subparsers = parser.add_subparsers(
+        dest='subparser', metavar='\b\bCommands:', title=None)
     parser_do = subparsers.add_parser(
         'download', help='show download help',
         usage='gensystem download [options]')
