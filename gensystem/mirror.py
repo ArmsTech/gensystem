@@ -21,16 +21,23 @@ def get_gentoo_mirrors(mirrors_soup, country=None):
     gentoo mirrors by country, or just for a specified country. We assume
     a particular HTML layout and will explode horribly if it isn't right.
 
-    :param mirrors_soup: soupified GENTOO_MIRRORS_URL
-    :type mirrors_soup: bs4.BeautifulSoup
-    :param country: the only country name to return
-    :type country: str
-    :return: all or one gentoo mirror(s) by country
-    :rtype: dict
+    Args:
+        mirrors_soup (bs4.BeautifulSoup): Soupified GENTOO_MIRRORS_URL.
+        country (str): The only country name to return.
 
-    :Example:
+    Returns:
+        dict: All or one gentoo mirror(s) by country.
 
-    Expected HTML format of GENTOO_MIRRORS_URL:
+        {'Netherlands':
+            {u'LeaseWeb (ftp)': u'ftp://mirror.leaseweb.com/gentoo/',
+             u'LeaseWeb (http)': u'http://mirror.leaseweb.com/gentoo/',
+            ...
+            }
+         ...
+        }
+
+    Examples:
+        Expected HTML format of GENTOO_MIRRORS_URL.
 
         <h3 id="CA">CA &ndash; Canada</h3>
         <table class="table table-condensed">
@@ -55,16 +62,6 @@ def get_gentoo_mirrors(mirrors_soup, country=None):
         ...
         <h3 id="US">US &ndash; USA</h3>
         ...
-
-    Return format:
-
-        {'Netherlands':
-            {u'LeaseWeb (ftp)': u'ftp://mirror.leaseweb.com/gentoo/',
-             u'LeaseWeb (http)': u'http://mirror.leaseweb.com/gentoo/',
-            ...
-            }
-         ...
-        }
 
     """
     mirrors = {}
