@@ -8,6 +8,7 @@ help:
 	@echo "clean-docs - remove documentation artifacts"
 	@echo "lint - check style with flake8"
 	@echo "test - run tests quickly with the default Python"
+	@echo "functional-test - run func tests quickly with the default Python"
 	@echo "test-all - run tests on every Python version with tox"
 	@echo "coverage - check code coverage quickly with the default Python"
 	@echo "docs - generate Sphinx HTML documentation, including API docs"
@@ -45,6 +46,9 @@ lint:
 
 test:
 	py.test gensystem/test
+
+functional-test:
+	py.test gensystem/functional_test
 
 test-all:
 	tox
