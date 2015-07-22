@@ -98,3 +98,25 @@ def test_format_choice_more_than_10_choices():
     formatted_choice = gensystem_utils.format_choice(
         11, ten_or_more_choices=True)
     assert formatted_choice == '[11]'
+
+
+@mock.patch('urllib.urlretrieve')
+@mock.patch('os.path.exists', lambda path: True)
+def test_download_file_success(m_urlretrieve):
+    """Test download_file succeeding."""
+    m_urlretrieve.return_value = ('/tmp/fake/path', 'HTTPMessage Object')
+    downloaded, _ = gensystem_utils.download_file(
+        'http://!FakeURL.com/file.tar.gz', '/tmp/fake/path')
+    assert downloaded
+    m_urlretrieve.assert_called_once_with(
+        'http://!FakeURL.com/file.tar.gz', '/tmp/fake/path')
+
+
+@mock.patch('urllib.urlretrieve')
+def test_download_file_failure(m_urlretrieve):
+    """Test download_file failing."""
+    m_urlretrieve.side_effect = IOError('Forced IOError')
+    downloaded, error = gensystem_utils.download_file(
+        'http://!FakeURL.com/file.tar.gz', '/tmp/fake/path')
+    assert not downloaded
+    assert error == 'Forced IOError'

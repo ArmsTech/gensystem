@@ -1,5 +1,7 @@
 """Utilities for working with gensystem."""
 
+import os
+import urllib
 import urllib2
 
 from bs4 import BeautifulSoup
@@ -123,3 +125,22 @@ def format_choice(choice, ten_or_more_choices=False):
         choice_format = "[%s]"
 
     return choice_format % str(choice)
+
+
+def download_file(url, destination):
+    """Download a file and save it to disk.
+
+    Args:
+        url (str): URL of file to download.
+        destination (str): Path on file system to save downloaded file.
+
+    Returns:
+        tuple: Whether file was downloaded and the error if failure or None.
+
+    """
+    try:
+        urllib.urlretrieve(url, destination)
+    except IOError as error:
+        return False, str(error)
+
+    return os.path.exists(destination), None
