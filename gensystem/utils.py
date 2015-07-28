@@ -1,5 +1,6 @@
 """Utilities for working with gensystem."""
 
+import hashlib
 import os
 import urllib
 import urllib2
@@ -144,3 +145,32 @@ def download_file(url, destination):
         return False, str(error)
 
     return os.path.exists(destination), None
+
+
+def verify_download(download_path, digest_path):
+    """Verify a gentoo download as being not corrupted.
+
+    Args:
+        download_path (str): Path to download file.
+        digest_path (str): Path to digest file.
+
+    Returns:
+        bool: Whether download was verified (not corrupted).
+
+    """
+    valid_sha512 = None
+    download_file = os.path.basename(download_path)
+
+    with open(digest_path, 'r') as digest_file:
+        for line in digest_file:
+            print line
+            if line.startswith('# SHA512 HASH'):
+                hash_line = digest_file.next().strip()
+                if hash_line.endswith(download_file):
+                    valid_sha512 = hash_line.split()[0]
+                    break
+
+    hasher = hashlib.sha512()
+    hasher.update(open(download_path).read())
+
+    return hasher.hexdigest() == valid_sha512
