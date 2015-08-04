@@ -107,10 +107,10 @@ def test_download_file_success(m_urlretrieve):
     """Test download_file succeeding."""
     m_urlretrieve.return_value = ('/tmp/fake/path', 'HTTPMessage Object')
     downloaded, _ = gensystem_utils.download_file(
-        'http://!FakeURL.com/file.tar.gz', '/tmp/fake/path')
+        'http://!FakeURL.com/file.tar.gz', '/tmp/fake/path', 'fake_function')
     assert downloaded
     m_urlretrieve.assert_called_once_with(
-        'http://!FakeURL.com/file.tar.gz', '/tmp/fake/path')
+        'http://!FakeURL.com/file.tar.gz', '/tmp/fake/path', 'fake_function')
 
 
 @mock.patch('urllib.urlretrieve')
