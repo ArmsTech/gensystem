@@ -164,7 +164,6 @@ def verify_download(download_path, digest_path):
 
     with open(digest_path, 'r') as digest_file:
         for line in digest_file:
-            print line
             if line.startswith('# SHA512 HASH'):
                 hash_line = digest_file.next().strip()
                 if hash_line.endswith(download_file):
