@@ -12,6 +12,7 @@ import gensystem.mirror as gensystem_mirror
 import gensystem.utils as gensystem_utils
 
 COLUMN_PADDING = 3
+PROGRESS_BAR_LENGTH = 20
 
 
 def print_columnized_choices(choices):
@@ -126,9 +127,51 @@ def download_interactively():
         mirrors[mirror_chosen], releases_url[:-1])
     media_url = gensystem_media.get_media_file_url(
         *media_folder_and_regex.split('::'))
-    print media_url
 
     # DOWNLOAD THE MEDIA FILE
+    def show_download_progress(transferred, size, total):
+        # Bytes transferred are block size * blocks transferred
+        bytes_transferred = transferred * size
+        # Handle files that are smaller than tranfer size
+        if total <= size and transferred == 1:
+            bytes_transferred = total
+
+        progress = float(bytes_transferred) / total
+        hashes = '#' * int(round(progress * PROGRESS_BAR_LENGTH))
+        spaces = ' ' * (PROGRESS_BAR_LENGTH - len(hashes))
+
+        sys.stdout.write(
+            '\rProgress: [{0}] {1}%'.format(
+                ''.join([hashes, spaces]), int(progress * 100)))
+        sys.stdout.flush()
+
+    media_file = os.path.join('.', os.path.basename(media_url))
+    print "\nDownloading media to %s" % media_file
+    media_downloaded, _ = gensystem_utils.download_file(
+        media_url, media_file, show_download_progress)
+
+    # VERIFY THE MEDIA FILE
+    digest_url = '.'.join([media_url, 'DIGESTS'])
+    digest_file = os.path.join('.', os.path.basename(digest_url))
+    print "\n\nDownloading digest to %s" % os.path.basename(digest_url)
+    digest_downloaded, _ = gensystem_utils.download_file(
+        digest_url, os.path.basename(digest_url), show_download_progress)
+
+    if not digest_downloaded:
+        print "\n\nDigest could not be downloaded. Skipping verification."
+        verified = False
+    else:
+        print "\n\nVerifying download (%s)" % os.path.join(media_file)
+        verified = gensystem_utils.verify_download(media_file, digest_file)
+
+    if verified:
+        print "Success: Download (%s) verified." % media_file
+
+    print "\nCleaning up.",
+    os.remove(digest_file)
+    print "Done.\n"
+
+    return media_downloaded and verified
 
 
 def main():
@@ -144,10 +187,10 @@ def main():
     subparsers = parser.add_subparsers(
         dest='subparser', metavar='\b\bCommands:', title=None)
     parser_do = subparsers.add_parser(
-        'download', help='show download help',
+        'download', help='download installation media',
         usage='gensystem download [options]')
     parser_in = subparsers.add_parser(
-        'install', help='show install help',
+        'install', help='install a Gentoo system',
         usage='gensystem install [options]')
 
     # Add 'download' arguments
@@ -155,18 +198,20 @@ def main():
         "-i", "--interactive", help="perform download interactively",
         action="store_true")
 
+    success = False
     args = parser.parse_args()
 
     if args.subparser == 'download':
         if args.interactive:
-            download_interactively()
+            success = download_interactively()
         else:
             # 'download' with no options shows help
             parser_do.print_help()
     elif args.subparser == 'install':
         raise NotImplementedError("Install has not been implemented.")
 
-    return 0
+    # For now we'll only handle success and a general error
+    return 0 if success else 1
 
 
 if __name__ == '__main__':
