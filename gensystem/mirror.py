@@ -85,9 +85,12 @@ def get_gentoo_mirrors(mirrors_soup, country=None):
                     mirror_name = descendant.string
                 if descendant.name == 'a':
                     mirror_link = descendant['href']
-                    name_with_protocol = '%s (%s)' % (
-                        mirror_name, urlparse(mirror_link).scheme)
-                    mirrors[country_name][name_with_protocol] = mirror_link
+                    protocol = urlparse(mirror_link).scheme
+                    name_with_protocol = '%s (%s)' % (mirror_name, protocol)
+                    # Only support http for now (not rsync or ftp)
+                    if protocol == 'http':
+                        mirrors[country_name][name_with_protocol] = (
+                            mirror_link)
 
             # Reset country_name
             country_name = None
