@@ -128,19 +128,20 @@ def format_choice(choice, ten_or_more_choices=False):
     return choice_format % str(choice)
 
 
-def download_file(url, destination):
+def download_file(url, destination, hook=None):
     """Download a file and save it to disk.
 
     Args:
         url (str): URL of file to download.
         destination (str): Path on file system to save downloaded file.
+        hook (Optional[fn]): Function to call to report progress or None.
 
     Returns:
         tuple: Whether file was downloaded and the error if failure or None.
 
     """
     try:
-        urllib.urlretrieve(url, destination)
+        urllib.urlretrieve(url, destination, hook)
     except IOError as error:
         return False, str(error)
 
