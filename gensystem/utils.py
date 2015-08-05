@@ -8,14 +8,14 @@ import urllib2
 from bs4 import BeautifulSoup
 
 
-def soupify(url_path):
-    """Get a BeautifulSoup representation of a web page.
+def read_webpage(url_path):
+    """Read a response from a urlopen request for a web page.
 
     Args:
-        url_path (str): Full path to a URL to soupify.
+        url_path (str): Full path to a URL to read.
 
     Returns:
-        bs4.BeautifulSoup: Soup representation of `url_path`.
+        str: String representation of `url_path`.
 
     Raises:
         RuntimeError: When urllib2 cannot communicate with `url_path`.
@@ -26,7 +26,21 @@ def soupify(url_path):
     except urllib2.URLError:
         raise RuntimeError("Could NOT talk to %s." % url_path)
 
-    return BeautifulSoup(response.read())
+    return response.read()
+
+
+def soupify(url_path):
+    """Get a BeautifulSoup representation of a web page.
+
+    Args:
+        url_path (str): Full path to a URL to soupify.
+
+    Returns:
+        bs4.BeautifulSoup: Soup representation of `url_path`.
+
+    """
+
+    return BeautifulSoup(read_webpage(url_path))
 
 
 def get_choices(items, sort=True):

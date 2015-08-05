@@ -10,20 +10,29 @@ import pytest
 import gensystem.utils as gensystem_utils
 
 
-@mock.patch(
-    'urllib2.urlopen', lambda url: StringIO.StringIO('<b>soupified</b>'))
+@mock.patch.object(
+    gensystem_utils, 'read_webpage',
+    lambda url: StringIO.StringIO('<b>soupified</b>'))
 def test_soupify_sucess():
     """Test soupify sucessfully soupifies a URL."""
     soupified = gensystem_utils.soupify('http://!FakeURL.com')
     assert soupified.text == 'soupified'
 
 
+@mock.patch(
+    'urllib2.urlopen', lambda url: StringIO.StringIO('<html>Fake</html>'))
+def test_read_webpage_success():
+    """Test read_webpage sucessfully reads a URL."""
+    webpage = gensystem_utils.read_webpage('http://!FakeURL.com')
+    assert webpage == '<html>Fake</html>'
+
+
 @mock.patch('urllib2.urlopen')
-def test_soupify_raises_exception_on_failure(m_urlopen):
-    """Test soupify raises an exception when urlopen fails."""
+def test_read_webpage_raises_exception_on_failure(m_urlopen):
+    """Test read_webpage raises an exception when urlopen fails."""
     m_urlopen.side_effect = urllib2.URLError("Forced URLError.")
     assert pytest.raises(
-        RuntimeError, gensystem_utils.soupify, ('http://!FakeURL.com',))
+        RuntimeError, gensystem_utils.read_webpage, ('http://!FakeURL.com',))
 
 
 def test_get_choices_sorted():
