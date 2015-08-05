@@ -35,6 +35,22 @@ def test_read_webpage_raises_exception_on_failure(m_urlopen):
         RuntimeError, gensystem_utils.read_webpage, ('http://!FakeURL.com',))
 
 
+@mock.patch.object(
+    gensystem_utils, 'read_webpage', lambda url: '{"ip":"127.0.0.1"}')
+def test_get_public_ip_success():
+    """Test get_public_ip success."""
+    public_ip = gensystem_utils.get_public_ip()
+    assert public_ip == '127.0.0.1'
+
+
+@mock.patch.object(
+    gensystem_utils, 'read_webpage', lambda url: 'I SHOULD BE JSON')
+def test_get_public_ip_failure():
+    """Test get_public_ip failure."""
+    public_ip = gensystem_utils.get_public_ip()
+    assert public_ip is None
+
+
 def test_get_choices_sorted():
     """Test get_choices with sorting (default)."""
     choices = gensystem_utils.get_choices(['B', 'A', 'D', 'C'])

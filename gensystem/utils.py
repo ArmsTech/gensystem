@@ -1,11 +1,14 @@
 """Utilities for working with gensystem."""
 
 import hashlib
+import json
 import os
 import urllib
 import urllib2
 
 from bs4 import BeautifulSoup
+
+PUBLIC_IP_API = 'https://api.ipify.org?format=json'
 
 
 def read_webpage(url_path):
@@ -41,6 +44,21 @@ def soupify(url_path):
     """
 
     return BeautifulSoup(read_webpage(url_path))
+
+
+def get_public_ip():
+    """Get public IP address of current machine (in a hacky way).
+
+    Returns:
+        str: Public IP address of current machine or None.
+
+    """
+    try:
+        public_ip = json.loads(read_webpage(PUBLIC_IP_API))['ip']
+    except (RuntimeError, ValueError, KeyError):
+        public_ip = None
+
+    return public_ip
 
 
 def get_choices(items, sort=True):
