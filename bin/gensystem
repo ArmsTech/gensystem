@@ -128,7 +128,19 @@ def download_interactively():
     media_url = gensystem_media.get_media_file_url(
         *media_folder_and_regex.split('::'))
 
-    # DOWNLOAD THE MEDIA FILE
+    downloaded_and_verified = download_and_verify(media_url)
+    return downloaded_and_verified
+
+
+def download_and_verify(media_url):
+    """Download specified media and verify download is not corrupted.
+
+    Args:
+        media_url (str): A URL path to the Gentoo media to download.
+
+    Returns:
+        bool: Whether media was downloaded and verified successfully.
+    """
     def show_download_progress(transferred, size, total):
         # Bytes transferred are block size * blocks transferred
         bytes_transferred = transferred * size
@@ -145,6 +157,7 @@ def download_interactively():
                 ''.join([hashes, spaces]), int(progress * 100)))
         sys.stdout.flush()
 
+    # DOWNLOAD THE MEDIA FILE
     media_file = os.path.join('.', os.path.basename(media_url))
     print "\nDownloading media to %s" % media_file
     media_downloaded, _ = gensystem_utils.download_file(
@@ -167,6 +180,7 @@ def download_interactively():
     if verified:
         print "Success: Download (%s) verified." % media_file
 
+    # CLEAN UP unused file
     print "\nCleaning up.",
     os.remove(digest_file)
     print "Done.\n"
@@ -198,12 +212,19 @@ def main():
         "-i", "--interactive", help="perform download interactively",
         action="store_true")
 
+    media_choices = ['minimal', 'stage3', 'hardened', 'nomultilib', 'live']
+    parser_do.add_argument(
+        "-m", "--media", help=', '.join(media_choices),
+        choices=media_choices, metavar='')
+
     success = False
     args = parser.parse_args()
 
     if args.subparser == 'download':
         if args.interactive:
             success = download_interactively()
+        elif args.media:
+            pass  # TODO: Add non-interactive download
         else:
             # 'download' with no options shows help
             parser_do.print_help()
