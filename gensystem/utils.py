@@ -3,12 +3,14 @@
 import hashlib
 import json
 import os
+import pygeoip
 import urllib
 import urllib2
 
 from bs4 import BeautifulSoup
 
 PUBLIC_IP_API = 'https://api.ipify.org?format=json'
+GEOIP_FILE = os.environ.get('GEOIP_FILE', './data/GeoIP.dat')
 
 
 def read_webpage(url_path):
@@ -59,6 +61,24 @@ def get_public_ip():
         public_ip = None
 
     return public_ip
+
+
+def get_country_code_by_ip(ip):
+    """Get the country code of an IP address.
+
+    Args:
+        ip (str): IP address to get country code for.
+
+    Returns:
+        str: Country code of provided IP address.
+
+    """
+    try:
+        code = pygeoip.GeoIP(GEOIP_FILE).country_code_by_addr(ip)
+    except Exception:
+        code = None
+
+    return code
 
 
 def get_choices(items, sort=True):

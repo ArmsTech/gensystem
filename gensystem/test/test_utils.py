@@ -51,6 +51,18 @@ def test_get_public_ip_failure():
     assert public_ip is None
 
 
+def test_get_country_code_by_ip_success():
+    """Test get_country_code_by_ip success."""
+    country_code = gensystem_utils.get_country_code_by_ip('8.8.8.8')
+    assert country_code == 'US'
+
+
+def test_get_country_code_by_ip_failure():
+    """Test get_country_code_by_ip failure."""
+    country_code = gensystem_utils.get_country_code_by_ip('I SHOULD BE AN IP')
+    assert country_code is None
+
+
 def test_get_choices_sorted():
     """Test get_choices with sorting (default)."""
     choices = gensystem_utils.get_choices(['B', 'A', 'D', 'C'])
