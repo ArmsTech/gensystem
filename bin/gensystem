@@ -98,8 +98,7 @@ def download_interactively():
     country_choices = gensystem_utils.get_choices(
         gensystem_mirror.GENTOO_MIRRORS.keys())
     print_columnized_choices(country_choices)
-    prompt = "\nSELECT COUNTRY (e.g. %i for USA): " % country_choices['USA']
-    country = gensystem_utils.get_user_choice(prompt, country_choices)
+    country = gensystem_utils.select_country(country_choices)
 
     print
 
@@ -107,8 +106,7 @@ def download_interactively():
     mirrors = gensystem_mirror.GENTOO_MIRRORS[country]
     mirror_choices = gensystem_utils.get_choices(mirrors.keys())
     print_choices(mirror_choices)
-    prompt = "\nSELECT MIRROR: "
-    mirror_chosen = gensystem_utils.get_user_choice(prompt, mirror_choices)
+    mirror_chosen = gensystem_utils.select_mirror(mirror_choices)
 
     print
 
@@ -208,6 +206,10 @@ def main():
         "-i", "--interactive", help="perform download interactively",
         action="store_true")
 
+    parser_do.add_argument(
+        "-c", "--choose-mirror", help="choose a mirror manually",
+        action="store_true")
+
     media_choices = ['minimal', 'stage3', 'hardened', 'nomultilib', 'live']
     parser_do.add_argument(
         "-m", "--media", help=', '.join(media_choices),
@@ -220,6 +222,7 @@ def main():
         if args.interactive:
             success = download_interactively()
         elif args.media:
+            print args.choose_mirror
             pass  # TODO: Add non-interactive download
         else:
             # 'download' with no options shows help

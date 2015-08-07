@@ -81,6 +81,34 @@ def get_country_code_by_ip(ip):
     return code
 
 
+def select_country(choices):
+    """Select a country based on user input.
+
+    Args:
+        choices (dict): Country choices to select from.
+
+    Returns:
+        str: Country code of selected country.
+
+    """
+    prompt = "\nSELECT COUNTRY (e.g. %i for USA): " % choices['USA']
+    return get_user_choice(prompt, choices)
+
+
+def select_mirror(choices):
+    """Select a mirror based on user input.
+
+    Args:
+        choices (dict): Mirror choices to select from.
+
+    Returns:
+        str: URL of mirror chosen.
+
+    """
+    prompt = "\nSELECT MIRROR: "
+    return get_user_choice(prompt, choices)
+
+
 def get_choices(items, sort=True):
     """Get choices for a given list of items.
 
@@ -107,7 +135,7 @@ def get_user_choice(prompt, choices):
 
     Args:
         prompt (str): Message to prompt the user with.
-        valid_choices (dict): Valid choices a user can make.
+        choices (dict): Valid choices a user can make.
 
     Returns:
         int: A valid user choice.
