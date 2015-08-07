@@ -5,6 +5,7 @@
 
 import argparse
 import os
+import random
 import sys
 
 import gensystem.media as gensystem_media
@@ -126,6 +127,56 @@ def download_interactively():
     return downloaded_and_verified
 
 
+def download_media(media, choose_mirror=False, arch='amd64'):
+    """Download a specified media as hands-free as possible.
+
+    Args:
+        media (str): Media to download.
+        choose_mirror (Optional[bool]): Whether to manually select mirror.
+        arch (Optional[str]): Architecture of media to download.
+
+    Returns:
+        bool: Whether media was downloaded and verified successfully.
+
+    """
+    country = gensystem_utils.get_country_code_by_ip(
+        gensystem_utils.get_public_ip())
+
+    # GeoIP data does not map 100% accurately to Gentoo countries ;(
+    discrepancies = {'US': 'USA'}
+    country = discrepancies[country] if country in discrepancies else country
+
+    try:
+        mirrors = gensystem_mirror.GENTOO_MIRRORS[country]
+    except KeyError:
+        country = None
+
+    if country is None:
+        country_choices = gensystem_utils.get_choices(
+            gensystem_mirror.GENTOO_MIRRORS.keys())
+        print_columnized_choices(country_choices)
+        country = gensystem_utils.select_country(country_choices)
+        mirrors = gensystem_mirror.GENTOO_MIRRORS[country]
+
+    mirror_choices = gensystem_utils.get_choices(mirrors.keys())
+    if choose_mirror:
+        print
+        print_choices(mirror_choices)
+        mirror_chosen = gensystem_utils.select_mirror(mirror_choices)
+    else:
+        # It would be nice to select the closest mirror using GeoIP
+        mirror_chosen = gensystem_utils.get_choice_value(
+            random.randint(1, len(mirror_choices)), mirror_choices)
+
+    arch = gensystem_media.SUPPORTED_ARCH[arch]
+    media = getattr(arch, media)
+    media_url = gensystem_media.get_media_file_url(
+        mirrors[mirror_chosen], arch.name, media)
+
+    downloaded_and_verified = download_and_verify(media_url)
+    return downloaded_and_verified
+
+
 def download_and_verify(media_url):
     """Download specified media and verify download is not corrupted.
 
@@ -210,10 +261,15 @@ def main():
         "-c", "--choose-mirror", help="choose a mirror manually",
         action="store_true")
 
-    media_choices = ['minimal', 'stage3', 'hardened', 'nomultilib', 'live']
+    media_choices = ('minimal', 'stage3', 'hardened', 'nomultilib', 'live')
     parser_do.add_argument(
         "-m", "--media", help=', '.join(media_choices),
         choices=media_choices, metavar='')
+
+    arch_choices = ('amd64',)
+    parser_do.add_argument(
+        "-a", "--arch", help=', '.join(arch_choices),
+        choices=arch_choices, metavar='', default='amd64')
 
     success = False
     args = parser.parse_args()
@@ -222,8 +278,8 @@ def main():
         if args.interactive:
             success = download_interactively()
         elif args.media:
-            print args.choose_mirror
-            pass  # TODO: Add non-interactive download
+            success = download_media(
+                args.media, args.choose_mirror, args.arch)
         else:
             # 'download' with no options shows help
             parser_do.print_help()
