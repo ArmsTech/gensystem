@@ -121,12 +121,8 @@ def download_interactively():
     media_chosen = getattr(
         arch_chosen, gensystem_media.GENTOO_MEDIA[media_chosen])
 
-    releases_url = gensystem_mirror.GENTOO_RELEASES_TEMPLATE % (
-        arch_chosen.name, media_chosen)
-    media_folder_and_regex = os.path.join(
-        mirrors[mirror_chosen], releases_url[:-1])
     media_url = gensystem_media.get_media_file_url(
-        *media_folder_and_regex.split('::'))
+        mirrors[mirror_chosen], arch_chosen.name, media_chosen)
 
     downloaded_and_verified = download_and_verify(media_url)
     return downloaded_and_verified

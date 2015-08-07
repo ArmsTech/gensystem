@@ -4,6 +4,7 @@ from collections import namedtuple
 import os
 import re
 
+import gensystem.mirror as gensystem_mirror
 import gensystem.utils as gensystem_utils
 
 GENTOO_MEDIA = {
@@ -23,21 +24,30 @@ AMD64 = Arch(
 SUPPORTED_ARCH = {'amd64': AMD64}
 
 
-def get_media_file_url(folder_url, file_regex):
+def get_media_file_url(mirror, arch, media):
     """Get the URL path to gentoo media.
 
+    To get the media file URL, this function builds the releases folder URL
+    that houses the downloads. Then using a regular expression, it matches
+    the specified media file in that folder and returns the URL path to the
+    file.
+
     Args:
-        folder_url (str): Gentoo media folder url.
-        file_regex (str): Regex to match media file.
+        mirror (str): Gentoo (base) mirror.
+        arch (str): The name of the architecture download is for.
+        media (str): The name of the media download is for.
 
     Returns:
         str: URL path to the specified media.
 
     """
-    soupified_folder = gensystem_utils.soupify(folder_url)
-    links = soupified_folder.find_all(href=re.compile(file_regex))
+    releases = gensystem_mirror.GENTOO_RELEASES_TEMPLATE % (arch, media)
+    folder, regex = os.path.join(mirror, releases[:-1]).split('::')
+
+    soupified_folder = gensystem_utils.soupify(folder)
+    links = soupified_folder.find_all(href=re.compile(regex))
     try:
         # Use -1 index to avoid image links
-        return os.path.join(folder_url, links[-1]['href'])
+        return os.path.join(folder, links[-1]['href'])
     except (IndexError, KeyError):
-        raise RuntimeError("Gentoo media file not found in %s." % folder_url)
+        raise RuntimeError("Gentoo media file not found in %s." % folder)
