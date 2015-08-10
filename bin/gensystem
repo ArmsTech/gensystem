@@ -239,6 +239,14 @@ def main():
     Returns:
         int: An exit code; 0 (success) | >0 (failure).
     """
+    download_examples = (
+        "Examples:\n"
+        "  gensystem -i\t\t\tDownload interactively (make ALL choices"
+        " manually).\n"
+        "  gensystem -m stage3\t\tDownload latest stage3 tarball with no"
+        " interaction.\n"
+        "  gensystem -m stage3 --mirror\tDownload latest stage3 tarball, but"
+        " manually select a mirror.")
     parser = argparse.ArgumentParser(
         description='Tool for downloading and installing Gentoo Linux',
         usage='gensystem [-h] <command> [options]',
@@ -247,29 +255,33 @@ def main():
         dest='subparser', metavar='\b\bCommands:', title=None)
     parser_do = subparsers.add_parser(
         'download', help='download installation media',
-        usage='gensystem download [options]')
+        usage='gensystem download [options]', epilog=download_examples,
+        formatter_class=argparse.RawDescriptionHelpFormatter)
     parser_in = subparsers.add_parser(
         'install', help='install a Gentoo system',
         usage='gensystem install [options]')
 
-    # Add 'download' arguments
-    parser_do.add_argument(
+    # Add 'download' args with two paths (interactive and non-interactive)
+    interactive_group = parser_do.add_mutually_exclusive_group(required=True)
+
+    interactive_group.add_argument(
         "-i", "--interactive", help="perform download interactively",
         action="store_true")
 
-    parser_do.add_argument(
-        "-c", "--choose-mirror", help="choose a mirror manually",
-        action="store_true")
-
-    media_choices = ('minimal', 'stage3', 'hardened', 'nomultilib', 'live')
-    parser_do.add_argument(
-        "-m", "--media", help=', '.join(media_choices),
-        choices=media_choices, metavar='')
+    media_choices = ('minimal', 'stage3', 'hardened', 'nomultilib')
+    interactive_group.add_argument(
+        "-m", "--media", help='choose media M: {%s}' % '|'.join(media_choices),
+        choices=media_choices, metavar='{M}')
 
     arch_choices = ('amd64',)
     parser_do.add_argument(
-        "-a", "--arch", help=', '.join(arch_choices),
-        choices=arch_choices, metavar='', default='amd64')
+        "-a", "--arch",
+        help='choose architecture A: {%s}' % '|'.join(arch_choices),
+        choices=arch_choices, metavar='{A}', default='amd64')
+
+    parser_do.add_argument(
+        "-r", "--mirror",
+        help="choose mirror (default: closest by GeoIP)", action="store_true")
 
     success = False
     args = parser.parse_args()
