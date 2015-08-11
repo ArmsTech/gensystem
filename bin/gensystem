@@ -250,7 +250,7 @@ def main():
     parser = argparse.ArgumentParser(
         description='Tool for downloading and installing Gentoo Linux',
         usage='gensystem [-h] <command> [options]',
-        epilog="Use 'gensystem <command>' for specific subcommand help.")
+        epilog="Use 'gensystem <command> -h' for specific subcommand help.")
     subparsers = parser.add_subparsers(
         dest='subparser', metavar='\b\bCommands:', title=None)
     parser_do = subparsers.add_parser(
@@ -290,8 +290,7 @@ def main():
         if args.interactive:
             success = download_interactively()
         elif args.media:
-            success = download_media(
-                args.media, args.choose_mirror, args.arch)
+            success = download_media(args.media, args.mirror, args.arch)
         else:
             # 'download' with no options shows help
             parser_do.print_help()
