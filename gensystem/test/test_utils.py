@@ -51,10 +51,16 @@ def test_get_public_ip_failure():
     assert public_ip is None
 
 
-def test_get_country_code_by_ip_success():
+@mock.patch.object(gensystem_utils, 'pygeoip')
+def test_get_country_code_by_ip_success(m_pygeoip):
     """Test get_country_code_by_ip success."""
+    m_GeoIP = mock.Mock()
+    m_GeoIP.country_code_by_addr.return_value = 'US'
+    m_pygeoip.GeoIP.return_value = m_GeoIP
+
     country_code = gensystem_utils.get_country_code_by_ip('8.8.8.8')
     assert country_code == 'US'
+    m_GeoIP.country_code_by_addr.assert_called_once_with('8.8.8.8')
 
 
 def test_get_country_code_by_ip_failure():
