@@ -54,6 +54,9 @@ test-all:
 	tox
 
 coverage:
+	nosetests --with-coverage --cover-package=gensystem
+
+coverage-html:
 	nosetests --with-coverage --cover-package=gensystem --cover-html
 	xdg-open cover/index.html
 
