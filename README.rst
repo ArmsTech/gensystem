@@ -29,4 +29,10 @@ GEOIP_FILE
   File path for the GeoIP.bat file used by pygeoip.
   Use the *--exclude-geoip* install option to exclude GeoIP installation
   (e.g. python setup.py install --exclude-geoip).
+  
+Developers
+----------
+Some notes for anyone interested in helping with gensystem development:
 
+* To build Sphinx docs use ``make docs``
+* To run the unit tests use ``make test``
