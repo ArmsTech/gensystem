@@ -5,6 +5,7 @@ import StringIO
 import urllib2
 
 import mock
+import nose
 import pytest
 
 import gensystem.utils as gensystem_utils
@@ -69,6 +70,30 @@ def test_get_country_code_by_ip_failure():
     assert country_code is None
 
 
+@mock.patch.object(gensystem_utils, 'get_user_choice')
+def test_select_country(m_get_user_choice):
+    """Test select_country."""
+    m_get_user_choice.return_value = 31
+    correct_prompt = "\nSELECT COUNTRY (e.g. 31 for USA): "
+    correct_choices = {'USA': 31, 'UK': 30}
+
+    country_choice = gensystem_utils.select_country(correct_choices)
+    assert country_choice == 31
+    m_get_user_choice.assert_called_once_with(correct_prompt, correct_choices)
+
+
+@mock.patch.object(gensystem_utils, 'get_user_choice')
+def test_select_mirror(m_get_user_choice):
+    """Test select_mirror."""
+    m_get_user_choice.return_value = 1
+    correct_prompt = "\nSELECT MIRROR: "
+    correct_choices = {'http://test/mirror/1': 1, 'http://test/mirror/2': 2}
+
+    mirror_choice = gensystem_utils.select_mirror(correct_choices)
+    assert mirror_choice == 1
+    m_get_user_choice.assert_called_once_with(correct_prompt, correct_choices)
+
+
 def test_get_choices_sorted():
     """Test get_choices with sorting (default)."""
     choices = gensystem_utils.get_choices(['B', 'A', 'D', 'C'])
@@ -104,6 +129,7 @@ def test_get_user_choice_invalid_choice(m_get_raw_input):
     assert len(m_get_raw_input.mock_calls) == 4 and choice == 'B'
 
 
+@nose.tools.nottest
 def test_get_raw_input():
     """Test get_raw_input."""
     # get_raw_input is just a wrapper for raw_input
