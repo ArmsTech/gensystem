@@ -13,11 +13,20 @@ Quick start
 -----------
 To start using gensystem:
 
-* git clone https://github.com/ArmsTech/gensystem.git
-* cd ./gensystem
+* git clone ``https://github.com/ArmsTech/gensystem.git`` && cd gensystem
 * pip install -r requirements.txt
 * python setup.py install
 * gensystem --help
 
-.. include:: CONFIGURATION.rst
+.. include:: CONFIGURATION.rst (Hopefully directives will be supported on Github one day.)
+Configuration
+-------------
+
+All configuration is accomplished by environmental variables.
+The following variables are available:
+
+GEOIP_FILE
+  File path for the GeoIP.bat file used by pygeoip.
+  Use the *--exclude-geoip* install option to exclude GeoIP installation
+  (e.g. python setup.py install --exclude-geoip).
 
