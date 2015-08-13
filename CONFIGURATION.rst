@@ -1,5 +1,5 @@
-Gensystem Configuration
------------------------
+Configuration
+-------------
 
 All configuration is accomplished by environmental variables.
 The following variables are available:
