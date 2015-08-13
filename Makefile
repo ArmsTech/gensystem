@@ -32,7 +32,7 @@ clean-pyc:
 clean-test:
 	rm -fr .tox/
 	rm -f .coverage
-	rm -fr htmlcov/
+	rm -fr cover/
 
 clean-docs:
 	$(MAKE) -C docs clean
@@ -54,10 +54,8 @@ test-all:
 	tox
 
 coverage:
-	coverage run --source gensystem --module py.test
-	coverage report --show-missing
-	coverage html
-	xdg-open htmlcov/index.html
+	nosetests --with-coverage --cover-package=gensystem --cover-html
+	xdg-open cover/index.html
 
 docs:
 	rm -f docs/gensystem.rst
