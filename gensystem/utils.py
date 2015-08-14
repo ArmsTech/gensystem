@@ -10,7 +10,10 @@ import urllib2
 from bs4 import BeautifulSoup
 
 PUBLIC_IP_API = 'https://api.ipify.org?format=json'
-GEOIP_FILE = os.environ.get('GEOIP_FILE', './data/GeoIP.dat')
+GEOIP_FILE = os.environ.get(
+    'GEOIP_FILE',
+    os.path.join(
+        os.path.dirname(os.path.realpath(__file__)), 'data/GeoIP.dat'))
 
 
 def read_webpage(url_path):

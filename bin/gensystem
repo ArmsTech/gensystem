@@ -154,6 +154,7 @@ def download_media(media, choose_mirror=False, arch='amd64'):
     if country is None:
         country_choices = gensystem_utils.get_choices(
             gensystem_mirror.GENTOO_MIRRORS.keys())
+        print
         print_columnized_choices(country_choices)
         country = gensystem_utils.select_country(country_choices)
         mirrors = gensystem_mirror.GENTOO_MIRRORS[country]
