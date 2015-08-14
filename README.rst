@@ -38,9 +38,9 @@ Here are some ``download`` usage examples:
 
 * ``gensystem -i``
      Download interactively (make ALL choices manually via the command line). Choices include: platform, media,    country, and mirror.
-* ``gensystem -m stage3``
+* ``gensystem -f stage3``
      Download latest stage3 tarball with no interaction. Choices for platform, country, and mirror will be made automatically based on defaults and on the location of the machine using ``gensystem``.
-* ``gensystem -m stage3 --mirror``
+* ``gensystem -f stage3 --select-mirror``
      Download latest stage3 tarball, but manually select a mirror. Given the choice of mirror is determined randomly from mirrors available in your country, selecting a mirror manually will likely yield the fastest download speed.
      
 Please note that ``install`` functionality is not yet implemented. This functionality will be added in future months.

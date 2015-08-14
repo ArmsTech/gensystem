@@ -244,10 +244,10 @@ def main():
         "Examples:\n"
         "  gensystem -i\t\t\tDownload interactively (make ALL choices"
         " manually).\n"
-        "  gensystem -m stage3\t\tDownload latest stage3 tarball with no"
+        "  gensystem -f stage3\t\tDownload latest stage3 tarball with no"
         " interaction.\n"
-        "  gensystem -m stage3 --mirror\tDownload latest stage3 tarball, but"
-        " manually select a mirror.")
+        "  gensystem -f stage3 --select-mirror\tDownload latest stage3"
+        " tarball, but manually select a mirror.")
     parser = argparse.ArgumentParser(
         description='Tool for downloading and installing Gentoo Linux',
         usage='gensystem [-h] <command> [options]',
@@ -271,18 +271,18 @@ def main():
 
     media_choices = ('minimal', 'stage3', 'hardened', 'nomultilib')
     interactive_group.add_argument(
-        "-m", "--media", help='choose media M: {%s}' % '|'.join(media_choices),
-        choices=media_choices, metavar='{M}')
+        "-f", "--file", help='file F: {%s}' % '|'.join(media_choices),
+        choices=media_choices, metavar='<F>')
 
     arch_choices = ('amd64',)
     parser_do.add_argument(
         "-a", "--arch",
-        help='choose architecture A: {%s}' % '|'.join(arch_choices),
-        choices=arch_choices, metavar='{A}', default='amd64')
+        help='architecture A: {%s}' % '|'.join(arch_choices),
+        choices=arch_choices, metavar='<A>', default='amd64')
 
     parser_do.add_argument(
-        "-r", "--mirror",
-        help="choose mirror (default: closest by GeoIP)", action="store_true")
+        "-s", "--select-mirror",
+        help="select mirror (default: closest by GeoIP)", action="store_true")
 
     success = False
     args = parser.parse_args()
@@ -290,8 +290,8 @@ def main():
     if args.subparser == 'download':
         if args.interactive:
             success = download_interactively()
-        elif args.media:
-            success = download_media(args.media, args.mirror, args.arch)
+        elif args.file:
+            success = download_media(args.file, args.select_mirror, args.arch)
         else:
             # 'download' with no options shows help
             parser_do.print_help()
