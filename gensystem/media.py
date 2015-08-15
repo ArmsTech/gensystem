@@ -24,7 +24,7 @@ AMD64 = Arch(
 SUPPORTED_ARCH = {'amd64': AMD64}
 
 
-def get_media_file_url(mirror, arch, media):
+def get_media_file_url(mirror, arch, media_file):
     """Get the URL path to gentoo media.
 
     To get the media file URL, this function builds the releases folder URL
@@ -35,13 +35,14 @@ def get_media_file_url(mirror, arch, media):
     Args:
         mirror (str): Gentoo (base) mirror.
         arch (str): The name of the architecture download is for.
-        media (str): The name of the media download is for.
+        media_file (str): The name of the media file download is for.
 
     Returns:
-        str: URL path to the specified media.
+        str: URL path to the specified media file.
 
     """
-    releases = gensystem_mirror.GENTOO_RELEASES_TEMPLATE % (arch, media)
+    releases = gensystem_mirror.GENTOO_RELEASES_TEMPLATE % (
+        arch, getattr(SUPPORTED_ARCH[arch], media_file))
     folder, regex = os.path.join(mirror, releases[:-1]).split('::')
 
     soupified_folder = gensystem_utils.soupify(folder)

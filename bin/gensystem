@@ -117,28 +117,34 @@ def download_interactively():
     print_choices(media_choices)
     prompt = "\nSELECT INSTALLATION MEDIA: "
     media_chosen = gensystem_utils.get_user_choice(prompt, media_choices)
-    media_chosen = getattr(
-        arch_chosen, gensystem_media.GENTOO_MEDIA[media_chosen])
 
     media_url = gensystem_media.get_media_file_url(
-        mirrors[mirror_chosen], arch_chosen.name, media_chosen)
+        mirrors[mirror_chosen], arch_chosen.name,
+        gensystem_media.GENTOO_MEDIA[media_chosen])
 
     downloaded_and_verified = download_and_verify(media_url)
     return downloaded_and_verified
 
 
-def download_media(media, choose_mirror=False, arch='amd64'):
-    """Download a specified media as hands-free as possible.
+def download_media_file(
+        media_file, mirror=None, select_mirror=False, arch='amd64'):
+    """Download a specified media file as hands-free as possible.
 
     Args:
-        media (str): Media to download.
-        choose_mirror (Optional[bool]): Whether to manually select mirror.
-        arch (Optional[str]): Architecture of media to download.
+        media_file (str): Media file to download.
+        mirror (Optional[str]): Mirror to download media file from.
+        select_mirror (Optional[bool]): Whether to manually select mirror.
+        arch (Optional[str]): Architecture of media file to download.
 
     Returns:
-        bool: Whether media was downloaded and verified successfully.
+        bool: Whether media file was downloaded and verified successfully.
 
     """
+    # If we already know the mirror we can download immediately
+    if mirror:
+        return download_and_verify(
+            gensystem_media.get_media_file_url(mirror, arch, media_file))
+
     country = gensystem_utils.get_country_code_by_ip(
         gensystem_utils.get_public_ip())
 
@@ -160,7 +166,7 @@ def download_media(media, choose_mirror=False, arch='amd64'):
         mirrors = gensystem_mirror.GENTOO_MIRRORS[country]
 
     mirror_choices = gensystem_utils.get_choices(mirrors.keys())
-    if choose_mirror:
+    if select_mirror:
         print
         print_choices(mirror_choices)
         mirror_chosen = gensystem_utils.select_mirror(mirror_choices)
@@ -169,10 +175,9 @@ def download_media(media, choose_mirror=False, arch='amd64'):
         mirror_chosen = gensystem_utils.get_choice_value(
             random.randint(1, len(mirror_choices)), mirror_choices)
 
-    arch = gensystem_media.SUPPORTED_ARCH[arch]
-    media = getattr(arch, media)
+    print mirrors[mirror_chosen], arch, media_file
     media_url = gensystem_media.get_media_file_url(
-        mirrors[mirror_chosen], arch.name, media)
+        mirrors[mirror_chosen], arch, media_file)
 
     downloaded_and_verified = download_and_verify(media_url)
     return downloaded_and_verified
@@ -274,6 +279,10 @@ def main():
         "-f", "--file", help='file F: {%s}' % '|'.join(media_choices),
         choices=media_choices, metavar='<F>')
 
+    parser_do.add_argument(
+        "-m", "--mirror",
+        help="mirror to download file from (base URL)", metavar='<M>')
+
     arch_choices = ('amd64',)
     parser_do.add_argument(
         "-a", "--arch",
@@ -291,7 +300,8 @@ def main():
         if args.interactive:
             success = download_interactively()
         elif args.file:
-            success = download_media(args.file, args.select_mirror, args.arch)
+            success = download_media_file(
+                args.file, args.mirror, args.select_mirror, args.arch)
         else:
             # 'download' with no options shows help
             parser_do.print_help()
