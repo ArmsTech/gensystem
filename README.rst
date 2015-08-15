@@ -38,18 +38,20 @@ non-interactive.
 
 Here are some ``download`` usage examples:
 
-* ``gensystem -i``
+* ``gensystem download -i``
      Download interactively (make ALL choices manually via the command line).
      Choices include: platform, media, country, and mirror.
-* ``gensystem -f stage3``
+* ``gensystem download -f stage3``
      Download latest stage3 tarball with no interaction. Choices for platform,
      country, and mirror will be made automatically based on defaults and on
      the location of the machine using ``gensystem``.
-* ``gensystem -f stage3 --select-mirror``
+* ``gensystem download -f stage3 --select-mirror``
      Download latest stage3 tarball, but manually select a mirror. Given the
      choice of mirror is determined randomly from mirrors available in your
      country, selecting a mirror manually will likely yield the fastest
      download speed.
+* ``gensystem download -f minimal -m http://www.gtlib.gatech.edu/pub/gentoo/``
+     Download latest minimal iso from the Georgia Tech mirror.
 
 Please note that ``install`` functionality is not yet implemented. This
 functionality will be added in future months.

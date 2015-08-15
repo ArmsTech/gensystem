@@ -247,12 +247,10 @@ def main():
     """
     download_examples = (
         "Examples:\n"
-        "  gensystem -i\t\t\tDownload interactively (make ALL choices"
-        " manually).\n"
-        "  gensystem -f stage3\t\tDownload latest stage3 tarball with no"
-        " interaction.\n"
-        "  gensystem -f stage3 --select-mirror\tDownload latest stage3"
-        " tarball, but manually select a mirror.")
+        "  gensystem download -i\n"
+        "  gensystem download -f stage3\n"
+        "  gensystem download -f stage3 --select-mirror\n"
+        "  gensystem -f minimal -m http://www.gtlib.gatech.edu/pub/gentoo/\n")
     parser = argparse.ArgumentParser(
         description='Tool for downloading and installing Gentoo Linux',
         usage='gensystem [-h] <command> [options]',
