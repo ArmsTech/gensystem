@@ -13,12 +13,11 @@ Quick start
 -----------
 To start using gensystem:
 
-* git clone ``https://github.com/ArmsTech/gensystem.git && cd gensystem``
+* ``git clone https://github.com/ArmsTech/gensystem.git && cd gensystem``
 * ``pip install -r requirements.txt``
 * ``python setup.py install``
 * ``gensystem --help``
 
-.. include:: CONFIGURATION.rst (Hopefully directives will be supported on Github one day.)
 Configuration
 -------------
 
@@ -29,18 +28,28 @@ GEOIP_FILE
   File path for the GeoIP.bat file used by pygeoip.
   Use the *--exclude-geoip* install option to exclude GeoIP installation
   (e.g. python setup.py install --exclude-geoip).
-  
+
 Usage
 -----
-Gensystem is a command-line tool used to simplify the installation of a Gentoo Linux system, including the download of installation media. There are two (mutually exclusive) download usage-paths, one interactive and the other non-interactive.
+Gensystem is a command-line tool used to simplify the installation of a
+Gentoo Linux system, including the download of installation media. There are
+two (mutually exclusive) download usage-paths, one interactive and the other
+non-interactive.
 
 Here are some ``download`` usage examples:
 
 * ``gensystem -i``
-     Download interactively (make ALL choices manually via the command line). Choices include: platform, media,    country, and mirror.
+     Download interactively (make ALL choices manually via the command line).
+     Choices include: platform, media, country, and mirror.
 * ``gensystem -f stage3``
-     Download latest stage3 tarball with no interaction. Choices for platform, country, and mirror will be made automatically based on defaults and on the location of the machine using ``gensystem``.
+     Download latest stage3 tarball with no interaction. Choices for platform,
+     country, and mirror will be made automatically based on defaults and on
+     the location of the machine using ``gensystem``.
 * ``gensystem -f stage3 --select-mirror``
-     Download latest stage3 tarball, but manually select a mirror. Given the choice of mirror is determined randomly from mirrors available in your country, selecting a mirror manually will likely yield the fastest download speed.
-     
-Please note that ``install`` functionality is not yet implemented. This functionality will be added in future months.
+     Download latest stage3 tarball, but manually select a mirror. Given the
+     choice of mirror is determined randomly from mirrors available in your
+     country, selecting a mirror manually will likely yield the fastest
+     download speed.
+
+Please note that ``install`` functionality is not yet implemented. This
+functionality will be added in future months.
