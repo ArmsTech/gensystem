@@ -175,7 +175,6 @@ def download_media_file(
         mirror_chosen = gensystem_utils.get_choice_value(
             random.randint(1, len(mirror_choices)), mirror_choices)
 
-    print mirrors[mirror_chosen], arch, media_file
     media_url = gensystem_media.get_media_file_url(
         mirrors[mirror_chosen], arch, media_file)
 
