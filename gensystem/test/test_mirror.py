@@ -64,31 +64,44 @@ TEST_GENTOO_ORG = """
 """
 
 
-def test_get_mirrors_from_web_all():
+@mock.patch('gensystem.utils.soupify')
+def test_get_mirrors_from_web_all(m_soupify):
     """Test get_mirrors_from_web get all mirrors."""
-    mirrors = gensystem_mirror.get_mirrors_from_web(
-        bs4.BeautifulSoup(TEST_GENTOO_ORG))
+    m_soupify.return_value = bs4.BeautifulSoup(TEST_GENTOO_ORG)
+    mirrors = gensystem_mirror.get_mirrors_from_web()
     assert mirrors == {
         u'Canada': {u'Arctic Network Mirrors (http)': u'http://test/canada'},
         u'USA': {u'OSU Open Source Lab (http)': u'http://test/usa'}}
 
 
-def test_get_mirrors_from_web_one_country():
+@mock.patch('gensystem.utils.soupify')
+def test_get_mirrors_from_web_one_country(m_soupify):
     """Test get_mirrors_from_web get mirrors for one country."""
-    mirrors = gensystem_mirror.get_mirrors_from_web(
-        bs4.BeautifulSoup(TEST_GENTOO_ORG), country='USA')
+    m_soupify.return_value = bs4.BeautifulSoup(TEST_GENTOO_ORG)
+    mirrors = gensystem_mirror.get_mirrors_from_web(country='USA')
     assert mirrors == {
         u'USA': {u'OSU Open Source Lab (http)': u'http://test/usa'}}
 
 
 @mock.patch('__builtin__.open')
-def test_get_mirrors_from_json_success(m_open):
-    """Test get_mirrors_from_json successfully."""
+def test_get_mirrors_from_json_all(m_open):
+    """Test get_mirrors_from_json for all successfully."""
     m_open.return_value = test_helpers.mock_open(
         '{"Australia": {"Test Mirror (http)": "http://test/gentoo"}}')
     mirrors = gensystem_mirror.get_mirrors_from_json()
     assert mirrors == {
         'Australia': {'Test Mirror (http)': 'http://test/gentoo'}}
+
+
+@mock.patch('__builtin__.open')
+def test_get_mirrors_from_json_one_country(m_open):
+    """Test get_mirrors_from_json for one country successfully."""
+    m_open.return_value = test_helpers.mock_open(
+        ('{"Australia": {"Australia Mirror (http)": "http://test/gentoo"},'
+         '"USA": {"USA Mirror (http)": "http://test/gentoo"}}'))
+    mirrors = gensystem_mirror.get_mirrors_from_json(country='Australia')
+    assert mirrors == {
+        'Australia': {'Australia Mirror (http)': 'http://test/gentoo'}}
 
 
 @mock.patch('__builtin__.open')

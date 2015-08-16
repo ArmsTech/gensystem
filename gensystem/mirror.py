@@ -4,6 +4,8 @@ import json
 import os
 from urlparse import urlparse
 
+import gensystem.utils as gensystem_utils
+
 GENTOO_MIRRORS_URL = 'https://www.gentoo.org/downloads/mirrors/'
 GENTOO_RELEASES_TEMPLATE = 'releases/%s/autobuilds/%s/'
 
@@ -13,15 +15,14 @@ SUPPORTED_COUNTRIES = [
     'CN', 'HK', 'JP', 'KR', 'RU', 'TW', 'IL', 'KZ']
 
 
-def get_mirrors_from_web(mirrors_soup, country=None):
+def get_mirrors_from_web(country=None):
     """Get gentoo.org mirrors from GENTOO_MIRRORS_URL.
 
-    Given a BeautifulSoup representation of GENTOO_MIRRORS_URL, get all
+    Get a BeautifulSoup representation of GENTOO_MIRRORS_URL, then get all
     gentoo mirrors by country, or just for a specified country. We assume
     a particular HTML layout and will explode horribly if it isn't right.
 
     Args:
-        mirrors_soup (bs4.BeautifulSoup): Soupified GENTOO_MIRRORS_URL.
         country (str): The only country name to return.
 
     Returns:
@@ -64,8 +65,9 @@ def get_mirrors_from_web(mirrors_soup, country=None):
 
     """
     mirrors = {}
-
     country_name = None
+
+    mirrors_soup = gensystem_utils.soupify(GENTOO_MIRRORS_URL)
     for tag in mirrors_soup.find_all(True):
 
         if tag.name == 'h3' and tag.get('id') in SUPPORTED_COUNTRIES:
@@ -97,18 +99,22 @@ def get_mirrors_from_web(mirrors_soup, country=None):
     return {country: mirrors[country]} if country else mirrors
 
 
-def get_mirrors_from_json():
+def get_mirrors_from_json(country=None):
     """Get Gentoo mirrors from data/mirrors.json.
 
+    Args:
+        country (str): The only country name to return.
+
     Returns:
-        dict: All Gentoo mirrors available from GENTOO_MIRRORS_URL.
+        dict: All or one gentoo mirror(s) by country.
 
     """
     mirrors_file_path = os.path.join(
         os.path.dirname(os.path.realpath(__file__)), 'data/mirrors.json')
     try:
         with open(mirrors_file_path, 'r') as mirrors_file:
-            return json.load(mirrors_file)
+            mirrors = json.load(mirrors_file)
+            return {country: mirrors[country]} if country else mirrors
     except (IOError, ValueError):
         raise RuntimeError(
             "Mirrors file was not found or could not be loaded.")
