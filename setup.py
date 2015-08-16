@@ -1,8 +1,11 @@
+"""Install gensystem package."""
+
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 import glob
 import gzip
+import json
 import os
 import setuptools
 from setuptools.command.install import install
@@ -10,6 +13,7 @@ import shutil
 import urllib
 
 import gensystem
+import gensystem.mirror as gensystem_mirror
 import gensystem.temp as temp
 
 
@@ -56,8 +60,9 @@ with open(os.path.join(SETUP_DIR, 'test_requirements.txt'), 'r') as file_:
         add_requirement(line, test_requirements)
 
 
-class InstallWithGeoIP(install):
-    """Install GeoIP after setup install operations."""
+class InstallWithDependencies(install):
+
+    """Install custom dependencies before normal setup install operations."""
 
     user_options = install.user_options + [
         ('exclude-geoip', None, "do not install GeoIP with gensystem.")]
@@ -65,39 +70,77 @@ class InstallWithGeoIP(install):
     boolean_options = install.boolean_options + ['exclude-geoip']
 
     def initialize_options(self):
+        """Initialize custom options."""
         install.initialize_options(self)
         self.exclude_geoip = None
 
+    def install_geoip(self):
+        """Install GeoIP dependency.
+
+        Returns:
+            bool: Whether GeoIP was installed successfully.
+
+        """
+        with temp.temp_directory() as geoip_dir:
+
+            # Download zipped GeoIP.dat(.gz)
+            geoip_dat_gz_path = os.path.join(geoip_dir, 'GeoIP.dat.gz')
+            with open(geoip_dat_gz_path, 'wb') as geoip_zipped:
+                geoip_zipped.writelines(
+                    urllib.urlopen(GEOIP_URL).readlines())
+
+            # Unzip and save as GeoIP.dat
+            geoip_dat_path = os.path.join(geoip_dir, 'GeoIP.dat')
+            with gzip.open(geoip_dat_gz_path, 'rb') as geoip_unzipped:
+                with open(geoip_dat_path, 'w') as geoip_dat:
+                    geoip_dat.write(geoip_unzipped.read())
+
+            # Move dat file to build_lib path
+            build_lib_path = os.path.join(self.build_lib, 'gensystem', 'data')
+            shutil.move(geoip_dat_path, build_lib_path)
+
+        return os.path.exists(os.path.join(build_lib_path, 'GeoIP.dat'))
+
+    def install_mirrors(self):
+        """Install mirrors.json dependency.
+
+        Returns:
+            bool: Whether mirrors.json was installed successfully.
+
+        """
+        try:
+            mirrors = gensystem_mirror.get_mirrors_from_web()
+        except Exception:
+            return False  # Not installed.
+
+        with temp.temp_directory() as mirrors_dir:
+            mirrors_json_path = os.path.join(mirrors_dir, 'mirrors.json')
+            with open(mirrors_json_path, 'w') as mirrors_json:
+                json.dump(mirrors, mirrors_json, indent=4, sort_keys=True)
+            shutil.copy(
+                mirrors_json_path,
+                os.path.join(self.build_lib, 'gensystem', 'data'))
+
+        return True  # Safe to assume installed.
+
     def run(self):
+        """Run the install, installing custom dependencies first."""
+        # Make sure required dirs exist since we aren't starting install yet
+        os.makedirs(os.path.join(self.build_lib, 'gensystem', 'data'), 0755)
 
         # Install GeoIP unless a dry run or user doesn't want it
         if not self.dry_run and not self.exclude_geoip:
-            with temp.temp_directory() as geoip_dir:
+            self.install_geoip()
 
-                # Download zipped GeoIP.dat(.gz)
-                geoip_dat_gz_path = os.path.join(geoip_dir, 'GeoIP.dat.gz')
-                with open(geoip_dat_gz_path, 'wb') as geoip_zipped:
-                    geoip_zipped.writelines(
-                        urllib.urlopen(GEOIP_URL).readlines())
+        # Install latest mirrors.json
+        self.install_mirrors()
 
-                # Unzip and save as GeoIP.dat
-                geoip_dat_path = os.path.join(geoip_dir, 'GeoIP.dat')
-                with gzip.open(geoip_dat_gz_path, 'rb') as geoip_unzipped:
-                    with open(geoip_dat_path, 'w') as geoip_dat:
-                        geoip_dat.write(geoip_unzipped.read())
-
-                # Move dat file to build_lib path
-                os.makedirs(
-                    os.path.join(self.build_lib, 'gensystem', 'data'), 0755)
-                shutil.move(
-                    geoip_dat_path,
-                    os.path.join(self.build_lib, 'gensystem', 'data'))
-
+        # Run the rest of the installer as usual
         install.run(self)
 
 
 setuptools.setup(
-    cmdclass={'install': InstallWithGeoIP},
+    cmdclass={'install': InstallWithDependencies},
     name='gensystem',
     license='GPLv3',
     version=gensystem.__version__,
