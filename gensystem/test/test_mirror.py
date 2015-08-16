@@ -3,8 +3,11 @@
 """Unit tests for gensystem mirror."""
 
 import bs4
+import mock
+import pytest
 
 import gensystem.mirror as gensystem_mirror
+import gensystem.test.helpers as test_helpers
 
 TEST_GENTOO_ORG = """
     <!DOCTYPE html>
@@ -61,18 +64,36 @@ TEST_GENTOO_ORG = """
 """
 
 
-def test_get_gentoo_mirrors_all():
-    """Test get_gentoo_mirrors get all mirrors."""
-    mirrors = gensystem_mirror.get_gentoo_mirrors(
+def test_get_mirrors_from_web_all():
+    """Test get_mirrors_from_web get all mirrors."""
+    mirrors = gensystem_mirror.get_mirrors_from_web(
         bs4.BeautifulSoup(TEST_GENTOO_ORG))
     assert mirrors == {
         u'Canada': {u'Arctic Network Mirrors (http)': u'http://test/canada'},
         u'USA': {u'OSU Open Source Lab (http)': u'http://test/usa'}}
 
 
-def test_get_gentoo_mirrors_one_country():
-    """Test get_gentoo_mirrors get mirrors for one country."""
-    mirrors = gensystem_mirror.get_gentoo_mirrors(
+def test_get_mirrors_from_web_one_country():
+    """Test get_mirrors_from_web get mirrors for one country."""
+    mirrors = gensystem_mirror.get_mirrors_from_web(
         bs4.BeautifulSoup(TEST_GENTOO_ORG), country='USA')
     assert mirrors == {
         u'USA': {u'OSU Open Source Lab (http)': u'http://test/usa'}}
+
+
+@mock.patch('__builtin__.open')
+def test_get_mirrors_from_json_success(m_open):
+    """Test get_mirrors_from_json successfully."""
+    m_open.return_value = test_helpers.mock_open(
+        '{"Australia": {"Test Mirror (http)": "http://test/gentoo"}}')
+    mirrors = gensystem_mirror.get_mirrors_from_json()
+    assert mirrors == {
+        'Australia': {'Test Mirror (http)': 'http://test/gentoo'}}
+
+
+@mock.patch('__builtin__.open')
+def test_get_mirrors_from_json_failure(m_open):
+    """Test get_mirrors_from_json failure."""
+    m_open.side_effect = IOError('Forced IOError')
+    assert pytest.raises(
+        RuntimeError, gensystem_mirror.get_mirrors_from_json)

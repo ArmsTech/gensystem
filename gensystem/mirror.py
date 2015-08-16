@@ -4,7 +4,6 @@ import json
 import os
 from urlparse import urlparse
 
-GENTOO_MIRRORS = {}
 GENTOO_MIRRORS_URL = 'https://www.gentoo.org/downloads/mirrors/'
 GENTOO_RELEASES_TEMPLATE = 'releases/%s/autobuilds/%s/'
 
@@ -14,7 +13,7 @@ SUPPORTED_COUNTRIES = [
     'CN', 'HK', 'JP', 'KR', 'RU', 'TW', 'IL', 'KZ']
 
 
-def get_gentoo_mirrors(mirrors_soup, country=None):
+def get_mirrors_from_web(mirrors_soup, country=None):
     """Get gentoo.org mirrors from GENTOO_MIRRORS_URL.
 
     Given a BeautifulSoup representation of GENTOO_MIRRORS_URL, get all
@@ -97,10 +96,22 @@ def get_gentoo_mirrors(mirrors_soup, country=None):
 
     return {country: mirrors[country]} if country else mirrors
 
-MIRRORS_FILE_PATH = os.path.join(
-    os.path.dirname(os.path.realpath(__file__)), 'data/mirrors.json')
-try:
-    with open(MIRRORS_FILE_PATH, 'r') as mirrors_file:
-        GENTOO_MIRRORS = json.loads(mirrors_file.read())
-except Exception:
-    raise RuntimeError("Mirrors file was not found or could not be loaded.")
+
+def get_mirrors_from_json():
+    """Get Gentoo mirrors from data/mirrors.json.
+
+    Returns:
+        dict: All Gentoo mirrors available from GENTOO_MIRRORS_URL.
+
+    """
+    mirrors_file_path = os.path.join(
+        os.path.dirname(os.path.realpath(__file__)), 'data/mirrors.json')
+    try:
+        with open(mirrors_file_path, 'r') as mirrors_file:
+            return json.load(mirrors_file)
+    except (IOError, ValueError):
+        raise RuntimeError(
+            "Mirrors file was not found or could not be loaded.")
+
+
+GENTOO_MIRRORS = get_mirrors_from_json()
