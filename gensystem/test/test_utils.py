@@ -1,6 +1,5 @@
 """Unit tests for gensystem utils."""
 
-import contextlib
 import StringIO
 import urllib2
 
@@ -9,6 +8,7 @@ import nose
 import pytest
 
 import gensystem.utils as gensystem_utils
+import gensystem.test.helpers as test_helpers
 
 
 @mock.patch.object(
@@ -192,22 +192,12 @@ def test_download_file_failure(m_urlretrieve):
     assert error == 'Forced IOError'
 
 
-# NOTE: mock.mock_open doesn't want to work properly with a context manager
-@contextlib.contextmanager
-def mock_open(contents):
-    """Mimic __builtin__.open functionality."""
-    string_io = StringIO.StringIO(contents)
-    try:
-        yield string_io
-    finally:
-        string_io.close()
-
-
 @mock.patch('hashlib.sha512')
 @mock.patch('__builtin__.open')
 def test_verify_download_success(m_open, m_sha512):
     """Test verify_download succeeding."""
-    open_digest = mock_open('# SHA512 HASH\n1234567890 fake.tar.bz2')
+    open_digest = test_helpers.mock_open(
+        '# SHA512 HASH\n1234567890 fake.tar.bz2')
     m_open.side_effect = [open_digest, StringIO.StringIO('Download File')]
     m_hexdigest = mock.Mock()
     m_hexdigest.hexdigest.return_value = '1234567890'
@@ -222,7 +212,8 @@ def test_verify_download_success(m_open, m_sha512):
 @mock.patch('__builtin__.open')
 def test_verify_download_failure(m_open, m_sha512):
     """Test verify_download failing."""
-    open_digest = mock_open('# SHA512 HASH\n1234567890 fake.tar.bz2')
+    open_digest = test_helpers.mock_open(
+        '# SHA512 HASH\n1234567890 fake.tar.bz2')
     m_open.side_effect = [open_digest, StringIO.StringIO('Download File')]
     m_hexdigest = mock.Mock()
     m_hexdigest.hexdigest.return_value = '0987654321'
