@@ -1,8 +1,8 @@
 """Collect Gentoo mirrors from gentoo.org."""
 
+import json
+import os
 from urlparse import urlparse
-
-from bs4 import BeautifulSoup
 
 GENTOO_MIRRORS = {}
 GENTOO_MIRRORS_URL = 'https://www.gentoo.org/downloads/mirrors/'
@@ -97,11 +97,10 @@ def get_gentoo_mirrors(mirrors_soup, country=None):
 
     return {country: mirrors[country]} if country else mirrors
 
-with open('gensystem/functional_test/files/mirrors.html') as response:
-    mirrors_soup = BeautifulSoup(response.read())
-    GENTOO_MIRRORS = get_gentoo_mirrors(mirrors_soup)
-
-#try:
-#    #GENTOO_MIRRORS = get_gentoo_mirrors(soupify(GENTOO_MIRRORS_URL))
-#except Exception:
-#    raise ("Could NOT parse %s." % GENTOO_MIRRORS_URL)
+MIRRORS_FILE_PATH = os.path.join(
+    os.path.dirname(os.path.realpath(__file__)), 'data/mirrors.json')
+try:
+    with open(MIRRORS_FILE_PATH, 'r') as mirrors_file:
+        GENTOO_MIRRORS = json.loads(mirrors_file.read())
+except Exception:
+    raise RuntimeError("Mirrors file was not found or could not be loaded.")

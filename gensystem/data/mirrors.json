@@ -1,0 +1,138 @@
+{
+    "Australia": {
+        "Swinburne University of Technology (http)": "http://ftp.swin.edu.au/gentoo"
+    }, 
+    "Austria": {
+        "Vienna Univ. of Technology (http)": "http://gd.tuwien.ac.at/opsys/linux/gentoo/"
+    }, 
+    "Brazil": {
+        "C3SL, Federal University of Paran\u00e1 (http)": "http://gentoo.c3sl.ufpr.br/", 
+        "Laboratory of System Administration (http)": "http://www.las.ic.unicamp.br/pub/gentoo/"
+    }, 
+    "Bulgaria": {
+        "telepoint.bg (http)": "http://mirrors.telepoint.bg/gentoo/"
+    }, 
+    "Canada": {
+        "Gossamer Threads (http)": "http://gentoo.gossamerhost.com", 
+        "Tera-byte Dot Com Inc (http)": "http://gentoo.mirrors.tera-byte.com/", 
+        "University of Waterloo (http)": "http://mirror.csclub.uwaterloo.ca/gentoo-distfiles/"
+    }, 
+    "China": {
+        "Netease.com, Inc. (http)": "http://mirrors.163.com/gentoo/", 
+        "Xiamen University (http)": "http://mirrors.xmu.edu.cn/gentoo"
+    }, 
+    "Czech": {
+        "Advokatni Kancelar Kindl & Partneri (http)": "http://gentoo.supp.name/", 
+        "Masaryk University Brno (http)": "http://ftp.fi.muni.cz/pub/linux/gentoo/", 
+        "UPC \u010cesk\u00e1 republika, a.s. (http)": "http://gentoo.mirror.dkm.cz/pub/gentoo/", 
+        "Web4U Mirror (http)": "http://gentoo.mirror.web4u.cz/"
+    }, 
+    "Finland": {
+        "tut.fi (http)": "http://trumpetti.atm.tut.fi/gentoo/"
+    }, 
+    "France": {
+        "Linuxant.fr (http)": "http://mirrors.linuxant.fr/distfiles.gentoo.org/", 
+        "OVH (http)": "http://gentoo.mirrors.ovh.net/gentoo-distfiles/", 
+        "modulix.net (http)": "http://gentoo.modulix.net/gentoo/"
+    }, 
+    "Germany": {
+        "Netcologne (http)": "http://mirror.netcologne.de/gentoo/", 
+        "RWTH Aachen University (http)": "http://ftp.halifax.rwth-aachen.de/gentoo/", 
+        "Ruhr-Universit\u00e4t Bochum (http)": "http://linux.rz.ruhr-uni-bochum.de/download/gentoo-mirror/", 
+        "SPLINE, Institut f\u00fcr Informatik, Freie Universit\u00e4t Berlin (http)": "http://ftp.spline.inf.fu-berlin.de/mirrors/gentoo/", 
+        "Uni Erlangen-N\u00fcrnberg (http)": "http://ftp.uni-erlangen.de/pub/mirrors/gentoo", 
+        "University of Applied Sciences, Esslingen (http)": "http://ftp-stud.hs-esslingen.de/pub/Mirrors/gentoo/", 
+        "de-mirror.org (http)": "http://de-mirror.org/gentoo/"
+    }, 
+    "Greece": {
+        "National Technical University of Athens (http)": "http://ftp.ntua.gr/pub/linux/gentoo/", 
+        "files.gentoo.gr (http)": "http://files.gentoo.gr"
+    }, 
+    "Hong": {
+        "aditsu.net (http)": "http://gentoo.aditsu.net:8000/"
+    }, 
+    "Ireland": {
+        "HEAnet - Ireland's National Education and Research Network (http)": "http://ftp.heanet.ie/pub/gentoo/"
+    }, 
+    "Israel": {
+        "Hamakor FOSS Society (http)": "http://mirror.isoc.org.il/pub/gentoo/"
+    }, 
+    "Japan": {
+        "Internet Initiative Japan (http)": "http://ftp.iij.ad.jp/pub/linux/gentoo/", 
+        "Japan Advanced Institute of Science and Technology (http)": "http://ftp.jaist.ac.jp/pub/Linux/Gentoo/"
+    }, 
+    "Kazakhstan": {
+        "Neo Lab's (http)": "http://mirror.neolabs.kz/gentoo/pub"
+    }, 
+    "Netherlands": {
+        "LeaseWeb (http)": "http://mirror.leaseweb.com/gentoo/", 
+        "Universiteit Twente (http)": "http://ftp.snt.utwente.nl/pub/os/linux/gentoo"
+    }, 
+    "Poland": {
+        "Rzeszow University of Technology (http)": "http://gentoo.prz.rzeszow.pl", 
+        "Vectranet (http)": "http://ftp.vectranet.pl/gentoo/", 
+        "Warsaw University Of Technology (http)": "http://gentoo.mirror.pw.edu.pl/"
+    }, 
+    "Portugal": {
+        "RNL - T\u00e9cnico Lisboa (http)": "http://ftp.rnl.tecnico.ulisboa.pt/pub/gentoo/gentoo-distfiles/", 
+        "University of Coimbra (http)": "http://ftp.dei.uc.pt/pub/linux/gentoo/"
+    }, 
+    "Romania": {
+        "Romanian Organization Network (http)": "http://ftp.romnet.org/gentoo/", 
+        "xservers.ro Gazduire Web (http)": "http://mirrors.xservers.ro/gentoo/"
+    }, 
+    "Russia": {
+        "Bloodhost.ru (http)": "http://gentoo.bloodhost.ru/", 
+        "Yandex.ru (http)": "http://mirror.yandex.ru/gentoo-distfiles/"
+    }, 
+    "Slovakia": {
+        "Rainside.sk (http)": "http://tux.rainside.sk/gentoo/", 
+        "Wheel.sk (http)": "http://gentoo.wheel.sk/"
+    }, 
+    "South": {
+        "Daum Communications Corp (http)": "http://ftp.daum.net/gentoo/", 
+        "KAIST (http)": "http://ftp.kaist.ac.kr/pub/gentoo/", 
+        "lecl.net (http)": "http://ftp.lecl.net/pub/gentoo/"
+    }, 
+    "Spain": {
+        "Politechnic University of Catalonia (http)": "http://gentoo-euetib.upc.es/mirror/gentoo/"
+    }, 
+    "Sweden": {
+        "Lund University (http)": "http://ftp.df.lth.se/pub/gentoo/", 
+        "mdfnet.se (http)": "http://mirror.mdfnet.se/gentoo"
+    }, 
+    "Switzerland": {
+        "SWITCHmirror (http)": "http://mirror.switch.ch/ftp/mirror/gentoo/"
+    }, 
+    "Taiwan": {
+        "National Center for High-Performance Computing (http)": "http://ftp.twaren.net/Linux/Gentoo/"
+    }, 
+    "Turkey": {
+        "Turkish Linux Users Group - Linux Kullanicilari Dernegi(LKD) (http)": "http://ftp.linux.org.tr/gentoo/"
+    }, 
+    "UK": {
+        "Bytemark Hosting (http)": "http://mirror.bytemark.co.uk/gentoo/", 
+        "Qube Managed Services (http)": "http://mirror.qubenet.net/mirror/gentoo/", 
+        "The UK Mirror Service (http)": "http://www.mirrorservice.org/sites/distfiles.gentoo.org/"
+    }, 
+    "USA": {
+        "Easynews NNTP Hosting (http)": "http://gentoo.mirrors.easynews.com/linux/gentoo/", 
+        "Georgia Tech (http)": "http://www.gtlib.gatech.edu/pub/gentoo", 
+        "Michigan Tech University (http)": "http://lug.mtu.edu/gentoo/", 
+        "NetNITCO Internet Services (http)": "http://gentoo.netnitco.net", 
+        "OSU Open Source Lab (http)": "http://gentoo.osuosl.org/", 
+        "Pair Networks (http)": "http://gentoo.mirrors.pair.com/", 
+        "Rochester Institute of Technology (http)": "http://mirrors.rit.edu/gentoo/", 
+        "Sandia National Labs (http)": "http://mirror.iawnet.sandia.gov/gentoo/", 
+        "TDS Internet Services (http)": "http://gentoo.mirrors.tds.net/gentoo", 
+        "University of California, Santa Barbara (http)": "http://ftp.ucsb.edu/pub/mirrors/linux/gentoo/", 
+        "University of Delaware, Delaware Linux Users Group (http)": "http://mirror.lug.udel.edu/pub/gentoo/", 
+        "University of Illinois-Urbana Champaign (http)": "http://gentoo.cites.uiuc.edu/pub/gentoo/", 
+        "University of Northern Iowa (http)": "http://gentoo.cs.uni.edu/", 
+        "Utah State University (http)": "http://mirror.usu.edu/mirrors/gentoo/"
+    }, 
+    "Ukraine": {
+        "ITEAM gentoo mirror (http)": "http://gentoo.iteam.net.ua/", 
+        "gentoo.kiev.ua (http)": "http://gentoo.kiev.ua/ftp/"
+    }
+}
