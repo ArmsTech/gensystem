@@ -148,7 +148,7 @@ setuptools.setup(
     long_description='\n\n'.join([README, HISTORY]),
     author=gensystem.__author__,
     author_email=gensystem.__email__,
-    url='https://github.com/ArmsTech/gensystem',
+    url='https://github.com/brenj/gensystem',
     packages=setuptools.find_packages(),
     package_dir={'gensystem': 'gensystem'},
     scripts=glob.glob('bin/*'),
